@@ -35,3 +35,20 @@ despontando no Brasil. Não poderia ser diferente com esse famoso jogo criado e 
 - Criar bots para apostar e encher a mesa
 - Curiosidades durante o jogo (jogabilidade e interesses)
 - Pensar em UMLS
+
+## Cartões CRC
+
+### Exemplo:
+
+Breve descrição do que é o Exemplo.
+
+#### Responsabilidades
+
+- Primeira Responsabilidade
+- Segunda....
+
+#### Colaboração
+
+- Primeira Colaboração
+- Segunda ....
+
