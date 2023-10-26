@@ -3,6 +3,9 @@
 ## Grupo
 
 - João Flávio de Freitas Cruz - 2023421408
+- João Vitor Alves - 2021014120
+- Matheus de Freitas Andrade - 2023421580
+- Maycon Gomes de Oliveira - 2021013949
 
 ## Documentação
 
@@ -21,3 +24,14 @@ prêmios e avaliação de desempenho por parte dos usuários.
 mercados ilegais a digitalização se torna um processo natural. Vemos diversos modelos de cassinos e loterias virtuais
 despontando no Brasil. Não poderia ser diferente com esse famoso jogo criado e popularizado no Rio de Janeiro dos anos
 70.
+
+### Brainstorm
+
+- Sistema de nível no jogo (baseado no dinheiro ganhado ou perdido)
+- Histórico de jogos, depósito
+- Login e senha para o jogador (user) e para o bicheiro (adm)
+- Pensar em interface gráfica
+- Sistema financeiro do bicheiro (banca de apostas)
+- Criar bots para apostar e encher a mesa
+- Curiosidades durante o jogo (jogabilidade e interesses)
+- Pensar em UMLS
