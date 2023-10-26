@@ -6,6 +6,8 @@
 - João Vitor Alves - 2021014120
 - Matheus de Freitas Andrade - 2023421580
 - Maycon Gomes de Oliveira - 2021013949
+- Geanderson Luiz de Souza - 2021014350
+
 
 ## Documentação
 
