@@ -13,19 +13,13 @@
 
 ### Apresentação do Problema
 
-O projeto do **Jogo do Bicho** foi escolhido como um programa experimental para a automatização do processo de cadastro
-e sorteio de números para o funcionamento de uma loteria do bicho. O projeto teve sua escolha baseada na ideia de
-trazer uma pegada cômica e interessante à avaliação de desenvolvimento de programas na matéria de PDS2, contando com um
-tema que fosse divertido e de fácil engajamento por parte dos alunos envolvidos.
+O projeto do *Jogo do Bicho* foi escolhido como um programa experimental para automatizar o cadastro e sorteio de números de uma loteria do bicho. A escolha foi motivada pela ideia de adicionar um toque cômico e interessante à avaliação de desenvolvimento de programas na disciplina de PDS2, de forma envolvente para os alunos.
 
-O foco desse projeto é criar uma interface capaz de rodar plenamente as funcionalidades de uma loteria do Jogo do Bicho
-contando com cadastro de usuários, compra de cartelas e modalidades de jogo, sorteio de prêmios, distribuição dos
-prêmios e avaliação de desempenho por parte dos usuários.
+É notável que a digitalização dos negócios tem crescido como tendência em diversos mercados, inclusive em setores considerados ilegais, como o do Jogo do Bicho. Observamos o surgimento de cassinos e loterias virtuais no Brasil.
 
-É um fato consumado que a digitalização dos negócios tem crescido como tendência nos mercados em geral e até mesmo em
-mercados ilegais a digitalização se torna um processo natural. Vemos diversos modelos de cassinos e loterias virtuais
-despontando no Brasil. Não poderia ser diferente com esse famoso jogo criado e popularizado no Rio de Janeiro dos anos
-70.
+O foco deste projeto é criar uma interface que suporte as funcionalidades de uma loteria do Jogo do Bicho, incluindo cadastro de usuários, compra de cartelas, modalidades de jogo, sorteio de prêmios, distribuição dos prêmios e avaliação de desempenho dos usuários.
+
+Este projeto reconhece não apenas a digitalização crescente dos negócios, mas também presta homenagem a um jogo que desempenhou um papel singular na cultura popular brasileira. O Jogo do Bicho representa um exemplo de como a tecnologia pode ser empregada de forma criativa e inovadora, independentemente do contexto, mantendo a diversão e o envolvimento como elementos centrais.
 
 ### Visão Geral da Solução
 
@@ -52,6 +46,7 @@ O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e si
 3. O sistema deve permitir a entrada e saída de fundos da carteira de usuário com registro das operações
 4. O sistema deve permitir a listagem e apresentação dos sorteios existentes
 5. O sistema deve permitir a aposta nos sorteios existentes
+6. O sistema deve permitir que os usuários visualizem seus históricos de apostas e ganhos.
 
 #### Requisitos Funcionais - Administrador
 
