@@ -27,30 +27,12 @@ mercados ilegais a digitalização se torna um processo natural. Vemos diversos 
 despontando no Brasil. Não poderia ser diferente com esse famoso jogo criado e popularizado no Rio de Janeiro dos anos
 70.
 
-### Brainstorm
+### Visão Geral da Solução
 
-- Sistema de nível no jogo (baseado no dinheiro ganhado ou perdido)
-- Histórico de jogos, depósito
-- Login e senha para o jogador (user) e para o bicheiro (adm)
-- Pensar em interface gráfica
-- Sistema financeiro do bicheiro (banca de apostas)
-- Criar bots para apostar e encher a mesa
-- Curiosidades durante o jogo (jogabilidade e interesses)
-- Pensar em UMLS
+### Descrição Geral do Sistema
 
-## Cartões CRC
+#### Requisitos do Projeto
 
-### Exemplo:
+#### Requisitos Funcionais
 
-Breve descrição do que é o Exemplo.
-
-#### Responsabilidades
-
-- Primeira Responsabilidade
-- Segunda....
-
-#### Colaboração
-
-- Primeira Colaboração
-- Segunda ....
-
+#### Requisitos Não-Funcionais
