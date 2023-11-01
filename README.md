@@ -11,19 +11,52 @@
 
 ## Documentação
 
+### Introdução sobre o jogo do bicho
+
+  O jogo do bicho é um tipo de jogo de azar amplamente difundido no Brasil.
+Nele, os participantes realizam apostas em grupos, sendo que cada grupo é associado a um animal e a 
+quatro números consecutivos entre 0 e 99. Na aposta mais simples, a por grupo, cinco números são sorteados, e os jogadores saem vitoriosos caso o número 
+correspondente ao animal no qual apostaram seja sorteado, seguindo um processo semelhante ao de uma rifa.
+
+  A origem do jogo do bicho remonta ao fim do Império e ao início do período republicano. Segundo registros em 
+jornais daquela época, João Batista Viana Drummond, um latifundiário que possuía escravos, tomou uma 
+iniciativa para reverter as dificuldades financeiras enfrentadas pelo zoológico localizado no bairro de 
+Vila Isabel. Ele concebeu uma espécie de loteria na qual os participantes tinham a opção de escolher um dos
+25 animais do zoológico.
+  Nessa loteria do jogo do bicho, as pessoas podiam fazer apostas com valores que variavam desde moedas simples até pequenas frações de moedas (tostões furados). Isso aconteceu em um momento de recessão econômica no Brasil, tornando o jogo do bicho uma forma acessível de entretenimento e apostas para a população daquela época.
+
+#### Como se joga
+  Com o passar dos anos, o jogo do bicho evoluiu e se refinou. A banca realiza um sorteio de cinco pares de dezenas, numeradas de 00 a 99, que estão associadas a animais. No total, são 25 animais, e cada um deles representa uma dezena composta por quatro números. Para ganhar a aposta, é necessário que o animal escolhido seja sorteado pela banca.    
+
+  Outra forma de testar sua sorte no jogo do bicho é através das apostas no milhar. Nesse caso, o jogador não precisa selecionar um animal a ser sorteado; é o oposto! É necessário escolher os quatro números que a banca sorteará. Essa é uma aposta consideravelmente mais desafiadora de acertar, mas, em contrapartida, o valor apostado é multiplicado por 4 mil vezes em caso de acerto.  
+  
+*Referências:*   
++ Jogo do Bicho. In: WIKIPÉDIA: a enciclopédia livre. Disponível em: https://pt.wikipedia.org/wiki/Jogo_do_bicho. Acesso em: 30 out. 2023.  
++ TORCATO, Carlos Eduardo Martins. A repressão oficial ao jogo do bicho: uma história dos jogos de azar em Porto Alegre (1885-1917). Dissertação (mestrado). PPG em História, Universidade Federal do Rio Grande do Sul, 2011  
 ### Apresentação do Problema
 
-O projeto do *Jogo do Bicho* foi escolhido como um programa experimental para automatizar o cadastro e sorteio de números de uma loteria do bicho. A escolha foi motivada pela ideia de adicionar um toque cômico e interessante à avaliação de desenvolvimento de programas na disciplina de PDS2, de forma envolvente para os alunos.
+O projeto do **Jogo do Bicho** foi escolhido como um programa experimental para a automatização do processo de cadastro
+e sorteio de números para o funcionamento de uma loteria do bicho. O projeto teve sua escolha baseada na ideia de
+trazer uma pegada cômica e interessante à avaliação de desenvolvimento de programas na matéria de PDS2, contando com um
+tema que fosse divertido e de fácil engajamento por parte dos alunos envolvidos.
 
-É notável que a digitalização dos negócios tem crescido como tendência em diversos mercados, inclusive em setores considerados ilegais, como o do Jogo do Bicho. Observamos o surgimento de cassinos e loterias virtuais no Brasil.
+O foco desse projeto é criar uma interface capaz de rodar plenamente as funcionalidades de uma loteria do Jogo do Bicho
+contando com cadastro de usuários, compra de cartelas e modalidades de jogo, sorteio de prêmios, distribuição dos
+prêmios e avaliação de desempenho por parte dos usuários.
 
-O foco deste projeto é criar uma interface que suporte as funcionalidades de uma loteria do Jogo do Bicho, incluindo cadastro de usuários, compra de cartelas, modalidades de jogo, sorteio de prêmios, distribuição dos prêmios e avaliação de desempenho dos usuários.
-
-Este projeto reconhece não apenas a digitalização crescente dos negócios, mas também presta homenagem a um jogo que desempenhou um papel singular na cultura popular brasileira. O Jogo do Bicho representa um exemplo de como a tecnologia pode ser empregada de forma criativa e inovadora, independentemente do contexto, mantendo a diversão e o envolvimento como elementos centrais.
-
+É um fato consumado que a digitalização dos negócios tem crescido como tendência nos mercados em geral e até mesmo em
+mercados ilegais a digitalização se torna um processo natural. Vemos diversos modelos de cassinos e loterias virtuais
+despontando no Brasil.  
 ### Descrição Geral do Sistema
+Com o objetivo de simular o jogo de azar caracterizado como jogo do bicho documentado nesse arquivo, o sistema necessitará de usuarios que poderão participar dos sorteios e um 
+adiministrador que os organizará.
+Esses dois serão representados por duas frentes, Sistema adiministrador e Sistema jogadores que controlam e efetuaram suas respectivas competencias, descritas melhor em Visão Geral da Solução. 
+Contudo, é esperado que o sistema consiga realizar os sorteios e demonstrar quais foram as perdas e ganhos tanto da banca da loteria quanto dos jogadores.
 
-O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e sistema admin. O sistema de jogadores possui como objetivo representar a interface utilizada por uma usuário que irá apostar nos sorteios e participar como cliente do jogo do bicho. O sistema de admin possui como objetivo representar a interface utilziada por um organizador do sorteio do bicho de modo a permitir a criação de sorteios, o acesso aos fundos do sorteio e o pagamento dos jogadores que venham a ganhar.
+
+### Visão Geral da Solução
+
+O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e sistema admin. O sistema de jogadores possui como objetivo representar a interface utilizada por uma usuário que irá apostar nos sorteios e participar como cliente do jogo do bicho. O sistema de admin possui como objetivo representar a interface utilizada por um organizador do sorteio do bicho de modo a permitir a criação de sorteios, o acesso aos fundos do sorteio e o pagamento dos jogadores que venham a ganhar.
 
 #### Requisitos do Projeto
 
@@ -38,11 +71,13 @@ O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e si
 #### Requisitos Funcionais - Usuário
 
 1. O sistema deve permitir o cadastro de usuários com login e senha
-2. O sistema deve permitir o login de usuários levantando uma seção de operação para estes
-3. O sistema deve permitir a entrada e saída de fundos da carteira de usuário com registro das operações
-4. O sistema deve permitir a listagem e apresentação dos sorteios existentes
-5. O sistema deve permitir a aposta nos sorteios existentes
-6. O sistema deve permitir que os usuários visualizem seus históricos de apostas e ganhos.
+
+3. O sistema deve permitir o login de usuários levantando uma seção de operação para estes
+1. O sistema deve perimitir que o usuario modifique certas informações pessoais que sua conta possui
+4. O sistema deve permitir a entrada e saída de fundos da carteira de usuário com registro das operações
+5. O sistema deve permitir a listagem e apresentação dos sorteios existentes
+1. O sistema deve perimitir que o usuario consulte sorteios que ele partipou assim como os resultados do mesmo
+6. O sistema deve permitir a aposta nos sorteios existentes
 
 #### Requisitos Funcionais - Administrador
 
@@ -61,3 +96,4 @@ O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e si
 2. Deve possuir tratamento das excessões apresentando em liguagem simples os erros obtidos
 3. Deve ser robusto para resistir às entradas de dados errados e permitir que o usuário tente o quebrar sem êxito
 4. Deve ser realístico provando a possibilidade prática da implementação de um jogo do bicho em um programa computacional sendo um modelo para possíveis implementações em rede
+5. A organização do código e a adesão a boas práticas de programação deve ser essenciais na implementação do projeto.
