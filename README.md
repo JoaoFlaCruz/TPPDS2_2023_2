@@ -21,10 +21,6 @@ O foco deste projeto é criar uma interface que suporte as funcionalidades de um
 
 Este projeto reconhece não apenas a digitalização crescente dos negócios, mas também presta homenagem a um jogo que desempenhou um papel singular na cultura popular brasileira. O Jogo do Bicho representa um exemplo de como a tecnologia pode ser empregada de forma criativa e inovadora, independentemente do contexto, mantendo a diversão e o envolvimento como elementos centrais.
 
-### Visão Geral da Solução
-
-_Falta esse..._
-
 ### Descrição Geral do Sistema
 
 O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e sistema admin. O sistema de jogadores possui como objetivo representar a interface utilizada por uma usuário que irá apostar nos sorteios e participar como cliente do jogo do bicho. O sistema de admin possui como objetivo representar a interface utilziada por um organizador do sorteio do bicho de modo a permitir a criação de sorteios, o acesso aos fundos do sorteio e o pagamento dos jogadores que venham a ganhar.
