@@ -14,25 +14,26 @@
 ### Introdução sobre o jogo do bicho
 
   O jogo do bicho é um tipo de jogo de azar amplamente difundido no Brasil.
-Nele, os participantes realizam apostas em grupos, sendo que cada grupo é associado a um animal e a 
-quatro números consecutivos entre 0 e 99. Na aposta mais simples, a por grupo, cinco números são sorteados, e os jogadores saem vitoriosos caso o número 
+Nele, os participantes realizam apostas em grupos, sendo que cada grupo é associado a um animal e a
+quatro números consecutivos entre 0 e 99. Na aposta mais simples, a por grupo, cinco números são sorteados, e os jogadores saem vitoriosos caso o número
 correspondente ao animal no qual apostaram seja sorteado, seguindo um processo semelhante ao de uma rifa.
 
-  A origem do jogo do bicho remonta ao fim do Império e ao início do período republicano. Segundo registros em 
-jornais daquela época, João Batista Viana Drummond, um latifundiário que possuía escravos, tomou uma 
-iniciativa para reverter as dificuldades financeiras enfrentadas pelo zoológico localizado no bairro de 
+  A origem do jogo do bicho remonta ao fim do Império e ao início do período republicano. Segundo registros em
+jornais daquela época, João Batista Viana Drummond, um latifundiário que possuía escravos, tomou uma
+iniciativa para reverter as dificuldades financeiras enfrentadas pelo zoológico localizado no bairro de
 Vila Isabel. Ele concebeu uma espécie de loteria na qual os participantes tinham a opção de escolher um dos
 25 animais do zoológico.
   Nessa loteria do jogo do bicho, as pessoas podiam fazer apostas com valores que variavam desde moedas simples até pequenas frações de moedas (tostões furados). Isso aconteceu em um momento de recessão econômica no Brasil, tornando o jogo do bicho uma forma acessível de entretenimento e apostas para a população daquela época.
 
 #### Como se joga
-  Com o passar dos anos, o jogo do bicho evoluiu e se refinou. A banca realiza um sorteio de cinco pares de dezenas, numeradas de 00 a 99, que estão associadas a animais. No total, são 25 animais, e cada um deles representa uma dezena composta por quatro números. Para ganhar a aposta, é necessário que o animal escolhido seja sorteado pela banca.    
+  Com o passar dos anos, o jogo do bicho evoluiu e se refinou. A banca realiza um sorteio de cinco pares de dezenas, numeradas de 00 a 99, que estão associadas a animais. No total, são 25 animais, e cada um deles representa uma dezena composta por quatro números. Para ganhar a aposta, é necessário que o animal escolhido seja sorteado pela banca.
 
-  Outra forma de testar sua sorte no jogo do bicho é através das apostas no milhar. Nesse caso, o jogador não precisa selecionar um animal a ser sorteado; é o oposto! É necessário escolher os quatro números que a banca sorteará. Essa é uma aposta consideravelmente mais desafiadora de acertar, mas, em contrapartida, o valor apostado é multiplicado por 4 mil vezes em caso de acerto.  
-  
-*Referências:*   
-+ Jogo do Bicho. In: WIKIPÉDIA: a enciclopédia livre. Disponível em: https://pt.wikipedia.org/wiki/Jogo_do_bicho. Acesso em: 30 out. 2023.  
-+ TORCATO, Carlos Eduardo Martins. A repressão oficial ao jogo do bicho: uma história dos jogos de azar em Porto Alegre (1885-1917). Dissertação (mestrado). PPG em História, Universidade Federal do Rio Grande do Sul, 2011  
+  Outra forma de testar sua sorte no jogo do bicho é através das apostas no milhar. Nesse caso, o jogador não precisa selecionar um animal a ser sorteado; é o oposto! É necessário escolher os quatro números que a banca sorteará. Essa é uma aposta consideravelmente mais desafiadora de acertar, mas, em contrapartida, o valor apostado é multiplicado por 4 mil vezes em caso de acerto.
+
+*Referências:*
++ Jogo do Bicho. In: WIKIPÉDIA: a enciclopédia livre. Disponível em: https://pt.wikipedia.org/wiki/Jogo_do_bicho. Acesso em: 30 out. 2023.
++ TORCATO, Carlos Eduardo Martins. A repressão oficial ao jogo do bicho: uma história dos jogos de azar em Porto Alegre (1885-1917). Dissertação (mestrado). PPG em História, Universidade Federal do Rio Grande do Sul, 2011
+
 ### Apresentação do Problema
 
 O projeto do **Jogo do Bicho** foi escolhido como um programa experimental para a automatização do processo de cadastro
@@ -46,13 +47,14 @@ prêmios e avaliação de desempenho por parte dos usuários.
 
 É um fato consumado que a digitalização dos negócios tem crescido como tendência nos mercados em geral e até mesmo em
 mercados ilegais a digitalização se torna um processo natural. Vemos diversos modelos de cassinos e loterias virtuais
-despontando no Brasil.  
-### Descrição Geral do Sistema
-Com o objetivo de simular o jogo de azar caracterizado como jogo do bicho documentado nesse arquivo, o sistema necessitará de usuarios que poderão participar dos sorteios e um 
-adiministrador que os organizará.
-Esses dois serão representados por duas frentes, Sistema adiministrador e Sistema jogadores que controlam e efetuaram suas respectivas competencias, descritas melhor em Visão Geral da Solução. 
-Contudo, é esperado que o sistema consiga realizar os sorteios e demonstrar quais foram as perdas e ganhos tanto da banca da loteria quanto dos jogadores.
+despontando no Brasil.
 
+### Descrição Geral do Sistema
+
+Com o objetivo de simular o jogo de azar caracterizado como jogo do bicho documentado nesse arquivo, o sistema necessitará de usuarios que poderão participar dos sorteios e um
+adiministrador que os organizará.
+Esses dois serão representados por duas frentes, Sistema adiministrador e Sistema jogadores que controlam e efetuaram suas respectivas competencias, descritas melhor em Visão Geral da Solução.
+Contudo, é esperado que o sistema consiga realizar os sorteios e demonstrar quais foram as perdas e ganhos tanto da banca da loteria quanto dos jogadores.
 
 ### Visão Geral da Solução
 
@@ -71,13 +73,12 @@ O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e si
 #### Requisitos Funcionais - Usuário
 
 1. O sistema deve permitir o cadastro de usuários com login e senha
-
-3. O sistema deve permitir o login de usuários levantando uma seção de operação para estes
-1. O sistema deve perimitir que o usuario modifique certas informações pessoais que sua conta possui
+2. O sistema deve permitir o login de usuários levantando uma seção de operação para estes
+3. O sistema deve perimitir que o usuario modifique certas informações pessoais que sua conta possui
 4. O sistema deve permitir a entrada e saída de fundos da carteira de usuário com registro das operações
 5. O sistema deve permitir a listagem e apresentação dos sorteios existentes
-1. O sistema deve perimitir que o usuario consulte sorteios que ele partipou assim como os resultados do mesmo
-6. O sistema deve permitir a aposta nos sorteios existentes
+6. O sistema deve perimitir que o usuario consulte sorteios que ele partipou assim como os resultados do mesmo
+7. O sistema deve permitir a aposta nos sorteios existentes
 
 #### Requisitos Funcionais - Administrador
 
