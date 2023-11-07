@@ -1,9 +1,13 @@
 #pragma once
 
-class Aposta{
+#include "Jogador.hpp"
+
+abstract class Aposta{
 
     private:
-
+        int valor_;
+        Jogador jogador_;
     public:
+        Aposta();
 
 };
