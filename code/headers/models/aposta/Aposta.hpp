@@ -2,7 +2,7 @@
 
 #include "Jogador.hpp"
 
-abstract class Aposta{
+class Aposta{
 
     private:
         int valor_;
