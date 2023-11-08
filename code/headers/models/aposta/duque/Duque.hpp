@@ -1,12 +1,17 @@
 #pragma once
 
+#include <vector>
+
 #include "Aposta.hpp"
-#include "Grupo.hpp"
+#include "Grupos.hpp"
 
 class Duque : public Aposta {
 
     private:
 
     public:
+
+        Duque();
+        ~Duque();
 
 };
