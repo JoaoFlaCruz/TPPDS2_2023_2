@@ -16,17 +16,26 @@ class Aposta{
 
     private:
         const static int ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
-        float valor_;
-        bool cabeca_;
-        std::string nome_do_jogador_;
+        bool ganhou_ = false; //Verifica se a aposta é ganhadora
+        float valor_; //Valor apostado pelo jogador
+        bool cabeca_; //Verificação se a aposta é na cabeça
+        std::string nome_do_jogador_; //Nome do jogador que apostou
     public:
-        Aposta(std::string nome_do_jogador, float valor, bool cabeca = false);
-        ~Aposta();
-        int ganho();
-        float valor();
-        bool cabeca();
-        std::string nome_do_jogador();
-        float calcular_ganho();
-        virtual bool verificar_vitoria();
+        // CONSTRUTORES E DESTRUTORES
+        Aposta(std::string nome_do_jogador, float valor, bool cabeca = false); //Construtor
+        ~Aposta(); //Destrutor
+
+        //GETTERS
+        int ganho(); //Getter para o atributo ganho
+        float valor(); //Getter para o atributo valor
+        bool cabeca(); //Getter para o atributo cabeça
+        std::string nome_do_jogador(); //Getter para o atributo nome_do_jogador
+        bool ganhou(); //Getter para o atributo ganhou
+
+        //MÉTODOS CONCRETOS
+        float calcular_ganho(); //Calculo do dinheiro ganhado com base no valor, no ganho e na cabeça
+
+        //MÉTODOS ABSTRATOS
+        virtual void verificar_vitoria(); //Verificação da vitória com atualização da variavel ganhou
 
 };
