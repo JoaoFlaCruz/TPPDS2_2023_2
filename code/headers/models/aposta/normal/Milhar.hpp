@@ -1,15 +1,20 @@
 #pragma once
 
-#include "Aposta.hpp"
-#include "Grupo.hpp"
+#include <vector>
 
-class Milhar : public Aposta {
+#include "Normal.hpp"
+
+class Milhar : public Normal {
+    
     private:
 
     public:
-        Milhar(int valor, std::string nome_do_jogador, bool cabeca) : Normal(valor, nome_do_jogador, cabeca) {
 
-        }
+        /*Construtor*/
+        Milhar(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<Grupos> apostas); 
+        /*Destrutor*/
         ~Milhar();
 
+
+        void verificar_vitoria(); //Verificação da vitória com atualização da variavel ganhou
 };
