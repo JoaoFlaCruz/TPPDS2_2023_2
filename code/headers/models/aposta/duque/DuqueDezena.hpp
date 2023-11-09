@@ -7,7 +7,7 @@
 class DuqueDezena : public Duque {
 
     private:
-        const static int ganho_ = GANHO_DUQUE_DEZENA; //Ganho de 300 para uma classe DuqueDezena
+        const static float ganho_ = GANHO_DUQUE_DEZENA; //Ganho de 300 para uma classe DuqueDezena
     public:
 
         //CONSTRUTORES E DESTRUTORES

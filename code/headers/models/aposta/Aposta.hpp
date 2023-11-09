@@ -15,7 +15,7 @@
 class Aposta{
 
     private:
-        const static int ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
+        const static float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
         bool ganhou_ = false; //Verifica se a aposta é ganhadora
         float valor_; //Valor apostado pelo jogador
         bool cabeca_; //Verificação se a aposta é na cabeça
@@ -26,7 +26,7 @@ class Aposta{
         ~Aposta(); //Destrutor
 
         //GETTERS
-        int ganho(); //Getter para o atributo ganho
+        float ganho(); //Getter para o atributo ganho
         float valor(); //Getter para o atributo valor
         bool cabeca(); //Getter para o atributo cabeça
         std::string nome_do_jogador(); //Getter para o atributo nome_do_jogador
