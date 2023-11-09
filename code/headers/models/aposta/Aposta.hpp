@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Jogador.hpp"
+#include <string>
 
+#define GANHO_NULO 0
 #define GANHO_GRUPO 18
 #define GANHO_DEZENA 60
 #define GANHO_CENTENA 600
@@ -14,10 +15,18 @@
 class Aposta{
 
     private:
-        int valor_;
-        int ganho_;
+        const static int ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
+        float valor_;
         bool cabeca_;
         std::string nome_do_jogador_;
     public:
-        Aposta();
+        Aposta(std::string nome_do_jogador, float valor, bool cabeca = false);
+        ~Aposta();
+        int ganho();
+        float valor();
+        bool cabeca();
+        std::string nome_do_jogador();
+        float calcular_ganho();
+        virtual bool verificar_vitoria();
+
 };
