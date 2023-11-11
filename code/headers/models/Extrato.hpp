@@ -1,19 +1,31 @@
 #pragma once
-
-#include <vector>
+#include <list>
+#include <string>
+#include <map>
 
 class Extrato {
 public:
-    // Registra uma transação no extrato.
-    // Pré-condição: O valor da transação deve ser não negativo.
-    void registrar_transacao(double valor, bool ganho);
+	//Retorna um extrato
+	//Pré-condição:tamanho do extrato deve ser maior que zero
+	std::list<std::map<std::string, float>> extrato();
 
-    // Calcula e retorna o total de ganhos ou perdas no extrato.
-    // Pré-condição: O extrato não deve estar vazio.
-    double calcular_ganhos_ou_perdas() const;
+	//Adiciona uma movimentação
+	//Pré-condição: o valor passado tem que ser valido
+	void adicionar_movimentacao(std::map<std::string, float>);
+
+	//Pré-condição:tamanho do extrato deve ser maior que zero
+	//Retornar a lista em ordem cronologica
+	std::list<std::map<std::string, float>> ordenar_cronologicamente();
+
+	//Pré-condição:tamanho do extrato deve ser maior que zero
+	//Retornar a lista em ordem de maior valor
+	std::list<std::map<std::string, float>> ordenar_por_valor();
+
+	//Retorna o tamanho da lista
+	int tamanho();
 
 private:
-    // Armazena informações sobre uma transação.
-    // Cada elemento é um par representando o valor e se é ganho (true) ou perda (false).
-    std::vector<std::pair<double, bool>> transacoes;
+	//Lista de movimentações que guarda a se recebido, depositado ou pago, data,  e valor 
+	std::list<std::map<std::string, float>> extrato_;
+	int tamanho_;
 };
