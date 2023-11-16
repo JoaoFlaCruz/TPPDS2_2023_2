@@ -1,31 +1,31 @@
 #pragma once
+
 #include <list>
 #include <string>
-#include <map>
+#include <utility>
 
 class Extrato {
 public:
-	//Retorna um extrato
-	//Pré-condição:tamanho do extrato deve ser maior que zero
-	std::list<std::map<std::string, float>> extrato();
+	//Inicializa um extrato vazio
+	Extrato();
 
-	//Adiciona uma movimentação
-	//Pré-condição: o valor passado tem que ser valido
-	void adicionar_movimentacao(std::map<std::string, float>);
-
+	//Retorna um extrato por padrão em ordem cronologica
 	//Pré-condição:tamanho do extrato deve ser maior que zero
-	//Retornar a lista em ordem cronologica
-	std::list<std::map<std::string, float>> ordenar_cronologicamente();
+	std::list<std::pair<std::string, float>> extrato_por_ordem_cronologica();
 
 	//Pré-condição:tamanho do extrato deve ser maior que zero
 	//Retornar a lista em ordem de maior valor
-	std::list<std::map<std::string, float>> ordenar_por_valor();
+	std::list<std::pair<std::string, float>> ordenar_por_ordem_de_valor();
+
+	//Adiciona uma movimentação
+	//Pré-condição: o valor passado tem que ser valido
+	void adicionar_movimentacao(std::string descricao, float valor);
 
 	//Retorna o tamanho da lista
 	int tamanho();
 
 private:
-	//Lista de movimentações que guarda a se recebido, depositado ou pago, data,  e valor 
-	std::list<std::map<std::string, float>> extrato_;
+	//Lista de movimentações que guarda se recebido, depositado ou pago, data e valor 
+	std::list<std::pair<std::string, float>> extrato_;
 	int tamanho_;
 };
