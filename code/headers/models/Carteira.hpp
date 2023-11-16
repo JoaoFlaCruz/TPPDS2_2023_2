@@ -2,21 +2,24 @@
 #include "Extrato.hpp"
 class Carteira {
 public:
+	//Inicializa uma carteira vazia 
+	Carteira();
+
 	//Retorna o saldo da carteira
 	float saldo();
 
-	//Depositar
-	//Pré-condição: valor tem que ser valido
-	void depositar(float valor);
+	//Retorna o extrato da carteira
+	Extrato extrato();
 	
-	//Receber valor da banca
-	//Pré-condição: valor tem que ser valido
-	void receber(float valor);
+	//Depositar
+	//Pré-condição: valor tem que ser maior que zero
+	void depositar(float valor);
 
+	//*Indefinido ainda quem irá pagar
 	//Pagar banca
-	//Pré-condição: valor tem que ser valido
+	//Pré-condição: valor tem que ser valido e menor que o saldo e maior que zero
 	void pagar(float valor);
-
+	
 private:
 	float saldo_;
 	Extrato extrato_;
