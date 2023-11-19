@@ -4,20 +4,22 @@
 
 class Login {
 public:
-
-  Login();
+    // Construtor
+    Login();
 
     // Define o usuário logado
-    // Pré-condição: O objeto Usuario passado como parâmetro deve ser válido.
-    void set_usuario(const Usuario& usuario);
+    void definirUsuarioLogado(const Usuario& usuario);
 
-    // Obtém o usuário logado
-    // Pré-condição: O usuário logado deve ser válido.
-    Usuario get_usuario() const;
+    // Verifica se há um usuário logado
+    bool haUsuarioLogado() const;
 
-    ~Login();
+    // Obtém informações do usuário logado
+    const Usuario& obterUsuarioLogado() const;
+
+    // Desconecta o usuário logado
+    void desconectarUsuario();
 
 private:
-   
-    Usuario usuario_;
+    bool usuarioLogado_;
+    Usuario usuarioAtual_;
 };
