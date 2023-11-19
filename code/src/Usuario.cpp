@@ -3,25 +3,27 @@
 Usuario::Usuario(std::string nome, std::string senha, std::string cpf, Jogador jogador)
     : nome_(nome), senha_(senha), cpf_(cpf), jogador_(jogador) {}
 
+
 Usuario::~Usuario() {}
 
-void Usuario::alterar_senha(std::string senha_nova) {
-    senha_ = senha_nova;
-}
-
-std::string Usuario::nome() {
+std::string Usuario::obterNome() const {
     return nome_;
 }
 
-std::string Usuario::senha() {
+std::string Usuario::obterSenha() const {
     return senha_;
 }
 
-std::string Usuario::cpf() {
+std::string Usuario::obterCPF() const {
     return cpf_;
 }
 
-// Método para obter o objeto Jogador associado ao usuário
-Jogador Usuario::jogador() {
+Jogador Usuario::obterJogador() const {
     return jogador_;
 }
+
+// Método para alterar a senha 
+void Usuario::alterarSenha(std::string senhaNova) {
+    senha_ = senhaNova;
+}
+
