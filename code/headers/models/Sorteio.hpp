@@ -1,4 +1,6 @@
 #pragma once
+//Realizar o tratamento de excessões e a função verificar sorteio
+//Testar
 
 #include "ListaApostas.hpp"
 #include <string>
@@ -6,33 +8,42 @@
 
 class Sorteio {
 public:
+	//Inicializa um sorteio
+	//Pre_condição: o formato da entrada tem que estar no padrão AA-AA-AAA/PTM
+	//Pre-condição: não pode haver um sorteio existente com o mesmo nome
+	Sorteio(std::string data_e_horario);
+
+	Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteados_, bool status);
+
+	//Retorna a data e horario do sorteio
+	std::string data_e_horario();
+
 	//Retornar os numeros sorteados
 	std::array<int, 5> numeros_sorteados();
 
 	//Retornar a lista de apostadas feitas
-	Lista_de_apostas apostas_feitas();
+	ListaApostas apostas_feitas();
 
 	//Retornar as apostas ganhas 
-	Lista_de_apostas apostas_ganhas();
+	ListaApostas apostas_ganhas();
 
-	//Retronar o status do sorteio
+	//Retornar o status do sorteio
 	bool status();
-
-	//Inicializa um sorteio
-	Sorteio(std::string nome);
 
 	//Sorteia 5 numeros
 	void sortear();
 
-	//Modifica os status das apostas e adiciona elas na lista de ganhadores
-	//Altera o valor dos status das apostas
+	//Testa e Modifica os status das apostas e adiciona elas na lista de ganhadores
+	//A seguencia dos numeros sorteados tem que ter tamanho igual a 5, ou seja, é 
+	// necessario já haver um sorteio
 	void verificar_apostas_ganhas();
 
 private:
-	std::string nome_;
+
+	std::string data_e_horario_;//Data e horario
 	std::array<int, 5> numeros_sorteados_;
-	Lista_de_apostas apostas_feitas_;
-	Lista_de_apostas apostas_ganhas_;
+	ListaApostas apostas_feitas_;
+	ListaApostas apostas_ganhas_;
 	bool status_; // 0 em andamento e 1 finalizado
 	int gerar_numero_aleatorio();
 };
