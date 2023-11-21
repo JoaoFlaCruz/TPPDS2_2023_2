@@ -1,26 +1,43 @@
 #pragma once
 #pragma once
 
-#include "Aposta.hpp"
+#include "aposta/Aposta.hpp"
 #include <list>
+//Testar
+struct ListaDeApostaVazia {
+};
 
-class Lista_apostas {
+struct ApostaDeApostaInexistente {
+	Aposta aposta_que_nao_existe;
+};
+
+class ListaApostas {
 public:
+	//Cria uma lista de apostas vazia
+	ListaApostas();
+
+	//Retorna a lista de apostas
+	std::list<Aposta> lista_de_aposta();
+
 	//Retorna o tamanho da lista 
 	int tamanho();
 
-	//Retorna a lista de apostas
-	std::list<Aposta*> lista_de_aposta();
-
 	//Adiciona uma nova aposta na lista
-	//Pre-condição: a aposta não deve já existir na lista
 	void adicionar_aposta(Aposta aposta);
 
 	//Remove uma aposta na lista
-	//Pre-Condição: deve existir essa aposta
+	//Pre-Condição: deve existir a aposta a ser removida
+	//Pre-condicao: o tamanho da lista tem que ser maior que zero 
 	void remover_aposta(Aposta aposta);
+	
+	//Buscar aposta que ganharam
+	ListaApostas apostas_ganhas();
+
+	//Libera todo espaço reservado para os conteudos da lista
+	~ListaApostas();
 
 private:
-	std::list<Aposta*> lista_de_aposta_;
+	std::list<Aposta> lista_de_aposta_;
 	int tamanho_;
+	bool pertence(Aposta aposta);
 };
