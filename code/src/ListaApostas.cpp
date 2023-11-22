@@ -1,4 +1,4 @@
-#include "ListaApostas.hpp"
+#include "../headers/models/ListaApostas.hpp"
 //Testar
 
 ListaApostas::ListaApostas() : lista_de_aposta_({}), tamanho_(0) {
@@ -23,10 +23,16 @@ void ListaApostas::remover_aposta(Aposta aposta) {
 		throw ListaDeApostaVazia{};
 	}
 	if (!pertence(aposta)) {
-		throw ApostaDeApostaInexistente{ aposta };
+		throw ApostaInexistente{ aposta };
+	}
+	for (auto it = this->lista_de_aposta_.begin(); it != this->lista_de_aposta_.end(); it++) {
+		if (*it == aposta) {
+			this->lista_de_aposta_.erase(it);
+			this->tamanho_--;
+			break;
+		}
 	}
 	
-	//this->lista_de_aposta_.remove(aposta); Manutenção!!
 }
 
 ListaApostas ListaApostas::apostas_ganhas(){
@@ -45,11 +51,9 @@ ListaApostas::~ListaApostas() {
 	}
 }
 
-
-
 bool ListaApostas::pertence(Aposta aposta) {
 	for (auto aposta_selecionada : this->lista_de_aposta_) {
-		if (0) {//manutençao dessa função
+		if (aposta_selecionada == aposta) {
 			return 1;
 		}
 	}
