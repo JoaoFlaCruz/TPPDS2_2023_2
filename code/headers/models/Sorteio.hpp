@@ -1,18 +1,31 @@
 #pragma once
-//Realizar o tratamento de excessões e a função verificar sorteio
+//Fazer a função verificar sorteio
 //Testar
 
 #include "ListaApostas.hpp"
 #include <string>
 #include <array>
-
+struct DiaInvalido {
+	int dia;
+};
+struct MesInvalido {
+	int mes;
+};
+struct AnoInvalido {
+	int ano;
+};
+struct HorarioInvalido {
+	std::string horario;
+};
 class Sorteio {
 public:
 	//Inicializa um sorteio
 	//Pre_condição: o formato da entrada tem que estar no padrão AA-AA-AAA/PTM
-	//Pre-condição: não pode haver um sorteio existente com o mesmo nome
+
 	Sorteio(std::string data_e_horario);
 
+	//Inicializa um sorteio parcialmente preenchido (sorteio sem apostas)
+	//Pre_condição: o formato da entrada tem que estar no padrão AA-AA-AAA/PTM
 	Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteados_, bool status);
 
 	//Retorna a data e horario do sorteio
