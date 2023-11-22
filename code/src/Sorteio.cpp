@@ -1,12 +1,68 @@
-#include "Sorteio.hpp"
+#include "../headers/models/Sorteio.hpp"
 #include <random>
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
-Sorteio::Sorteio(std::string data_e_horario) : data_e_horario_(data_e_horario){
+Sorteio::Sorteio(std::string data_e_horario) : data_e_horario_(data_e_horario), numeros_sorteados_({}), status_(0), 
+apostas_feitas_({}), apostas_ganhas_({}) {
+    //DECOMPOSIÇÃO DA DATA E HORARIO
+    std::string dia = data_e_horario.substr(0, 2);
+    std::string mes = data_e_horario.substr(3, 2);
+    std::string ano = data_e_horario.substr(6, 4);
+    std::string horario = data_e_horario.substr(11, 3); //PTM, PTV, PTN, COR
+
+    std::string separador1 = data_e_horario.substr(2, 1);
+    std::string separador2 = data_e_horario.substr(5, 1);
+    std::string separador3 = data_e_horario.substr(10, 1);
+
+    int dia_ = stoi(dia);
+    int mes_ = stoi(mes);
+    int ano_ = stoi(ano);
+
+    //Tratamento de excessão
+    if (dia_ < 0 || dia_ > 31) {
+        throw DiaInvalido{ dia_ };
+    }
+    if (mes_ < 0 || mes_ > 12) {
+        throw MesInvalido{ mes_ };
+    }
+    if (ano_ < 1892 || ano_ > 2050) {
+        throw AnoInvalido{ ano_ };
+    }
+    if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR    
+        throw HorarioInvalido{ horario };
+    }
 }
 
-Sorteio::Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteados, bool status) : data_e_horario_(data_e_horario), status_(status) {
-        this->numeros_sorteados_ = numeros_sorteados;
+Sorteio::Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteados, bool status) : data_e_horario_(data_e_horario),
+    numeros_sorteados_(numeros_sorteados), status_(status) {
+        
+        //DECOMPOSIÇÃO DA DATA E HORARIO
+        std::string dia = data_e_horario.substr(0, 2);
+        std::string mes = data_e_horario.substr(3, 2);
+        std::string ano = data_e_horario.substr(6, 4);
+        std::string horario = data_e_horario.substr(11, 3); //PTM, PTV, PTN, COR
+
+        std::string separador1 = data_e_horario.substr(2, 1);
+        std::string separador2 = data_e_horario.substr(5, 1);
+        std::string separador3 = data_e_horario.substr(10, 1);
+
+        int dia_ = stoi(dia);
+        int mes_ = stoi(mes);
+        int ano_ = stoi(ano);
+
+        //Tratamento de excessão
+        if (dia_ < 0 || dia_ > 31) {
+            throw DiaInvalido{ dia_ };
+        }
+        if (mes_ < 0 || mes_ > 12) {
+            throw MesInvalido{ mes_ };
+        }
+        if (ano_ < 1892 || ano_ > 2050) {
+            throw AnoInvalido{ ano_ };
+        }
+        if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR    
+            throw HorarioInvalido{ horario };
+        }
 }
 
 std::string Sorteio::data_e_horario(){
@@ -48,3 +104,6 @@ int Sorteio::gerar_numero_aleatorio(){
 
     return distribuicao(gerador);
 }
+
+
+
