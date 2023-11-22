@@ -3,6 +3,20 @@
 #include <list>
 //Realizar os tratamentos de excessões
 //Testar
+struct ListaDeSorteioVazia {
+};
+
+struct SorteioInexistente {
+	std::string data_e_horario_que_nao_existe;//Não existe construtor para esse tipo de aposta
+};
+
+struct SorteioJaExistente{
+	std::string data_e_horario_ja_existente;
+};
+
+struct JogadorNaoParticipou {
+	std::string nome_do_jogador;
+};
 
 class ListaSorteios {
 public:
@@ -15,27 +29,34 @@ public:
 	//Retorna a lista de sorteio
 	std::list<Sorteio> lista_de_sorteio();
 
-	//Adiciona uma nova aposta na lista
-	//Pre-condição: a aposta não deve já existir na lista
+	//Adiciona uma novo sorteio na lista
+	//Pre-condição: o sorteio não deve já existir na lista
 	void adicionar_sorteio(Sorteio sorteio);
 
-	//Remove uma aposta na lista
-	//Pre-Condição: deve existir essa aposta
-	void remover_sorteio(Sorteio sorteio);
+	//Remove um sorteio na lista
+	//Pre-Condição: deve existir esse sorteio
+	//Pre_condição: tamanho da lista maior que zero
+	void remover_sorteio(std::string data_e_horario);
 
 	//Buscar sorteios em andamento 
+	//Pre_condição: tamanho da lista maior que zero
 	ListaSorteios sorteios_em_andamento();
 
 	//Buscar sorteios feitos
+	//Pre_condição: tamanho da lista maior que zero
 	ListaSorteios sorteios_feitos();
 
 	//Buscar sorteio por nome(Data e hora)
+	//Pre-Condição: deve existir esse sorteio
+	//Pre_condição: tamanho da lista maior que zero
 	Sorteio buscar_sorteio_por_data_e_horario(std::string data_e_horario);
 
 	//Buscar participações de um jogador
-	ListaSorteios buscar_participacao(std::string nome);
+	//Pre-Condição: deve existir pelo menos um sorteio participado
+	ListaSorteios buscar_participacao(std::string nome_do_jogador);
 
 private:
 	std::list<Sorteio> lista_de_sorteio_;
 	int tamanho_;
+	bool pertence(std::string data_e_horario);
 };
