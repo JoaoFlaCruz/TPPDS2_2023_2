@@ -3,12 +3,12 @@
 
 #include "aposta/Aposta.hpp"
 #include <list>
-//Testar
+//Testar 
 struct ListaDeApostaVazia {
 };
 
-struct ApostaDeApostaInexistente {
-	Aposta aposta_que_nao_existe;
+struct ApostaInexistente {
+	Aposta aposta_que_nao_existe;//Não existe construtor para esse tipo de aposta
 };
 
 class ListaApostas {
