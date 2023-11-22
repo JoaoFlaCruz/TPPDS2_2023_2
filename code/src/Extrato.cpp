@@ -1,19 +1,30 @@
-#pragma once
+#include "Extrato.hpp"
+Extrato::Extrato() : extrato_({}), tamanho_(0) {
 
-#include <vector>
+}
 
-class Extrato {
-public:
-    // Registra uma transação no extrato.
-    // Pré-condição: O valor da transação deve ser não negativo.
-    void registrar_transacao(double valor, bool ganho);
+std::list<std::pair<std::string, float>> Extrato::extrato_por_ordem_cronologica(){
+    if (this->tamanho_ == 0) {
+        throw ExtratoVazio{};
+    }
+    return this->extrato_;
+}
 
-    // Calcula e retorna o total de ganhos ou perdas no extrato.
-    // Pré-condição: O extrato não deve estar vazio.
-    double calcular_ganhos_ou_perdas() const;
+std::list<std::pair<std::string, float>> Extrato::ordenar_por_ordem_de_valor(){
+    if (this->tamanho_ == 0) {
+        throw ExtratoVazio{};
+    }
+    std::list<std::pair<std::string, float>> lista_reordenada = this->extrato_;
+    auto comparador = [](const auto& a, const auto& b) {
+        return a.second > b.second;
+    };
+    lista_reordenada.sort(comparador);
 
-private:
-    // Armazena informações sobre uma transação.
-    // Cada elemento é um par representando o valor e se é ganho (true) ou perda (false).
-    std::vector<std::pair<double, bool>> transacoes;
-};
+    return lista_reordenada;
+}
+
+
+void Extrato::adicionar_movimentacao(std::string descricao, float valor){
+    this->extrato_.push_back({descricao, valor});
+    this->tamanho_++;
+}
