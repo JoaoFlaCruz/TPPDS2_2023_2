@@ -11,7 +11,7 @@ class DuqueDezena : public Duque {
     public:
 
         //CONSTRUTORES E DESTRUTORES
-        DuqueDezena(std::string nome_do_jogador, float valor, std::vector<Grupos> apostas, bool cabeca = false); //Construtor de DuqueDezena
+        DuqueDezena(std::string nome_do_jogador, float valor, std::vector<int> apostas, bool cabeca = false); //Construtor de DuqueDezena
         ~DuqueDezena(); //Destrutor de DuqueDezena
 
         //GETTERS
@@ -19,5 +19,5 @@ class DuqueDezena : public Duque {
         //MÉTODOS CONCRETOS
 
         //MÉTODOS ABSTRATOS
-        void verificar_vitoria(); //Verificação da vitória com atualização da variavel ganhou
+        void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
 };

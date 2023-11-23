@@ -20,13 +20,32 @@
 #include "./headers/models/Sorteio.hpp"
 #include "./headers/models/Usuario.hpp"
 
-int main() {
-
-    std::cout << "Teste" << std::endl;
+//Rotinas de teste
+void apostas() {
 
 }
 
-void apostas() {
+void carteira() {}
+void extrato() {}
+void jogador() {}
+void lista_apostas() {}
+void lista_sorteios() {}
+void lista_usuario() {}
+void login() {}
+void sorteio() {}
+void usuario() {}
 
+int main() {
+
+    apostas();
+    //carteira();
+    //extrato();
+    //jogador();
+    //lista_apostas();
+    //lista_sorteios();
+    //lista_usuario();
+    //login();
+    //sorteio();
+    //usuario();
 
 }
