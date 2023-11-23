@@ -4,13 +4,8 @@
 
 // CONSTRUTORES E DESTRUTORES
 Aposta::Aposta(std::string nome_do_jogador, float valor, bool cabeca) : valor_(valor), cabeca_(cabeca), nome_do_jogador_(nome_do_jogador) {
-    try {
-        if (valor < 0) {
-            throw std::invalid_argument("O valor da aposta não pode ser negativo.");
-        }
-    } catch (const std::exception& e) {
-        std::cerr << "Erro durante a criação da aposta: " << e.what() << std::endl;
-
+    if (valor < 0) {
+        throw ValorDaApostaNegativo{"O valor da aposta não pode ser negativo."};
     }
 }
 
