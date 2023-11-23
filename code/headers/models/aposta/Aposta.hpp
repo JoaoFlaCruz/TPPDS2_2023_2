@@ -44,7 +44,7 @@ enum Grupos {
 
 class Aposta{
 
-    private:
+    protected:
         const float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
         bool ganhou_ = false; //Verifica se a aposta é ganhadora
         float valor_; //Valor apostado pelo jogador

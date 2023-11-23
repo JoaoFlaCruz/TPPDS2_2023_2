@@ -7,7 +7,7 @@
 
 class Terno : public Aposta {
 
-    private:
+    protected:
         std::vector<Grupos> apostas_[3]; //Guarda as apostas do Terno
     public:
 

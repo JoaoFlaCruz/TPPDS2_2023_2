@@ -6,7 +6,7 @@
 
 class Duque : public Aposta {
 
-    private:
+    protected:
         std::vector<int> apostas_; //Guarda as apostas do Duque
     public:
 
