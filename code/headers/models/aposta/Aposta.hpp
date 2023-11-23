@@ -15,7 +15,7 @@
 class Aposta{
 
     private:
-        const static float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
+        const float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
         bool ganhou_ = false; //Verifica se a aposta é ganhadora
         float valor_; //Valor apostado pelo jogador
         bool cabeca_; //Verificação se a aposta é na cabeça
@@ -38,4 +38,8 @@ class Aposta{
         //MÉTODOS ABSTRATOS
         virtual void verificar_vitoria(); //Verificação da vitória com atualização da variavel ganhou
 
+};
+
+struct ValorDaApostaNegativo {
+    const std::string mensagem = "O valor da aposta não pode ser negativo.";
 };

@@ -10,7 +10,7 @@ Aposta::Aposta(std::string nome_do_jogador, float valor, bool cabeca) : valor_(v
         }
     } catch (const std::exception& e) {
         std::cerr << "Erro durante a criação da aposta: " << e.what() << std::endl;
-        
+
     }
 }
 
@@ -48,19 +48,6 @@ float Aposta::calcular_ganho() {
         return valor_ * ganho_;
     } catch (const std::exception& e) {
         std::cerr << "Erro durante o cálculo do ganho: " << e.what() << std::endl;
-        return 0.0; 
+        return 0.0;
     }
-}
-
-// MÉTODOS ABSTRATOS
-void Aposta::verificar_vitoria() {
-    try {
-        // Implementação da verificação de vitória
-        if (/* não ganhou */) {
-            throw std::runtime_error("Condição de vitória não satisfeita.");
-        }
-        ganhou_ = true; 
-    } catch (const std::exception& e) {
-        std::cerr << "Erro durante a verificação de vitória: " << e.what() << std::endl;
-        ganhou_ = false; 
 }

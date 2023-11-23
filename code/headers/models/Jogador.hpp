@@ -1,6 +1,5 @@
 #pragma once
 #include "Sorteio.hpp"
-#include "ListaSorteios.hpp"
 #include "Carteira.hpp"
 #include "aposta/Grupos.hpp"
 //Testar
@@ -16,8 +15,8 @@ public:
 	Carteira carteira();
 
 private:
-	
+
 	std::string apelido_;//O mesmo nome que usuario
 	Carteira carteira_;//Carteria do jogador
-	
+
 };
