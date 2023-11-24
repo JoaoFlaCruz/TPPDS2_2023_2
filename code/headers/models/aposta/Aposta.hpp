@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <array>
 
 #define GANHO_NULO 0
 #define GANHO_GRUPO 18
@@ -54,6 +56,9 @@ class Aposta{
         float valor_; //Valor apostado pelo jogador
         bool cabeca_; //Verificação se a aposta é na cabeça
         std::string nome_do_jogador_; //Nome do jogador que apostou
+
+        bool operator==(Aposta outra);
+
     public:
         // CONSTRUTORES E DESTRUTORES
         Aposta(std::string nome_do_jogador, float valor, bool cabeca = false); //Construtor
@@ -68,6 +73,7 @@ class Aposta{
 
         //MÉTODOS CONCRETOS
         float calcular_ganho(); //Calculo do dinheiro ganhado com base no valor, no ganho e na cabeça
+
 
         //MÉTODOS ABSTRATOS
         virtual void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
