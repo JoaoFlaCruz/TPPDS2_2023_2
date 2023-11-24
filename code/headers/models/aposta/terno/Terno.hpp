@@ -7,7 +7,7 @@
 class Terno : public Aposta {
 
     protected:
-        std::vector<int> apostas_[3]; //Guarda as apostas do Terno
+        std::vector<int> apostas_; //Guarda as apostas do Terno
     public:
 
         //CONSTRUTORES E DESTRUTORES
