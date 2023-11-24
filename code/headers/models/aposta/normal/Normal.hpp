@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "Aposta.hpp"
-#include "Grupos.hpp"
+#include "Grupo.hpp"
 
 class Normal : public Aposta {
 

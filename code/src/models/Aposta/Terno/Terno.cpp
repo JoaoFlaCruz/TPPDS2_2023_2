@@ -1,1 +1,1 @@
-#include "terno.hpp"
+#include "Terno.hpp"

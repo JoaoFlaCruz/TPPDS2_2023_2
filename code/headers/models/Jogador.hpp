@@ -1,7 +1,7 @@
 #pragma once
 #include "Sorteio.hpp"
 #include "Carteira.hpp"
-#include "aposta/Grupos.hpp"
+#include "./aposta/normal/Grupo.hpp"
 //Testar
 
 class Jogador {
