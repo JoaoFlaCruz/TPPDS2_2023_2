@@ -42,6 +42,10 @@ enum Grupos {
 
 };
 
+struct ValorDaApostaNegativo {};
+struct ValorDaApostaMuitoAlto {};
+struct ValorDasApostasIgual {};
+
 class Aposta{
 
     protected:
@@ -70,6 +74,3 @@ class Aposta{
 
 };
 
-struct ValorDaApostaNegativo {
-    const std::string mensagem = "O valor da aposta não pode ser negativo.";
-};
