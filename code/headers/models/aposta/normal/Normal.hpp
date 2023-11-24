@@ -2,23 +2,20 @@
 
 #include <vector>
 
-#include "Aposta.hpp"
-#include "Grupo.hpp"
+#include "../Aposta.hpp"
 
 class Normal : public Aposta {
 
     protected:
-        std::vector<Grupos> apostas_[1]; /*Armazena apostas normais*/
+        std::vector<int> apostas_[1]; /*Armazena apostas normais*/
     public:
 
         /*Construtor*/
-        Normal(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<int> apostas);
+        Normal(float valor, std::string nome_do_jogador, bool cabeca = false);
+
         /*Destrutor*/
         ~Normal();
 
-
         std::vector<Grupos> apostas(); /*Getter de aposta*/
 
-
-        void verificar_vitoria(std::vector<int> resultado); /*Verificação da vitória com atualização da variavel ganho*/
 };
