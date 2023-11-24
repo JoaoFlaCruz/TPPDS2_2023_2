@@ -1,9 +1,14 @@
 #pragma once
 
 #include <vector>
-
+//Corrigir tramanetos, endereçamento e testar
 #include "../Aposta.hpp"
-
+struct ValorDaApostaNegativo{
+    int valor_negativo;
+};
+struct ValorDaApostaMuitoAlto{
+    int valor_alto; 
+};
 class Normal : public Aposta {
 
     protected:
