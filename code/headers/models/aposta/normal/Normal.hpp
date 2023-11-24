@@ -12,7 +12,7 @@ class Normal : public Aposta {
     public:
 
         /*Construtor*/
-        Normal(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<Grupos> apostas);
+        Normal(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<int> apostas);
         /*Destrutor*/
         ~Normal();
 
@@ -20,5 +20,5 @@ class Normal : public Aposta {
         std::vector<Grupos> apostas(); /*Getter de aposta*/
 
 
-        void verificar_vitoria(); /*Verificação da vitória com atualização da variavel ganho*/
+        void verificar_vitoria(std::vector<int> resultado); /*Verificação da vitória com atualização da variavel ganho*/
 };

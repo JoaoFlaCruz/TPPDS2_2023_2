@@ -10,9 +10,9 @@ class Dezena : public Normal {
 
     public:
         /*Construtor*/
-        Dezena(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<Grupos> apostas); 
+        Dezena(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<int> apostas);
         /*Destrutor*/
         ~Dezena();
 
-        void verificar_vitoria(); /*Verificação da vitória com atualização da variavel ganho*/ 
+        void verificar_vitoria(std::vector<int> resultado); /*Verificação da vitória com atualização da variavel ganho*/
 };
