@@ -12,7 +12,7 @@ void Centena::verificar_vitoria(std::vector<int> resultado){
     bool se_aposta_foi_sorteada = false;
     
     for(int i = 0; i < 5; i++) {
-        if( primeira_aposta == (int)(resultado[i]%1000 / 4 + 1)) {
+        if( primeira_aposta == (resultado[i]%1000)) {
             se_aposta_foi_sorteada = true;
         }
     }
