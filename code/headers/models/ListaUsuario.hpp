@@ -5,7 +5,6 @@
 
 class ListaUsuario {
 public:
-=
     ListaUsuario();
 
     // Adiciona um novo usuário ao vetor usuarios_
