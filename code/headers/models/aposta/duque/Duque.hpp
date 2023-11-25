@@ -1,24 +1,20 @@
 #pragma once
 
-#include <vector>
+#include <array>
+#include "../Aposta.hpp"
 
-#include "Duque.hpp"
+class Duque : public Aposta {
 
-class DuqueDezena : public Duque {
-
-    private:
-        const float ganho_ = GANHO_DUQUE_DEZENA; //Ganho de 300 para uma classe DuqueDezena
+    protected:
+        std::vector<int> apostas_; //Guarda as apostas do Duque
     public:
 
         //CONSTRUTORES E DESTRUTORES
-        DuqueDezena(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 2> apostas); //Construtor de DuqueDezena
-        ~DuqueDezena(); //Destrutor de DuqueDezena
+        Duque(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 2> apostas); //Construtor de Duque
+
+        ~Duque(); //Destrutor de Duque
 
         //GETTERS
+        std::vector<int> apostas(); //Getter para o atributo apostas
 
-        //MÉTODOS CONCRETOS
-
-        //MÉTODOS ABSTRATOS
-        void verificar_vitoria(std::array<int, 5> resultado); //Verificação da vitória com atualização da variavel ganhou
-        bool operator==(Aposta outra) override;
 };
