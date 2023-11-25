@@ -1,7 +1,11 @@
 #pragma once
-
 #include "Usuario.hpp"
 
+struct Nenhum_Usuario_Logado {
+
+std::string mensagem;
+
+}
 class Login {
 public:
     // Construtor
