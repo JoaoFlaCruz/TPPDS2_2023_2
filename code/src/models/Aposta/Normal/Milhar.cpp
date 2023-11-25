@@ -15,6 +15,9 @@ void Milhar::verificar_vitoria(std::array<int, 5> resultado) {
         if (primeira_aposta == resultado[i]) {
             se_aposta_foi_sorteada = true;
         }
+        if(cabeca_) {
+            break;
+        }
     }
 
     if (se_aposta_foi_sorteada) {

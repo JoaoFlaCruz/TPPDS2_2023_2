@@ -9,10 +9,13 @@ void Grupo::verificar_vitoria(std::array<int, 5> resultado){
 
     int primeira_aposta = apostas_[0];
     bool se_aposta_foi_sorteada = false;
-    
+
     for(int i = 0; i < 5; i++) {
         if( primeira_aposta == (int)(resultado[i]%100 / 4 + 1)) {
             se_aposta_foi_sorteada = true;
+        }
+        if(cabeca_) {
+            break;
         }
     }
 

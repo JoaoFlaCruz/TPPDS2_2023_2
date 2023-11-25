@@ -1,5 +1,7 @@
 
 #include <iostream>
+#include <vector>
+#include <string>
 
 #include "./headers/models/aposta/normal/Normal.hpp"
 #include "./headers/models/aposta/normal/Grupo.hpp"
@@ -22,6 +24,15 @@
 
 //Rotinas de teste
 void apostas() {
+
+    float valor = 100;
+    std::string nome = "Fulano de Tal";
+
+    // Aposta Normal em um Grupo
+    std::vector<int> aposta;
+    aposta.push_back(3);
+    Grupo grupo(valor, nome, false, aposta);
+
 
 }
 

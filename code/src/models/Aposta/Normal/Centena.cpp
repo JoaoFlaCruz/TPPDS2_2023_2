@@ -11,10 +11,13 @@ void Centena::verificar_vitoria(std::array<int, 5> resultado){
 
     int primeira_aposta = apostas_[0];
     bool se_aposta_foi_sorteada = false;
-    
+
     for(int i = 0; i < 5; i++) {
-        if( primeira_aposta == (resultado[i]%1000)) {
+        if( primeira_aposta == (resultado[i]%10)) {
             se_aposta_foi_sorteada = true;
+        }
+        if(cabeca_) {
+            break;
         }
     }
 
@@ -32,6 +35,6 @@ bool Centena::operator==(Aposta outra){
         && this->ganhou() == outra.ganhou() && this->apostas_ == outra.apostas()) {
         return 1;
      }
-   
+
     return false;
 }
