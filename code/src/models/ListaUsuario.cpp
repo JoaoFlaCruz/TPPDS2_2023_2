@@ -1,11 +1,11 @@
-#include "ListaUsuario.hpp"
+#include "../../headers/models/ListaUsuario.hpp"
 
 ListaUsuario::ListaUsuario() {}
 
 // Adiciona um novo usuário ao vetor usuarios_
 void ListaUsuario::adicionarUsuario(const Usuario& usuario) {
     // Verifica se o usuário já existe
-    if (validarLogin(usuario.obterNome())) {
+    if (validarLogin(usuario.nome())) {
         throw "Usuário já existe na lista.";
     }
 
@@ -15,7 +15,7 @@ void ListaUsuario::adicionarUsuario(const Usuario& usuario) {
 // Verifica se um determinado login existe no vetor usuarios_
 bool ListaUsuario::validarLogin(const std::string& login) const {
     for (const auto& usuario : usuarios_) {
-        if (usuario.obterNome() == login) {
+        if (usuario.nome() == login) {
             return true;  // Login encontrado
         }
     }
@@ -25,7 +25,7 @@ bool ListaUsuario::validarLogin(const std::string& login) const {
 // Retorna um objeto Usuario com o login especificado, se existir
 Usuario ListaUsuario::buscarUsuario(const std::string& login) const {
     for (const auto& usuario : usuarios_) {
-        if (usuario.obterNome() == login) {
+        if (usuario.nome() == login) {
             return usuario;  // Retorna o usuário encontrado por valor
         }
     }
