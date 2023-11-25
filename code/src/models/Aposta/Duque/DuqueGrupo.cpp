@@ -13,7 +13,7 @@ void DuqueGrupo::verificar_vitoria(std::array<int, 5> resultado){
     bool verificador_segunda_aposta = false;
 
     for(int i = 0; i < 5; i++) {
-        int grupo = ((int) (resultado[i]%100)/25) + 1;
+        int grupo = ((int) (resultado[i]%100)/4) + 1;
         if( grupo == primeira_aposta) {
             verificador_primeira_aposta = true;
         }
