@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
+#include <array>
 
-#include "Aposta.hpp"
+#include "../Aposta.hpp"
 
 class Terno : public Aposta {
 
@@ -11,14 +11,11 @@ class Terno : public Aposta {
     public:
 
         //CONSTRUTORES E DESTRUTORES
-        Terno(std::string nome_do_jogador, float valor, std::vector<int> apostas, bool cabeca = false); //Construtor de Terno
+        Terno(std::string nome_do_jogador, float valor, bool cabeca, std::array<int,3> apostas); //Construtor de Terno
+
         ~Terno(); //Destrutor de Terno
 
         //GETTERS
         std::vector<int> apostas(); //Getter para o atributo apostas
 
-        //MÉTODOS CONCRETOS
-
-        //MÉTODOS ABSTRATOS
-        virtual void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
 };
