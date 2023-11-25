@@ -18,7 +18,7 @@ bool Login::haUsuarioLogado() const {
 // Obtém informações do usuário logado
 const Usuario& Login::obterUsuarioLogado() const {
     if (!haUsuarioLogado()) {
-        throw "Nenhum usuário logado.";
+        throw Nenhum_Usuario_Logado{};
     }
     return usuarioAtual_;
 }
