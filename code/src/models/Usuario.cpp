@@ -1,24 +1,30 @@
-#include "Usuario.hpp"
+#include "../../headers/models/Usuario.hpp"
 
-Usuario::Usuario(std::string nome, std::string senha, std::string cpf, Jogador jogador)
-    : nome_(nome), senha_(senha), cpf_(cpf), jogador_(jogador) {}
+Usuario::Usuario(std::string nome, std::string senha, std::string cpf, Jogador jogador_)
+    : nome_(nome), senha_(senha), cpf_(cpf), jogador_(jogador_) {
+
+}
+
+Usuario::Usuario() : nome_({}), senha_({}), cpf_({}), jogador_{} {
+
+}
 
 
 Usuario::~Usuario() {}
 
-std::string Usuario::obterNome() const {
+std::string Usuario::nome() const {
     return nome_;
 }
 
-std::string Usuario::obterSenha() const {
+std::string Usuario::senha() const {
     return senha_;
 }
 
-std::string Usuario::obterCPF() const {
+std::string Usuario::cpf() const {
     return cpf_;
 }
 
-Jogador Usuario::obterJogador() const {
+Jogador Usuario::jogador() const {
     return jogador_;
 }
 
