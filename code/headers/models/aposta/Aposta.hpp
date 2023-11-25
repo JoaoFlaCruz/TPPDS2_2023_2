@@ -44,24 +44,35 @@ enum Grupos {
 
 };
 
-struct ValorDaApostaNegativo {};
-struct ValorDaApostaMuitoAlto {};
-struct ValorDasApostasIgual {};
+
+struct ValorDaApostaNegativo {
+    float valor;
+};
+struct NumeroDaApostaNegativo {
+    int numeros;
+};
+struct NumeroDaApostaMuitoAlto {
+    int numeros;
+};
+struct NumerosDasApostasIguais {
+    int numero1;
+    int numero2;
+};
 
 class Aposta{
-
+  
     protected:
+        std::string nome_do_jogador_; //Nome do jogador que apostou
+        float valor_; //Valor apostado pelo jogador
         const float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
         bool ganhou_ = false; //Verifica se a aposta é ganhadora
-        float valor_; //Valor apostado pelo jogador
         bool cabeca_; //Verificação se a aposta é na cabeça
-        std::string nome_do_jogador_; //Nome do jogador que apostou
-
-        bool operator==(Aposta outra);
+        std::vector<int> apostas_;
 
     public:
         // CONSTRUTORES E DESTRUTORES
-        Aposta(std::string nome_do_jogador, float valor, bool cabeca = false); //Construtor
+        Aposta(std::string nome_do_jogador, float valor, bool cabeca); //Construtor
+
         ~Aposta(); //Destrutor
 
         //GETTERS
@@ -70,13 +81,15 @@ class Aposta{
         bool cabeca(); //Getter para o atributo cabeça
         std::string nome_do_jogador(); //Getter para o atributo nome_do_jogador
         bool ganhou(); //Getter para o atributo ganhou
+        std::vector<int> apostas();
 
         //MÉTODOS CONCRETOS
         float calcular_ganho(); //Calculo do dinheiro ganhado com base no valor, no ganho e na cabeça
 
 
         //MÉTODOS ABSTRATOS
-        virtual void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
+        virtual void verificar_vitoria(std::array<int, 5> resultado); //Verificação da vitória com atualização da variavel ganhou
+        virtual bool operator==(Aposta outra); //Verifica se uma aposta é igual a outra
 
 };
 
