@@ -1,12 +1,15 @@
-#include "Jogador.hpp"
+#include "../../headers/models/Jogador.hpp"
 //Testar
 
-Jogador::Jogador(std::string apelido) : apelido_(apelido) {
+Jogador::Jogador(std::string apelido) : nome_do_jogador_(apelido), carteira_({}) {
 
 }
 
-std::string Jogador::apelido(){
-	return this->apelido_;
+Jogador::Jogador() : nome_do_jogador_({}), carteira_({}) {
+}
+
+std::string Jogador::nome_do_jogador(){
+	return this->nome_do_jogador_;
 }
 
 Carteira Jogador::carteira(){
