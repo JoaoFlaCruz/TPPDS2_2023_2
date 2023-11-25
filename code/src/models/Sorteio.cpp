@@ -1,9 +1,10 @@
-#include "../headers/models/Sorteio.hpp"
+#include "../../headers/models/Sorteio.hpp"
 #include <random>
+
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
 Sorteio::Sorteio(std::string data_e_horario) : data_e_horario_(data_e_horario), numeros_sorteados_({}), status_(0), 
-apostas_feitas_({}), apostas_ganhas_({}) {
+apostas_feitas_({}) {
     //DECOMPOSIÇÃO DA DATA E HORARIO
     std::string dia = data_e_horario.substr(0, 2);
     std::string mes = data_e_horario.substr(3, 2);
@@ -78,7 +79,13 @@ ListaApostas Sorteio::apostas_feitas(){
 }
 
 ListaApostas Sorteio::apostas_ganhas(){
-    return this->apostas_ganhas_;
+    ListaApostas apostas_ganhas;
+    for (auto aposta_selecionada : this->apostas_feitas_.lista_de_aposta()) {
+        if (aposta_selecionada.ganhou() == 1) {
+            apostas_ganhas.adicionar_aposta(aposta_selecionada);
+        }
+    }
+    return apostas_ganhas;
 }
 
 bool Sorteio::status(){
@@ -96,6 +103,12 @@ void Sorteio::sortear(){
 }
 
 void Sorteio::verificar_apostas_ganhas(){
+    if (this->numeros_sorteados_.size() < 5) {
+        throw SorteioAindaNaoSorteado{ this->data_e_horario_ };
+    }
+    for (auto apostas_selecionadas : this->apostas_feitas_.lista_de_aposta()) {
+        apostas_selecionadas.verificar_vitoria(this->numeros_sorteados_);
+    }
 }
 int Sorteio::gerar_numero_aleatorio(){
     std::random_device rd;
