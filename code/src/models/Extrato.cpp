@@ -1,4 +1,4 @@
-#include "Extrato.hpp"
+#include "../../headers/models/Extrato.hpp"
 Extrato::Extrato() : extrato_({}), tamanho_(0) {
 
 }
@@ -27,4 +27,7 @@ std::list<std::pair<std::string, float>> Extrato::ordenar_por_ordem_de_valor(){
 void Extrato::adicionar_movimentacao(std::string descricao, float valor){
     this->extrato_.push_back({descricao, valor});
     this->tamanho_++;
+}
+int Extrato::tamanho() {
+    return this->tamanho_;
 }
