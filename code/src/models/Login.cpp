@@ -26,5 +26,5 @@ const Usuario& Login::obterUsuarioLogado() const {
 // Desconecta o usuário logado
 void Login::desconectarUsuario() {
     usuarioLogado_ = false;
-    //Usuario atual não deveria ser zero ou alterado aqui??
+   usuarioAtual_ = Usuario(); 
 }
