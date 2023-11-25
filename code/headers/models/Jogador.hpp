@@ -8,15 +8,18 @@ class Jogador {
 public:
 	Jogador(std::string apelido);
 
+	//Cria um jogador vazio (construtor padrão)
+	Jogador();
+
 	//Retornar apelido do jogador
-	std::string apelido();
+	std::string nome_do_jogador();
 
 	//Retornar a carteira do jogador
 	Carteira carteira();
 
 private:
 
-	std::string apelido_;//O mesmo nome que usuario
+	std::string nome_do_jogador_;//O mesmo nome que usuario
 	Carteira carteira_;//Carteria do jogador
 
 };
