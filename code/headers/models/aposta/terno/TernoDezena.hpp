@@ -7,11 +7,11 @@
 class TernoDezena : public Terno {
 
     private:
-        const static float ganho_ = GANHO_TERNO_DEZENA; //Ganho de 300 para uma classe TernoDezena
+        const float ganho_ = GANHO_TERNO_DEZENA; //Ganho de 300 para uma classe TernoDezena
     public:
 
         //CONSTRUTORES E DESTRUTORES
-        TernoDezena(std::string nome_do_jogador, float valor, std::vector<int> apostas, bool cabeca = false); //Construtor de TernoDezena
+        TernoDezena(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 3> apostas); //Construtor de TernoDezena
         ~TernoDezena(); //Destrutor de TernoDezena
 
         //GETTERS
@@ -19,5 +19,6 @@ class TernoDezena : public Terno {
         //MÉTODOS CONCRETOS
 
         //MÉTODOS ABSTRATOS
-        void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
+        void verificar_vitoria(std::array<int, 5> resultado); //Verificação da vitória com atualização da variavel ganhou
+        bool operator==(Aposta outra) override;
 };
