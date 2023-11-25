@@ -10,9 +10,11 @@ class Dezena : public Normal {
 
     public:
         /*Construtor*/
-        Dezena(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<int> apostas);
+        Dezena(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 1> apostas);
+
         /*Destrutor*/
         ~Dezena();
 
-        void verificar_vitoria(std::vector<int> resultado); /*Verificação da vitória com atualização da variavel ganho*/
+        void verificar_vitoria(std::array<int, 5> resultado); /*Verificação da vitória com atualização da variavel ganho*/
+        bool operator==(Aposta outra) override;
 };
