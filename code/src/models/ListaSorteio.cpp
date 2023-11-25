@@ -1,4 +1,4 @@
-#include "../headers/models/ListaSorteios.hpp"
+#include "../../headers/models/ListaSorteios.hpp"
 //Testar
 
 ListaSorteios::ListaSorteios() : tamanho_(0), lista_de_sorteio_({}) {
