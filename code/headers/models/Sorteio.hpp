@@ -5,6 +5,10 @@
 #include "ListaApostas.hpp"
 #include <string>
 #include <array>
+struct SorteioAindaNaoSorteado {
+	std::string data_e_horario;
+};
+
 struct DiaInvalido {
 	int dia;
 };
@@ -17,6 +21,7 @@ struct AnoInvalido {
 struct HorarioInvalido {
 	std::string horario;
 };
+
 class Sorteio {
 public:
 	//Inicializa um sorteio
@@ -56,7 +61,6 @@ private:
 	std::string data_e_horario_;//Data e horario
 	std::array<int, 5> numeros_sorteados_;
 	ListaApostas apostas_feitas_;
-	ListaApostas apostas_ganhas_;
 	bool status_; // 0 em andamento e 1 finalizado
 	int gerar_numero_aleatorio();
 };
