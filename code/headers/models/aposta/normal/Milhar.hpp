@@ -11,10 +11,11 @@ class Milhar : public Normal {
     public:
 
         /*Construtor*/
-        Milhar(float valor, std::string nome_do_jogador, bool cabeca = false, std::vector<int> apostas);
+        Milhar(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas);
         /*Destrutor*/
         ~Milhar();
 
 
-        void verificar_vitoria(std::vector<int> resultado); //Verificação da vitória com atualização da variavel ganhou
+        void verificar_vitoria(std::array<int, 5> resultado); //Verificação da vitória com atualização da variavel ganhou
+        bool operator==(Aposta outra) override;
 };
