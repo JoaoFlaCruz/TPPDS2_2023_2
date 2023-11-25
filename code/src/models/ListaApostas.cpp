@@ -1,4 +1,4 @@
-#include "../headers/models/ListaApostas.hpp"
+#include "../../headers/models/ListaApostas.hpp"
 //Testar
 
 ListaApostas::ListaApostas() : lista_de_aposta_({}), tamanho_(0) {
