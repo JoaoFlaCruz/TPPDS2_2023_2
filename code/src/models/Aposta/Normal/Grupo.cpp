@@ -1,11 +1,11 @@
-#include "Grupo.hpp"
+#include "../../headers/models/aposta/normal/Grupo.hpp"
 //Testar
-Grupo::Grupo(std::string nome_do_jogador, float valor, std::vector<int> apostas, bool cabeca = false)
-    : Normal(nome_do_jogador,valor, apostas, cabeca){}
+Grupo::Grupo(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas)
+    : Normal(nome_do_jogador, valor, cabeca, apostas) {}
 
 Grupo::~Grupo(){}
 
-void Grupo::verificar_vitoria(std::vector<int> resultado){
+void Grupo::verificar_vitoria(std::array<int, 5> resultado){
 
     int primeira_aposta = apostas_[0];
     bool se_aposta_foi_sorteada = false;
@@ -21,5 +21,13 @@ void Grupo::verificar_vitoria(std::vector<int> resultado){
     } else {
         ganhou_ = false;
     }
+}
+bool Grupo::operator==(Aposta outra) {
+    if (this->nome_do_jogador_ == outra.nome_do_jogador()
+        && this->valor_ == outra.valor() && this->cabeca_ == outra.cabeca()
+        && this->ganhou() == outra.ganhou() && this->apostas_ == outra.apostas()) {
+        return 1;
+    }
 
+    return false;
 }
