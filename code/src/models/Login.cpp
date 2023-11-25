@@ -1,7 +1,8 @@
-#include "Login.hpp"
+#include "../../headers/models/Login.hpp"
 
 
-Login::Login() : usuarioLogado_(false) {}
+Login::Login() : usuarioLogado_(false) {
+}
 
 // Define o usuário logado
 void Login::definirUsuarioLogado(const Usuario& usuario) {
@@ -25,4 +26,5 @@ const Usuario& Login::obterUsuarioLogado() const {
 // Desconecta o usuário logado
 void Login::desconectarUsuario() {
     usuarioLogado_ = false;
+    //Usuario atual não deveria ser zero ou alterado aqui??
 }
