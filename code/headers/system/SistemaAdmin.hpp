@@ -12,11 +12,12 @@ private:
     ListaSorteios listaSorteios;
 
 public:
-    // ... (construtor, destrutor, etc.)
+     SistemaAdmin();
+     ~SistemaAdmin();
 
     // Gerenciar sorteios
     void criarSorteio(Sorteio &sorteio);
-    void sortear();
+    auto sortear() -> Jogador;
     Jogador verificarGanhador();
 
     // Realizar pagamento para os ganhadores
