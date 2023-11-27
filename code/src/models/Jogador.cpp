@@ -1,19 +1,20 @@
 #include "../../headers/models/Jogador.hpp"
-//Testar
 
-Jogador::Jogador(std::string apelido) : nome_do_jogador_(apelido), carteira_({}) {
-
+// Construtor que recebe o apelido do jogador
+Jogador::Jogador(std::string apelido) : nome_do_jogador_(apelido) {
+    // Inicializa a carteira com um saldo inicial de 0
+    carteira_ = Carteira();
 }
 
-Jogador::Jogador() : nome_do_jogador_({}), carteira_({}) {
+// Construtor padrão que cria um jogador vazio
+Jogador::Jogador() : nome_do_jogador_(""), carteira_(Carteira()) {}
+
+// Retorna o apelido do jogador
+std::string Jogador::nome_do_jogador() {
+    return nome_do_jogador_;
 }
 
-std::string Jogador::nome_do_jogador(){
-	return this->nome_do_jogador_;
+// Retorna a carteira do jogador
+Carteira Jogador::carteira() {
+    return carteira_;
 }
-
-Carteira Jogador::carteira(){
-	return this->carteira_;
-}
-
-
