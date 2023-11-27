@@ -69,7 +69,7 @@ void Interface::pagina_0_inicial() {
     std::cin >> entrada;
 
     if(entrada == 1) {
-        estado_ == E1_PAG_LOGIN_ADMIN;
+        estado_ = E1_PAG_LOGIN_ADMIN;
     } else if(entrada == 2) {
 
     } else {
