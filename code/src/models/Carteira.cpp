@@ -20,3 +20,13 @@ void Carteira::depositar(float valor){
     this->extrato_.adicionar_movimentacao("Depositado", valor);
 }
 
+void Carteira::sacar(float valor) {
+    if (valor <= 0) {
+        throw ValorInvalido{ valor };
+    }
+    if (valor > saldo_) {
+        throw SaldoInsuficiente{ valor };
+    }
+    this->saldo_ -= valor;
+    this->extrato_.adicionar_movimentacao("Sacado", valor);
+}
