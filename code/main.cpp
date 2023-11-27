@@ -26,6 +26,8 @@
 int main() {
 
     Interface i;
-    i.executar();
+    while(true) {
+        i.executar();
+    }
 
 }
