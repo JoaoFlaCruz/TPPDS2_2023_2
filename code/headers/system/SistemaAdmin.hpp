@@ -7,13 +7,19 @@
 #include "../models/Jogador.hpp"
 #include "../models/Carteira.hpp"
 
+#include <iostream>
+
 class SistemaAdmin {
 private:
     ListaSorteios listaSorteios;
+    std::string senha_;
 
 public:
-     SistemaAdmin();
-     ~SistemaAdmin();
+    SistemaAdmin();
+    ~SistemaAdmin();
+
+    //Validação de login no sistema Admin
+    bool validar_senha(std::string senha);
 
     // Gerenciar sorteios
     void criarSorteio(Sorteio &sorteio);

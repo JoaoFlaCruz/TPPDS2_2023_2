@@ -1,5 +1,5 @@
 #include "./../../headers/system/SistemaAdmin.hpp"
-#include <iostream>
+
 using namespace std;
 
 // Construtor da classe SistemaAdmin
@@ -8,6 +8,11 @@ SistemaAdmin::SistemaAdmin() {
 
 // Destrutor da classe SistemaAdmin
 SistemaAdmin::~SistemaAdmin() {
+}
+
+// Validador de senha para login no sistema admin
+bool SistemaAdmin::validar_senha(std::string senha) {
+  return senha == senha_;
 }
 
 // Método para criar um novo sorteio
