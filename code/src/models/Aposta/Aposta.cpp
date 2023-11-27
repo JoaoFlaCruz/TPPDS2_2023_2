@@ -53,7 +53,7 @@ std::vector<int> Aposta::apostas(){
 
 // MÉTODOS CONCRETOS
 float Aposta::calcular_ganho() {
-    if(cabeca) {
+    if(cabeca_) {
         return valor_ * ganho_ * 5;
     }
     return valor_ * ganho_;

@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include <vector>
+#include <array>
 #include <string>
 
 #include "./headers/models/aposta/normal/Normal.hpp"
@@ -27,12 +27,25 @@ void apostas() {
 
     float valor = 100;
     std::string nome = "Fulano de Tal";
+    std::array<int, 5> resultado;
+    resultado[0] = 7635;
+    resultado[1] = 9427;
+    resultado[2] = 3684;
+    resultado[3] = 1298;
+    resultado[4] = 6413;
 
-    // Aposta Normal em um Grupo
-    std::vector<int> aposta;
-    aposta.push_back(3);
-    Grupo grupo(valor, nome, false, aposta);
+    // Aposta Duque em um Grupo
+    std::array<int, 2> aposta;
+    aposta[0] = 4;
+    aposta[1] = 25;
+    DuqueGrupo duque_grupo(nome, valor, false, aposta);
 
+    duque_grupo.verificar_vitoria(resultado);
+    if(duque_grupo.ganhou()) {
+        std::cout << "Vitoria DuqueGrupo" << std::endl;
+    } else {
+        std::cout << "Derrota DuqueGrupo" << std::endl;
+    }
 
 }
 
