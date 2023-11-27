@@ -25,6 +25,7 @@
 
 int main() {
 
-    std::cout << "Teste" << std::endl;
+    Interface i;
+    i.executar();
 
 }
