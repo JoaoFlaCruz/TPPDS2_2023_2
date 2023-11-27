@@ -1,5 +1,5 @@
 #include "./../../headers/system/SistemaAdmin.hpp"
-
+#include <iostream>
 using namespace std;
 
 // Construtor da classe SistemaAdmin
@@ -45,26 +45,33 @@ void SistemaAdmin::exibirDetalhesSorteio(Sorteio &sorteio) {
 }
 
 // Método para adicionar uma aposta a um sorteio
-void SistemaAdmin::adicionarAposta(Aposta &aposta) {
-  // Obtém o sorteio da aposta
-  Sorteio sorteio_selecionado = this->listaSorteios.buscar_sorteio_por_data_e_horario(aposta.data_e_horario());
-
-  // Adiciona a aposta ao sorteio
-  sorteio_selecionado.apostas_feitas().adicionar_aposta(aposta);
-}
-
-// Método para remover uma aposta de um sorteio
-void SistemaAdmin::removerAposta(Aposta &aposta) {
-  // Obtém o sorteio da aposta
-  Sorteio sorteio_selecionado = this->listaSorteios.buscar_sorteio_por_data_e_horario(aposta.data_e_horario());
-
-  // Verifica se o sorteio foi sorteado
-  if (sorteio_selecionado.status() == 1) {
-    return;
+void SistemaAdmin::adicionarSorteio(Sorteio &sorteio) {
+  // Valida se o sorteio já existe
+  auto it = listaSorteios.lista_de_sorteio().begin();
+  for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
+    if ((*it).data_e_horario() == sorteio.data_e_horario()) {
+      throw SorteioJaExistente{ sorteio.data_e_horario() };
+    }
   }
 
-  // Remove a aposta do sorteio
-  sorteio_selecionado.apostas_feitas().remover_aposta(aposta);
+  // Adiciona o sorteio à lista de sorteios
+  listaSorteios.lista_de_sorteio().push_back(sorteio);
+} 
+
+
+// Método para remover uma aposta de um sorteio
+
+void SistemaAdmin::removerSorteio(Sorteio &sorteio) {
+    auto it = listaSorteios.lista_de_sorteio().begin();
+    for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
+        if ((*it).data_e_horario() == sorteio.data_e_horario()) {
+            listaSorteios.lista_de_sorteio().erase(it);
+            return;  // Removemos o sorteio e saímos da função
+        }
+    }
+
+    // Se chegarmos aqui, significa que o sorteio não foi encontrado
+    throw SorteioInexistente{ sorteio.data_e_horario() };
 }
 
 // Método para verificar as apostas ganhas de todos os sorteios
@@ -90,3 +97,12 @@ void SistemaAdmin::exibirSaldo(Carteira &carteira) {
 }
 
 //falta fazer os outros metodos pois depende de jogador que ta incompleto
+void SistemaAdmin::realizarPagamento(Jogador &jogador, double valor) {
+    // Verifica se o valor é não negativo
+    if (valor < 0) {
+        throw ValorInvalido{};
+    }
+
+    // Adiciona o valor à carteira do jogador
+    jogador.carteira().depositar(valor);
+}
