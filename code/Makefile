@@ -1,3 +1,3 @@
-teste: teste.cpp
-	g++ -o build/teste teste.cpp
-	./build/teste
+Interface: ./src/interface/Interface.cpp
+	c++ -o ./build/interface/Interface.o -c ./src/interface/Interface.cpp
+

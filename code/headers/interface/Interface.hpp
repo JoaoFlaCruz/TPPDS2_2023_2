@@ -12,6 +12,7 @@ class Interface{
 
         void limpar_tela();
         void cabecalho();
+        void barra_final();
 
         void pagina_inicial();
 };
