@@ -20,7 +20,11 @@
 #include "headers/models/Sorteio.hpp"
 #include "headers/models/Usuario.hpp"
 
+#include "headers/interface/Interface.hpp"
+
 
 int main() {
+
+    std::cout << "Teste" << std::endl;
 
 }
