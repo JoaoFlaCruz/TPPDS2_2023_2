@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/duque/Duque.hpp"
+#include "models/aposta/duque/Duque.hpp"
 
 Duque::Duque(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 2> apostas)
     : Aposta(nome_do_jogador, valor, cabeca){

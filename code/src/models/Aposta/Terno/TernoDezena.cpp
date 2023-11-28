@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/terno/TernoDezena.hpp"
+#include "models/aposta/terno/TernoDezena.hpp"
 
 TernoDezena::TernoDezena(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 3> apostas)
     : Terno(nome_do_jogador, valor, cabeca, apostas){}

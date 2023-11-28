@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/normal/Centena.hpp"
+#include "models/aposta/normal/Centena.hpp"
 
 //Testar
 Centena::Centena(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas)
