@@ -30,7 +30,7 @@ void Interface::executar() {
 }
 
 void Interface::limpar_tela() {
-    system("clear||cls");
+    std::cout << "\033[2J\033[1;1H";
 }
 
 void Interface::cabecalho() {

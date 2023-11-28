@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/normal/Milhar.hpp"
+#include "models/aposta/normal/Milhar.hpp"
 
 //Testar
 Milhar::Milhar(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas)

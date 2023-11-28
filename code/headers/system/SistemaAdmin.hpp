@@ -43,7 +43,7 @@ public:
     void adicionarJogador(Jogador &jogador);
     void removerJogador(Jogador &jogador);
     void exibirDetalhesJogador(Jogador &jogador);
-
+    void  realizarPagamento(Jogador &jogador, double valor);
     // Manipular a seção de carteiras
     void adicionarDinheiro(Carteira &carteira, double valor);
     void retirarDinheiro(Carteira &carteira, double valor);

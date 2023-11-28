@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/normal/Dezena.hpp"
+#include "models/aposta/normal/Dezena.hpp"
 //Testar
 
 Dezena::Dezena(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 1> apostas) : Normal(nome_do_jogador, valor, cabeca, apostas) {

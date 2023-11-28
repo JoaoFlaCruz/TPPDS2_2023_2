@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/Aposta.hpp"
+#include "models/aposta/Aposta.hpp"
 #include <iostream>
 
 void Aposta::verificar_vitoria(std::array<int, 5> resultado) {

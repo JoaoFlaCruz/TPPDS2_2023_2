@@ -1,4 +1,4 @@
-#include "../../headers/models/aposta/normal/Grupo.hpp"
+#include "models/aposta/normal/Grupo.hpp"
 //Testar
 Grupo::Grupo(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas)
     : Normal(nome_do_jogador, valor, cabeca, apostas) {}
