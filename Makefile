@@ -15,7 +15,7 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name *.$(SRCEXT))
 
 CFLAGS := -g --coverage -w -O3 -std=c++17
-INC := -I include/ -I third_party/ -I $(HDRDIR)/
+INC := -I include/ -I third_party/ -I $(HDRDIR)/ -I code/headers/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(@D)
