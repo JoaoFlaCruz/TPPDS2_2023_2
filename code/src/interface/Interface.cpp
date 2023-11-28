@@ -4,7 +4,6 @@ Interface::Interface(){
     estado_ = E0_PAG_INICIAL;
     msg_erro_ = "";
     erro_tratado_ = true;
-
 }
 
 Interface::~Interface(){}
@@ -25,6 +24,8 @@ void Interface::executar() {
     } catch (EntradaInvalida e) {
         msg_erro_ = "A entrada é inválida!";
         erro_tratado_ = false;
+    } catch (SenhaInvalida e) {
+        msg_erro_ = "A senha está errada!";
     }
 }
 
@@ -83,11 +84,34 @@ void Interface::pagina_1_login_admin() {
     cabecalho();
     quebra_linha();
     std::cout << "#          LOGIN COMO ADMINISTRADOR                                                 #" << std::endl;
-    std::cout << "#          Insira as credenciais                                                    #" << std::endl;
+    std::cout << "#          (1) Logar como Admin                                                     #" << std::endl;
+    std::cout << "#          (2) Retornar                                                     #" << std::endl;
     quebra_linha();
     barra_final();
+    mensagem_de_erro();
+    std::cout << "########### ENTRE COM O COMANDO: ";
+    int entrada;
+    std::cin >> entrada;
+
+    if(entrada == 1) {
+        estado_ = E1_PAG_LOGIN_ADMIN;
+        return;
+    } else if(entrada == 2) {
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
 
     std::cout << "########### ENTRE COM A SENHA: ";
     std::string senha;
     std::cin >> senha;
+
+    if(sis_admin_.validar_senha(senha)) {
+
+    } else {
+        SenhaInvalida e;
+        throw e;
+    }
+
 }
+

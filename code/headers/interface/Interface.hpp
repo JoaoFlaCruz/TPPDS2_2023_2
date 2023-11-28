@@ -12,15 +12,22 @@
 //Lista de possíveis estados
 #define E0_PAG_INICIAL 0
 #define E1_PAG_LOGIN_ADMIN 1
+#define E1_PAG_ADMIN 2
 
 //Excecoes lançadas
 struct EntradaInvalida {};
+struct SenhaInvalida {};
 
 class Interface{
     private:
         int estado_;
         std::string msg_erro_;
         bool erro_tratado_;
+
+        SistemaAdmin sis_admin_;
+        SistemaGeral sis_geral_;
+        SistemaJogador sis_jogador_;
+
     public:
         Interface();
         ~Interface();
@@ -38,6 +45,8 @@ class Interface{
         // Estados
         // E0_PAG_INICIAL
         void pagina_0_inicial();
-        // E1_PAG_ADMIN
+        // E1_PAG_LOGIN_ADMIN
         void pagina_1_login_admin();
+        // E2_PAG_ADIM
+        void pagina_2_admin();
 };
