@@ -8,10 +8,12 @@
 #include "../models/Carteira.hpp"
 
 #include <iostream>
+#include <list>
 
 class SistemaAdmin {
 private:
     ListaSorteios listaSorteios;
+    Carteira carteira_;
     std::string senha_;
 
 public:
@@ -22,30 +24,34 @@ public:
     bool validar_senha(std::string senha);
 
     // Gerenciar sorteios
-    void criarSorteio(Sorteio &sorteio);
+    void criar_sorteio(Sorteio &sorteio);
     auto sortear() -> Jogador;
-    Jogador verificarGanhador();
+    Jogador verificar_ganhador();
 
     // Realizar pagamento para os ganhadores
-    void realizarPagamento(Jogador &ganhador);
+    void realizar_pagamento(Jogador &ganhador);
 
     // Manipular a seção de sorteios
-    void adicionarSorteio(Sorteio &sorteio);
-    void removerSorteio(Sorteio &sorteio);
-    void exibirDetalhesSorteio(Sorteio &sorteio);
+    void adicionar_sorteio(Sorteio &sorteio);
+    void remover_sorteio(Sorteio &sorteio);
+    void exibir_detalhes_sorteio(Sorteio &sorteio);
+    list<std::string> retornar_sorteios();
 
     // Manipular a seção de apostas
-    void adicionarAposta(Aposta &aposta);
-    void removerAposta(Aposta &aposta);
-    void verificarApostas();
+    void adicionar_aposta(Aposta &aposta);
+    void remover_aposta(Aposta &aposta);
+    void verificar_apostas();
 
     // Manipular a seção de jogadores
-    void adicionarJogador(Jogador &jogador);
-    void removerJogador(Jogador &jogador);
-    void exibirDetalhesJogador(Jogador &jogador);
-    void  realizarPagamento(Jogador &jogador, double valor);
+    void adicionar_jogador(Jogador &jogador);
+    void remover_jogador(Jogador &jogador);
+    void exibir_detalhes_jogador(Jogador &jogador);
+    void  realizar_pagamento(Jogador &jogador, double valor);
+
+
     // Manipular a seção de carteiras
-    void adicionarDinheiro(Carteira &carteira, double valor);
-    void retirarDinheiro(Carteira &carteira, double valor);
-    void exibirSaldo(Carteira &carteira);
+    void adicionar_dinheiro(Carteira &carteira, double valor);
+    void retirar_dinheiro(Carteira &carteira, double valor);
+    void exibir_saldo(Carteira &carteira);
+    float retornar_saldo();
 };

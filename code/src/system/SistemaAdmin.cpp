@@ -16,7 +16,7 @@ bool SistemaAdmin::validar_senha(std::string senha) {
 }
 
 // Método para criar um novo sorteio
-void SistemaAdmin::criarSorteio(Sorteio &sorteio) {
+void SistemaAdmin::criar_sorteio(Sorteio &sorteio) {
   // Verifica se o sorteio já existe
   for (auto sorteio_selecionado : this->listaSorteios.lista_de_sorteio()) {
     if (sorteio_selecionado.data_e_horario() == sorteio.data_e_horario()) {
@@ -29,7 +29,7 @@ void SistemaAdmin::criarSorteio(Sorteio &sorteio) {
 }
 
 // Método para exibir os detalhes de um sorteio
-void SistemaAdmin::exibirDetalhesSorteio(Sorteio &sorteio) {
+void SistemaAdmin::exibir_detalhes_sorteio(Sorteio &sorteio) {
   // Exibe a data e o horário do sorteio
   std::cout << "Data e horário: " << sorteio.data_e_horario() << std::endl;
 
@@ -45,7 +45,7 @@ void SistemaAdmin::exibirDetalhesSorteio(Sorteio &sorteio) {
 }
 
 // Método para adicionar uma aposta a um sorteio
-void SistemaAdmin::adicionarSorteio(Sorteio &sorteio) {
+void SistemaAdmin::adicionar_sorteio(Sorteio &sorteio) {
   // Valida se o sorteio já existe
   auto it = listaSorteios.lista_de_sorteio().begin();
   for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
@@ -56,12 +56,12 @@ void SistemaAdmin::adicionarSorteio(Sorteio &sorteio) {
 
   // Adiciona o sorteio à lista de sorteios
   listaSorteios.lista_de_sorteio().push_back(sorteio);
-} 
+}
 
 
 // Método para remover uma aposta de um sorteio
 
-void SistemaAdmin::removerSorteio(Sorteio &sorteio) {
+void SistemaAdmin::remover_sorteio(Sorteio &sorteio) {
     auto it = listaSorteios.lista_de_sorteio().begin();
     for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
         if ((*it).data_e_horario() == sorteio.data_e_horario()) {
@@ -74,8 +74,16 @@ void SistemaAdmin::removerSorteio(Sorteio &sorteio) {
     throw SorteioInexistente{ sorteio.data_e_horario() };
 }
 
+list<std::string> SistemaAdmin::retornar_sorteios() {
+  list<std::string> lista;
+  for (auto it = listaSorteios.lista_de_sorteio().begin(); it != listaSorteios.lista_de_sorteio().end(); it++) {
+    lista.push_back((*it).data_e_horario());
+  }
+  return lista;
+}
+
 // Método para verificar as apostas ganhas de todos os sorteios
-void SistemaAdmin::verificarApostas() {
+void SistemaAdmin::verificar_apostas() {
   // Itera sobre todos os sorteios
   for (auto sorteio : this->listaSorteios.lista_de_sorteio()) {
     // Verifica as apostas ganhas do sorteio
@@ -84,20 +92,20 @@ void SistemaAdmin::verificarApostas() {
 }
 
 // Métodos para manipular carteiras
-void SistemaAdmin::adicionarDinheiro(Carteira &carteira, double valor) {
+void SistemaAdmin::adicionar_dinheiro(Carteira &carteira, double valor) {
   carteira.depositar(valor);
 }
 
-void SistemaAdmin::retirarDinheiro(Carteira &carteira, double valor) {
+void SistemaAdmin::retirar_dinheiro(Carteira &carteira, double valor) {
   carteira.sacar(valor);
 }
 
-void SistemaAdmin::exibirSaldo(Carteira &carteira) {
+void SistemaAdmin::exibir_saldo(Carteira &carteira) {
   std::cout << carteira.saldo() << std::endl;
 }
 
 //falta fazer os outros metodos pois depende de jogador que ta incompleto
-void SistemaAdmin::realizarPagamento(Jogador &jogador, double valor) {
+void SistemaAdmin::realizar_pagamento(Jogador &jogador, double valor) {
     // Verifica se o valor é não negativo
     if (valor < 0) {
         throw ValorInvalido{};
@@ -105,4 +113,8 @@ void SistemaAdmin::realizarPagamento(Jogador &jogador, double valor) {
 
     // Adiciona o valor à carteira do jogador
     jogador.carteira().depositar(valor);
+}
+
+float SistemaAdmin::retornar_saldo() {
+  return carteira_.saldo();
 }

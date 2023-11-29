@@ -12,7 +12,7 @@
 //Lista de possíveis estados
 #define E0_PAG_INICIAL 0
 #define E1_PAG_LOGIN_ADMIN 1
-#define E1_PAG_ADMIN 2
+#define E2_PAG_ADMIN 2
 
 //Excecoes lançadas
 struct EntradaInvalida {};

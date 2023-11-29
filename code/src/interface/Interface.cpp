@@ -17,6 +17,10 @@ void Interface::executar() {
             break;
         case E1_PAG_LOGIN_ADMIN:
             pagina_1_login_admin();
+            break;
+        case E2_PAG_ADMIN:
+
+            break;
         default:
             break;
         }
@@ -85,7 +89,7 @@ void Interface::pagina_1_login_admin() {
     quebra_linha();
     std::cout << "#          LOGIN COMO ADMINISTRADOR                                                 #" << std::endl;
     std::cout << "#          (1) Logar como Admin                                                     #" << std::endl;
-    std::cout << "#          (2) Retornar                                                     #" << std::endl;
+    std::cout << "#          (2) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
     mensagem_de_erro();
@@ -112,6 +116,18 @@ void Interface::pagina_1_login_admin() {
         SenhaInvalida e;
         throw e;
     }
+
+}
+
+void Interface::pagina_2_admin() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA ADMINISTRADOR                                                    #" << std::endl;
+    std::cout << "#          (1) Criar sorteio                                                        #" << std::endl;
+    std::cout << "#          (2) Listar sorteios                                                      #" << std::endl;
+    std::cout << "#          (3) Realizar sorteio                                                     #" << std::endl;
+    std::cout << "#          (4)                                                      #" << std::endl;
 
 }
 
