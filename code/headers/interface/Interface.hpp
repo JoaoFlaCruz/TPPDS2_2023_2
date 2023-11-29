@@ -38,6 +38,7 @@ class Interface{
         void barra_final();
         void quebra_linha();
         void mensagem_de_erro();
+        int entrada_comando();
 
         // Execução principal
         void executar();

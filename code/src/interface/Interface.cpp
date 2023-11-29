@@ -19,7 +19,7 @@ void Interface::executar() {
             pagina_1_login_admin();
             break;
         case E2_PAG_ADMIN:
-
+            pagina_2_admin();
             break;
         default:
             break;
@@ -59,19 +59,24 @@ void Interface::mensagem_de_erro() {
     erro_tratado_ = true;
 }
 
+int Interface::entrada_comando() {
+    std::cout << "########### ENTRE COM O COMANDO: ";
+    int entrada;
+    std::cin >> entrada;
+    return entrada;
+}
+
 void Interface::pagina_0_inicial() {
     limpar_tela();
     cabecalho();
     quebra_linha();
+    std::cout << "#          PÁGINA INICIAL                                                           #" << std::endl;
     std::cout << "#          (1) Logar como Admin                                                     #" << std::endl;
     std::cout << "#          (2) Logar como Usuario                                                   #" << std::endl;
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-
-    std::cout << "########### ENTRE COM O COMANDO: ";
-    int entrada;
-    std::cin >> entrada;
+    int entrada = entrada_comando();
 
     if(entrada == 1) {
         estado_ = E1_PAG_LOGIN_ADMIN;
@@ -89,18 +94,16 @@ void Interface::pagina_1_login_admin() {
     quebra_linha();
     std::cout << "#          LOGIN COMO ADMINISTRADOR                                                 #" << std::endl;
     std::cout << "#          (1) Logar como Admin                                                     #" << std::endl;
-    std::cout << "#          (2) Retornar                                                             #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    std::cout << "########### ENTRE COM O COMANDO: ";
-    int entrada;
-    std::cin >> entrada;
+    int entrada = entrada_comando();
 
     if(entrada == 1) {
-        estado_ = E1_PAG_LOGIN_ADMIN;
+    } else if(entrada == 0) {
+        estado_ = E0_PAG_INICIAL;
         return;
-    } else if(entrada == 2) {
     } else {
         EntradaInvalida e;
         throw e;
@@ -111,7 +114,8 @@ void Interface::pagina_1_login_admin() {
     std::cin >> senha;
 
     if(sis_admin_.validar_senha(senha)) {
-
+        estado_ = E2_PAG_ADMIN;
+        return;
     } else {
         SenhaInvalida e;
         throw e;
@@ -124,10 +128,16 @@ void Interface::pagina_2_admin() {
     cabecalho();
     quebra_linha();
     std::cout << "#          SISTEMA ADMINISTRADOR                                                    #" << std::endl;
-    std::cout << "#          (1) Criar sorteio                                                        #" << std::endl;
-    std::cout << "#          (2) Listar sorteios                                                      #" << std::endl;
-    std::cout << "#          (3) Realizar sorteio                                                     #" << std::endl;
-    std::cout << "#          (4)                                                      #" << std::endl;
+    std::cout << "#          (1) Sorteios                                                             #" << std::endl;
+    std::cout << "#          (2) Carteira                                                             #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    int entrada = entrada_comando();
 
+    if(entrada == 0) {
+        estado_ = E1_PAG_LOGIN_ADMIN;
+        return;
+    }
 }
 

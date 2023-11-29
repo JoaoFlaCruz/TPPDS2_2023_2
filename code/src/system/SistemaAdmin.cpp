@@ -4,6 +4,7 @@ using namespace std;
 
 // Construtor da classe SistemaAdmin
 SistemaAdmin::SistemaAdmin() {
+  senha_ = "1234";
 }
 
 // Destrutor da classe SistemaAdmin
@@ -74,8 +75,8 @@ void SistemaAdmin::remover_sorteio(Sorteio &sorteio) {
     throw SorteioInexistente{ sorteio.data_e_horario() };
 }
 
-list<std::string> SistemaAdmin::retornar_sorteios() {
-  list<std::string> lista;
+std::list<std::string> SistemaAdmin::retornar_sorteios() {
+  std::list<std::string> lista;
   for (auto it = listaSorteios.lista_de_sorteio().begin(); it != listaSorteios.lista_de_sorteio().end(); it++) {
     lista.push_back((*it).data_e_horario());
   }
