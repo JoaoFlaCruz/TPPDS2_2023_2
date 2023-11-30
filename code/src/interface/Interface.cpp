@@ -184,3 +184,26 @@ void Interface::pagina_3_sorteio() {
     }
 }
 
+void Interface::pag_4_cadastrar_sorteio() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA ADMINISTRADOR - CADASTRAR SORTEIO                                #" << std::endl;
+    std::cout << "#          (1) Cadastrar                                                            #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    int entrada = entrada_comando();
+
+    if (entrada == 0) {
+        estado_ = E3_PAG_SORTEIO;
+        return;
+    } else if (entrada == 1) {
+
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+
+
+}
