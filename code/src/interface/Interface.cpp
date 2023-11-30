@@ -21,6 +21,9 @@ void Interface::executar() {
         case E2_PAG_ADMIN:
             pagina_2_admin();
             break;
+        case E3_PAG_SORTEIO:
+            pagina_3_sorteio();
+            break;
         default:
             break;
         }
@@ -138,6 +141,46 @@ void Interface::pagina_2_admin() {
     if(entrada == 0) {
         estado_ = E1_PAG_LOGIN_ADMIN;
         return;
+    } else if (entrada == 1) {
+        estado_ = E3_PAG_SORTEIO;
+        return;
+    } else if (entrada == 2) {
+        // Preencher com PAG_CARTEIRA
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pagina_3_sorteio() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA ADMINISTRADOR - SORTEIO                                          #" << std::endl;
+    std::cout << "#          (1) Listar Sorteios                                                      #" << std::endl;
+    std::cout << "#          (2) Cadastrar Sorteio                                                    #" << std::endl;
+    std::cout << "#          (3) Realizar Sorteio                                                     #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    int entrada = entrada_comando();
+
+    if(entrada == 0) {
+        estado_ = E2_PAG_ADMIN;
+        return;
+    } else if (entrada == 1) {
+        // Preencher com PAG_LISTAR_SORTEIOS
+        return;
+    } else if (entrada == 2) {
+        // Preencher com PAG_CADASTRAR_SORTEIOS
+        return;
+    }else if (entrada == 3) {
+        // Preencher com PAG_REALIZAR_SORTEIO
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
     }
 }
 

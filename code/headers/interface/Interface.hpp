@@ -13,6 +13,7 @@
 #define E0_PAG_INICIAL 0
 #define E1_PAG_LOGIN_ADMIN 1
 #define E2_PAG_ADMIN 2
+#define E3_PAG_SORTEIO 3
 
 //Excecoes lançadas
 struct EntradaInvalida {};
@@ -50,4 +51,6 @@ class Interface{
         void pagina_1_login_admin();
         // E2_PAG_ADIM
         void pagina_2_admin();
+        // E3_PAG_SORTEIO
+        void pagina_3_sorteio();
 };
