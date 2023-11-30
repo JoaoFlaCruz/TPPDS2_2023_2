@@ -37,6 +37,7 @@ public:
     void exibir_detalhes_sorteio(Sorteio &sorteio);
     std::list<std::string> retornar_sorteios();
 
+    /*
     // Manipular a seção de apostas
     void adicionar_aposta(Aposta &aposta);
     void remover_aposta(Aposta &aposta);
@@ -46,12 +47,13 @@ public:
     void adicionar_jogador(Jogador &jogador);
     void remover_jogador(Jogador &jogador);
     void exibir_detalhes_jogador(Jogador &jogador);
+    */
+
     void  realizar_pagamento(Jogador &jogador, double valor);
 
-
     // Manipular a seção de carteiras
-    void adicionar_dinheiro(Carteira &carteira, double valor);
-    void retirar_dinheiro(Carteira &carteira, double valor);
+    void adicionar_dinheiro(double valor);
+    void retirar_dinheiro(double valor);
     void exibir_saldo(Carteira &carteira);
     float retornar_saldo();
 };

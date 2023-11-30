@@ -3,7 +3,7 @@
 
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
-Sorteio::Sorteio(std::string data_e_horario) : data_e_horario_(data_e_horario), numeros_sorteados_({}), status_(0), 
+Sorteio::Sorteio(std::string data_e_horario, std::string nome) : data_e_horario_(data_e_horario), nome_(nome), numeros_sorteados_({}), status_(0),
 apostas_feitas_({}) {
     //DECOMPOSIÇÃO DA DATA E HORARIO
     std::string dia = data_e_horario.substr(0, 2);
@@ -29,14 +29,14 @@ apostas_feitas_({}) {
     if (ano_ < 1892 || ano_ > 2050) {
         throw AnoInvalido{ ano_ };
     }
-    if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR    
+    if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR
         throw HorarioInvalido{ horario };
     }
 }
 
-Sorteio::Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteados, bool status) : data_e_horario_(data_e_horario),
+Sorteio::Sorteio(std::string data_e_horario, std::string nome, std::array<int, 5> numeros_sorteados, bool status) : data_e_horario_(data_e_horario), nome_(nome),
     numeros_sorteados_(numeros_sorteados), status_(status) {
-        
+
         //DECOMPOSIÇÃO DA DATA E HORARIO
         std::string dia = data_e_horario.substr(0, 2);
         std::string mes = data_e_horario.substr(3, 2);
@@ -61,13 +61,17 @@ Sorteio::Sorteio(std::string data_e_horario, std::array<int, 5> numeros_sorteado
         if (ano_ < 1892 || ano_ > 2050) {
             throw AnoInvalido{ ano_ };
         }
-        if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR    
+        if (!(horario == "PTM" || horario == "PTV" || horario == "PTN" || horario == "COR")) {//Se não for igual a PM ou PTV ou PTN ou COR
             throw HorarioInvalido{ horario };
         }
 }
 
 std::string Sorteio::data_e_horario(){
     return this->data_e_horario_;
+}
+
+std::string Sorteio::nome() {
+    return this->nome_;
 }
 
 std::array<int, 5> Sorteio::numeros_sorteados(){

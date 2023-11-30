@@ -83,22 +83,13 @@ std::list<std::string> SistemaAdmin::retornar_sorteios() {
   return lista;
 }
 
-// Método para verificar as apostas ganhas de todos os sorteios
-void SistemaAdmin::verificar_apostas() {
-  // Itera sobre todos os sorteios
-  for (auto sorteio : this->listaSorteios.lista_de_sorteio()) {
-    // Verifica as apostas ganhas do sorteio
-    sorteio.verificar_apostas_ganhas();
-  }
-}
-
 // Métodos para manipular carteiras
-void SistemaAdmin::adicionar_dinheiro(Carteira &carteira, double valor) {
-  carteira.depositar(valor);
+void SistemaAdmin::adicionar_dinheiro(double valor) {
+  carteira_.depositar(valor);
 }
 
-void SistemaAdmin::retirar_dinheiro(Carteira &carteira, double valor) {
-  carteira.sacar(valor);
+void SistemaAdmin::retirar_dinheiro(double valor) {
+  carteira_.sacar(valor);
 }
 
 void SistemaAdmin::exibir_saldo(Carteira &carteira) {

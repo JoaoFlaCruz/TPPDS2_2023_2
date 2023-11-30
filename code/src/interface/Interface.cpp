@@ -24,6 +24,9 @@ void Interface::executar() {
         case E3_PAG_SORTEIO:
             pagina_3_sorteio();
             break;
+        case E4_PAG_CADASTRAR_SORTEIO:
+            pag_4_cadastrar_sorteio();
+            break;
         default:
             break;
         }
@@ -136,6 +139,7 @@ void Interface::pagina_2_admin() {
     std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
+    mensagem_de_erro();
     int entrada = entrada_comando();
 
     if(entrada == 0) {
@@ -164,6 +168,7 @@ void Interface::pagina_3_sorteio() {
     std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
+    mensagem_de_erro();
     int entrada = entrada_comando();
 
     if(entrada == 0) {
@@ -173,7 +178,7 @@ void Interface::pagina_3_sorteio() {
         // Preencher com PAG_LISTAR_SORTEIOS
         return;
     } else if (entrada == 2) {
-        // Preencher com PAG_CADASTRAR_SORTEIOS
+        estado_ = E4_PAG_CADASTRAR_SORTEIO;
         return;
     }else if (entrada == 3) {
         // Preencher com PAG_REALIZAR_SORTEIO
@@ -193,6 +198,7 @@ void Interface::pag_4_cadastrar_sorteio() {
     std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
+    mensagem_de_erro();
     int entrada = entrada_comando();
 
     if (entrada == 0) {
@@ -205,5 +211,8 @@ void Interface::pag_4_cadastrar_sorteio() {
         throw e;
     }
 
-
+    std::cout << "########### ENTRE COM UM NOME: ";
+    std::cout << "########### ENTRE COM A DATA (FORMATO: DD/MM/AAAA): ";
+    std::string senha;
+    std::cin >> senha;
 }
