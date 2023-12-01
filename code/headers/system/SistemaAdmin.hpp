@@ -32,7 +32,7 @@ public:
     void realizar_pagamento(Jogador &ganhador);
 
     // Manipular a seção de sorteios
-    void adicionar_sorteio(Sorteio &sorteio);
+    void adicionar_sorteio(std::string nome, std::string data);
     void remover_sorteio(Sorteio &sorteio);
     void exibir_detalhes_sorteio(Sorteio &sorteio);
     std::list<std::string> retornar_sorteios();

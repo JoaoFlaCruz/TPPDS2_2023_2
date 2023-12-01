@@ -36,6 +36,10 @@ void Interface::executar() {
         erro_tratado_ = false;
     } catch (SenhaInvalida e) {
         msg_erro_ = "A senha está errada!";
+        erro_tratado_ = false;
+    } catch (SorteioJaExistente e) {
+        msg_erro_ = "O sorteio já existe!";
+        erro_tratado_ = false;
     }
 }
 
@@ -211,8 +215,19 @@ void Interface::pag_4_cadastrar_sorteio() {
         throw e;
     }
 
-    std::cout << "########### ENTRE COM UM NOME: ";
-    std::cout << "########### ENTRE COM A DATA (FORMATO: DD/MM/AAAA): ";
-    std::string senha;
-    std::cin >> senha;
+    std::cout << "########### ENTRE COM UM NOME PARA O SORTEIO: ";
+    std::string nome;
+    std::cin >> nome;
+    std::cout << "########### HORÁRIOS POSSÍVEIS:" << std::endl;
+    std::cout << "########### PTM : Para Todos Manhã (sorteio de manhã)" << std::endl;
+    std::cout << "########### PTV : Para Todos Vespertino (sorteio de tarde)" << std::endl;
+    std::cout << "########### PTN : Para Todos Noturno (sorteio de noite)" << std::endl;
+    std::cout << "########### COR : Coruja (sorteio de madrugada)" << std::endl;
+    std::cout << "########### EXEMPLO DE DATA: 25-12-2023/PTM" << std::endl;
+    std::cout << "########### EXEMPLO DE DATA: 02-12-2023/COR" << std::endl;
+    std::cout << "########### ENTRE COM A DATA (FORMATO: DD-MM-AAAA/HHH) ";
+    std::string data;
+    std::cin >> data;
+
+    sis_admin_.adicionar_sorteio(nome, data);
 }

@@ -46,8 +46,9 @@ void SistemaAdmin::exibir_detalhes_sorteio(Sorteio &sorteio) {
 }
 
 // Método para adicionar uma aposta a um sorteio
-void SistemaAdmin::adicionar_sorteio(Sorteio &sorteio) {
+void SistemaAdmin::adicionar_sorteio(std::string nome, std::string data) {
   // Valida se o sorteio já existe
+  Sorteio sorteio(nome, data);
   auto it = listaSorteios.lista_de_sorteio().begin();
   for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
     if ((*it).data_e_horario() == sorteio.data_e_horario()) {
