@@ -1,7 +1,7 @@
-#include "../../headers/models/ListaSorteios.hpp"
+#include "models/ListaSorteios.hpp"
 //Testar
 
-ListaSorteios::ListaSorteios() : tamanho_(0), lista_de_sorteio_({}) {
+ListaSorteios::ListaSorteios() : lista_de_sorteio_({}), tamanho_(0) {
 }
 
 int ListaSorteios::tamanho(){
@@ -91,7 +91,7 @@ ListaSorteios ListaSorteios::buscar_participacao(std::string nome_do_jogador){
 	ListaSorteios participacao;
 	bool existe_participacao = 0; //Existe participação em pelo menos um sorteio
 	for (auto sorteio : this->lista_de_sorteio_) {//Selciador de cada sorteio
-		Sorteio sorteio_participado(sorteio.data_e_horario(), sorteio.numeros_sorteados(), sorteio.status());//Cria um sorteio com as 
+		Sorteio sorteio_participado(sorteio.data_e_horario(), sorteio.nome());//Cria um sorteio com as 
 		//mesmas informações do sorteio selecionado, exceto as apostas feitas, que é vazia
 
 		for (auto aposta : sorteio.apostas_feitas().lista_de_aposta()) {//Selecionador de aposta de cada torneio

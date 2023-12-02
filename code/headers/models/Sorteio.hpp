@@ -24,6 +24,10 @@ struct HorarioInvalido {
 
 class Sorteio {
 public:
+
+	Sorteio() = default; //Construtor padrão
+
+
 	//Inicializa um sorteio
 	//Pre_condição: o formato da entrada tem que estar no padrão AA-AA-AAA/PTM
 

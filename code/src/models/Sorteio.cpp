@@ -3,6 +3,9 @@
 
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
+
+
+
 Sorteio::Sorteio(std::string data_e_horario, std::string nome) : data_e_horario_(data_e_horario), nome_(nome), numeros_sorteados_({}), status_(0),
 apostas_feitas_({}) {
     //DECOMPOSIÇÃO DA DATA E HORARIO
