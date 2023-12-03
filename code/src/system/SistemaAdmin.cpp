@@ -19,14 +19,14 @@ bool SistemaAdmin::validar_senha(std::string senha) {
 // Método para criar um novo sorteio
 void SistemaAdmin::criar_sorteio(Sorteio &sorteio) {
   // Verifica se o sorteio já existe
-  for (auto sorteio_selecionado : this->listaSorteios.lista_de_sorteio()) {
+  for (auto sorteio_selecionado : this->listaSorteios_.lista_de_sorteio()) {
     if (sorteio_selecionado.data_e_horario() == sorteio.data_e_horario()) {
       throw SorteioJaExistente{ sorteio.data_e_horario() };
     }
   }
 
   // Adiciona o sorteio à lista de sorteios
-  this->listaSorteios.adicionar_sorteio(sorteio);
+  this->listaSorteios_.adicionar_sorteio(sorteio);
 }
 
 // Método para exibir os detalhes de um sorteio
@@ -48,26 +48,19 @@ void SistemaAdmin::exibir_detalhes_sorteio(Sorteio &sorteio) {
 // Método para adicionar uma aposta a um sorteio
 void SistemaAdmin::adicionar_sorteio(std::string nome, std::string data) {
   // Valida se o sorteio já existe
-  Sorteio sorteio(nome, data);
-  auto it = listaSorteios.lista_de_sorteio().begin();
-  for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
-    if ((*it).data_e_horario() == sorteio.data_e_horario()) {
-      throw SorteioJaExistente{ sorteio.data_e_horario() };
-    }
-  }
-
+  Sorteio sorteio(data, nome);
   // Adiciona o sorteio à lista de sorteios
-  listaSorteios.lista_de_sorteio().push_back(sorteio);
+  listaSorteios_.adicionar_sorteio(sorteio);
 }
 
 
 // Método para remover uma aposta de um sorteio
 
 void SistemaAdmin::remover_sorteio(Sorteio &sorteio) {
-    auto it = listaSorteios.lista_de_sorteio().begin();
-    for (; it != listaSorteios.lista_de_sorteio().end(); it++) {
+    auto it = listaSorteios_.lista_de_sorteio().begin();
+    for (; it != listaSorteios_.lista_de_sorteio().end(); it++) {
         if ((*it).data_e_horario() == sorteio.data_e_horario()) {
-            listaSorteios.lista_de_sorteio().erase(it);
+            listaSorteios_.lista_de_sorteio().erase(it);
             return;  // Removemos o sorteio e saímos da função
         }
     }
@@ -78,7 +71,7 @@ void SistemaAdmin::remover_sorteio(Sorteio &sorteio) {
 
 std::list<std::string> SistemaAdmin::retornar_sorteios() {
   std::list<std::string> lista;
-  for (auto it = listaSorteios.lista_de_sorteio().begin(); it != listaSorteios.lista_de_sorteio().end(); it++) {
+  for (auto it = listaSorteios_.lista_de_sorteio().begin(); it != listaSorteios_.lista_de_sorteio().end(); it++) {
     lista.push_back((*it).data_e_horario());
   }
   return lista;

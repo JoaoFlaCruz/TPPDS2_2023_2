@@ -1,5 +1,5 @@
 #include "../../headers/models/Sorteio.hpp"
-#include <random>
+
 
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
@@ -8,6 +8,13 @@
 
 Sorteio::Sorteio(std::string data_e_horario, std::string nome) : data_e_horario_(data_e_horario), nome_(nome), numeros_sorteados_({}), status_(0),
 apostas_feitas_({}) {
+
+    std::regex reg("[0-9]{2}-[0-9]{2}-[0-9]{4}/[A-Z]{3}");
+    if (!std::regex_search(data_e_horario, reg)){
+        FormatoDataHoraInvalido e;
+        throw e;
+    }
+
     //DECOMPOSIÇÃO DA DATA E HORARIO
     std::string dia = data_e_horario.substr(0, 2);
     std::string mes = data_e_horario.substr(3, 2);
@@ -39,6 +46,10 @@ apostas_feitas_({}) {
 
 Sorteio::Sorteio(std::string data_e_horario, std::string nome, std::array<int, 5> numeros_sorteados, bool status) : data_e_horario_(data_e_horario), nome_(nome),
     numeros_sorteados_(numeros_sorteados), status_(status) {
+        if(data_e_horario.size() < 14) {
+
+
+        }
 
         //DECOMPOSIÇÃO DA DATA E HORARIO
         std::string dia = data_e_horario.substr(0, 2);

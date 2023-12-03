@@ -5,6 +5,9 @@
 #include "ListaApostas.hpp"
 #include <string>
 #include <array>
+#include <random>
+#include <regex>
+
 struct SorteioAindaNaoSorteado {
 	std::string data_e_horario;
 };
@@ -21,6 +24,8 @@ struct AnoInvalido {
 struct HorarioInvalido {
 	std::string horario;
 };
+
+struct FormatoDataHoraInvalido {};
 
 class Sorteio {
 public:

@@ -12,7 +12,7 @@
 
 class SistemaAdmin {
 private:
-    ListaSorteios listaSorteios;
+    ListaSorteios listaSorteios_;
     Carteira carteira_;
     std::string senha_;
 

@@ -40,6 +40,9 @@ void Interface::executar() {
     } catch (SorteioJaExistente e) {
         msg_erro_ = "O sorteio já existe!";
         erro_tratado_ = false;
+    } catch (FormatoDataHoraInvalido e) {
+        msg_erro_ = "O formato da data deve ser DD-MM-AAA/PMT, exemplo: 12-12-2023/COR";
+        erro_tratado_ = false;
     }
 }
 
@@ -228,6 +231,9 @@ void Interface::pag_4_cadastrar_sorteio() {
     std::cout << "########### ENTRE COM A DATA (FORMATO: DD-MM-AAAA/HHH) ";
     std::string data;
     std::cin >> data;
+
+    //std::cout << data << std::endl;
+    //std::cin >> data;
 
     sis_admin_.adicionar_sorteio(nome, data);
 }
