@@ -1,16 +1,15 @@
 #include "../../headers/models/Extrato.hpp"
-Extrato::Extrato() : extrato_({}), tamanho_(0) {
+#include <iostream>
+Extrato::Extrato() : extrato_({}), tamanho_(0) {}
 
-}
-
-std::list<std::pair<std::string, float>> Extrato::extrato_por_ordem_cronologica(){
+std::list<std::pair<std::string, float>> Extrato::extrato_por_ordem_cronologica() {
     if (this->tamanho_ == 0) {
         throw ExtratoVazio{};
     }
     return this->extrato_;
 }
 
-std::list<std::pair<std::string, float>> Extrato::ordenar_por_ordem_de_valor(){
+std::list<std::pair<std::string, float>> Extrato::ordenar_por_ordem_de_valor() {
     if (this->tamanho_ == 0) {
         throw ExtratoVazio{};
     }
@@ -23,11 +22,17 @@ std::list<std::pair<std::string, float>> Extrato::ordenar_por_ordem_de_valor(){
     return lista_reordenada;
 }
 
-
-void Extrato::adicionar_movimentacao(std::string descricao, float valor){
+void Extrato::adicionar_movimentacao(std::string descricao, float valor) {
     this->extrato_.push_back({descricao, valor});
     this->tamanho_++;
 }
+
 int Extrato::tamanho() {
     return this->tamanho_;
+}
+
+void Extrato::exibirMovimentacoes() const {
+    for (const auto& movimento : this->extrato_) {
+        std::cout << "Tipo: " << movimento.first << ", Valor: " << movimento.second << std::endl;
+    }
 }
