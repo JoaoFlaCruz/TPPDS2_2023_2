@@ -54,6 +54,5 @@ public:
     // Manipular a seção de carteiras
     void adicionar_dinheiro(double valor);
     void retirar_dinheiro(double valor);
-    void exibir_saldo(Carteira &carteira);
     float retornar_saldo();
 };

@@ -30,6 +30,9 @@ void Interface::executar() {
         case E5_PAG_LISTAR_SORTEIO:
             pag_5_listar_sorteio();
             break;
+        case E6_PAG_CARTEIRA_ADMIN:
+            pag_6_carteira_admin();
+            break;
         default:
             break;
         }
@@ -44,7 +47,13 @@ void Interface::executar() {
         msg_erro_ = "O sorteio já existe!";
         erro_tratado_ = false;
     } catch (FormatoDataHoraInvalido e) {
-        msg_erro_ = "O formato da data deve ser DD-MM-AAA/PMT, exemplo: 12-12-2023/COR";
+        msg_erro_ = "O formato da data deve ser DD-MM-AAA/PMT, exemplo: 12-12-2023/COR.";
+        erro_tratado_ = false;
+    } catch (ValorInvalido e) {
+        msg_erro_ = "O valor passado é inválido!";
+        erro_tratado_ = false;
+    } catch (SaldoInsuficiente e) {
+        msg_erro_ = "O saldo é insuficiente!";
         erro_tratado_ = false;
     }
 }
@@ -159,7 +168,7 @@ void Interface::pagina_2_admin() {
         estado_ = E3_PAG_SORTEIO;
         return;
     } else if (entrada == 2) {
-        // Preencher com PAG_CARTEIRA
+        estado_ = E6_PAG_CARTEIRA_ADMIN;
         return;
     } else {
         EntradaInvalida e;
@@ -264,5 +273,43 @@ void Interface::pag_5_listar_sorteio() {
     if (entrada == 0) {
         estado_ = E3_PAG_SORTEIO;
         return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pag_6_carteira_admin() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA ADMINISTRADOR - CARTEIRA ADMIN                                   #" << std::endl;
+    std::cout << "#          (1) Adicionar Fundos                                                     #" << std::endl;
+    std::cout << "#          (2) Sacar Fundos                                                         #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    std::cout << "########### Saldo: $" << std::fixed << std::setprecision(2) << sis_admin_.retornar_saldo() << std::endl;
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 0) {
+        estado_ = E2_PAG_ADMIN;
+        return;
+    } else if (entrada == 1) {
+        double valor;
+        std::cout << "########### Valor a adicionar: $";
+        std::cin >> valor;
+        sis_admin_.adicionar_dinheiro(valor);
+        return;
+    } else if (entrada == 2) {
+        double valor;
+        std::cout << "########### Valor a sacar: $";
+        std::cin >> valor;
+        sis_admin_.retirar_dinheiro(valor);
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
     }
 }

@@ -82,10 +82,6 @@ void SistemaAdmin::retirar_dinheiro(double valor) {
   carteira_.sacar(valor);
 }
 
-void SistemaAdmin::exibir_saldo(Carteira &carteira) {
-  std::cout << carteira.saldo() << std::endl;
-}
-
 //falta fazer os outros metodos pois depende de jogador que ta incompleto
 void SistemaAdmin::realizar_pagamento(Jogador &jogador, double valor) {
     // Verifica se o valor é não negativo

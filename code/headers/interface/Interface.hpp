@@ -16,6 +16,7 @@
 #define E3_PAG_SORTEIO 3
 #define E4_PAG_CADASTRAR_SORTEIO 4
 #define E5_PAG_LISTAR_SORTEIO 5
+#define E6_PAG_CARTEIRA_ADMIN 6
 
 //Excecoes lançadas
 struct EntradaInvalida {};
@@ -59,4 +60,6 @@ class Interface{
         void pag_4_cadastrar_sorteio();
         // E5_PAG_LISTAR_SORTEIO
         void pag_5_listar_sorteio();
+        // E6_PAG_CARTEIRA_ADMIN
+        void pag_6_carteira_admin();
 };
