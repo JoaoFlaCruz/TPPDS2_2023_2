@@ -69,12 +69,8 @@ void SistemaAdmin::remover_sorteio(Sorteio &sorteio) {
     throw SorteioInexistente{ sorteio.data_e_horario() };
 }
 
-std::list<std::string> SistemaAdmin::retornar_sorteios() {
-  std::list<std::string> lista;
-  for (auto it = listaSorteios_.lista_de_sorteio().begin(); it != listaSorteios_.lista_de_sorteio().end(); it++) {
-    lista.push_back((*it).data_e_horario());
-  }
-  return lista;
+std::list<DadosSorteio> SistemaAdmin::dados_sorteios() {
+  return listaSorteios_.dados_sorteios();
 }
 
 // Métodos para manipular carteiras

@@ -27,6 +27,9 @@ void Interface::executar() {
         case E4_PAG_CADASTRAR_SORTEIO:
             pag_4_cadastrar_sorteio();
             break;
+        case E5_PAG_LISTAR_SORTEIO:
+            pag_5_listar_sorteio();
+            break;
         default:
             break;
         }
@@ -182,7 +185,7 @@ void Interface::pagina_3_sorteio() {
         estado_ = E2_PAG_ADMIN;
         return;
     } else if (entrada == 1) {
-        // Preencher com PAG_LISTAR_SORTEIOS
+        estado_ = E5_PAG_LISTAR_SORTEIO;
         return;
     } else if (entrada == 2) {
         estado_ = E4_PAG_CADASTRAR_SORTEIO;
@@ -232,8 +235,34 @@ void Interface::pag_4_cadastrar_sorteio() {
     std::string data;
     std::cin >> data;
 
-    //std::cout << data << std::endl;
-    //std::cin >> data;
-
     sis_admin_.adicionar_sorteio(nome, data);
+}
+
+void Interface::pag_5_listar_sorteio() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA ADMINISTRADOR - LISTAR SORTEIO                                   #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+
+    std::list<DadosSorteio> lista_dados = sis_admin_.dados_sorteios();
+
+    for(auto it = lista_dados.begin(); it != lista_dados.end(); it++) {
+        std::cout << "########### Sorteio " << it->nome << " : " << it->data_hora << " - ";
+        if(it->status) {
+            std::cout << "EXEC" << std::endl;
+        } else {
+            std::cout << "NEXEC" << std::endl;
+        }
+    }
+
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 0) {
+        estado_ = E3_PAG_SORTEIO;
+        return;
+    }
 }

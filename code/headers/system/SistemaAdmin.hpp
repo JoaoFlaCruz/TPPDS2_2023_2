@@ -35,7 +35,7 @@ public:
     void adicionar_sorteio(std::string nome, std::string data);
     void remover_sorteio(Sorteio &sorteio);
     void exibir_detalhes_sorteio(Sorteio &sorteio);
-    std::list<std::string> retornar_sorteios();
+    std::list<DadosSorteio> dados_sorteios();
 
     /*
     // Manipular a seção de apostas

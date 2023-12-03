@@ -18,12 +18,18 @@ struct JogadorNaoParticipou {
 	std::string nome_do_jogador;
 };
 
+struct DadosSorteio {
+    std::string nome;
+    std::string data_hora;
+    bool status;
+};
+
 class ListaSorteios {
 public:
 	//Inicializa uma lista de sorteios vazia
 	ListaSorteios();
 
-	//Retorna o tamanho da lista 
+	//Retorna o tamanho da lista
 	int tamanho();
 
 	//Retorna a lista de sorteio
@@ -38,7 +44,7 @@ public:
 	//Pre_condição: tamanho da lista maior que zero
 	void remover_sorteio(std::string data_e_horario);
 
-	//Buscar sorteios em andamento 
+	//Buscar sorteios em andamento
 	//Pre_condição: tamanho da lista maior que zero
 	ListaSorteios sorteios_em_andamento();
 
@@ -54,6 +60,8 @@ public:
 	//Buscar participações de um jogador
 	//Pre-Condição: deve existir pelo menos um sorteio participado
 	ListaSorteios buscar_participacao(std::string nome_do_jogador);
+
+	std::list<DadosSorteio> dados_sorteios();
 
 private:
 	std::list<Sorteio> lista_de_sorteio_;
