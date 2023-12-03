@@ -28,6 +28,9 @@ public:
 	//Pré-condição: o valor passado tem que ser valido
 	void adicionar_movimentacao(std::string descricao, float valor);
 
+	void exibirMovimentacoes() const;
+
+
 private:
 	//Lista de movimentações que guarda se recebido, depositado ou pago, data e valor 
 	std::list<std::pair<std::string, float>> extrato_;
