@@ -32,3 +32,12 @@ Usuario ListaUsuario::buscarUsuario(const std::string& login) const {
 
     throw "Usuário não encontrado na lista.";
 }
+
+void ListaUsuario::removerUsuario(const std::string& login) {
+    for (auto it = usuarios_.begin(); it != usuarios_.end(); ++it) {
+        if (it->nome() == login) {
+            usuarios_.erase(it);
+            break;
+        }
+    }
+}
