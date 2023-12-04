@@ -8,9 +8,6 @@ Interface::Interface(){
 
 Interface::~Interface(){}
 
-
-
-
 void Interface::executar() {
     try{
         switch (estado_)
@@ -318,7 +315,7 @@ void Interface::pag_6_carteira_admin() {
 }
 
 
-void Interface::pag_7_carteira_jogador() {
+void Interface::pag_carteira_jogador() {
     limpar_tela();
     cabecalho();
     quebra_linha();
@@ -353,7 +350,7 @@ void Interface::pag_7_carteira_jogador() {
     }
 }
 
-void Interface::pagina_8_jogador() {
+void Interface::pagina_jogador() {
     limpar_tela();
     cabecalho();
     quebra_linha();

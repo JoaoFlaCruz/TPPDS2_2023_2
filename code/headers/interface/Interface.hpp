@@ -64,10 +64,12 @@ public:
     void pag_6_carteira_admin();
 
     // Estados relacionados ao SistemaJogador
-    // E7_PAG_CARTEIRA_JOGADOR
-    void pag_7_carteira_jogador();
-    // E8_PAG_JOGADOR
-    void pagina_8_jogador();
+    //E7_PAG_JOGADOR
+    void pag_7_jogador();
+    // E_PAG_CARTEIRA_JOGADOR
+    void pag_carteira_jogador();
+    // E_PAG_JOGADOR
+    void pagina_jogador();
 };
 
 // INTERFACE_HPP
