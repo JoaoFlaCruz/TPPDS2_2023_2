@@ -3,6 +3,9 @@
 #include <vector>
 #include "Usuario.hpp"
 
+struct UsuarioJaExiste {};
+struct UsuarioNaoEncontrado {};
+
 class ListaUsuario {
 public:
     ListaUsuario();
@@ -19,7 +22,7 @@ public:
      // pré-condição: a lista de usuários não deve estar vazia.
     Usuario buscarUsuario(const std::string& login) const;
     void removerUsuario(const std::string& login);
-    
+
 private:
     std::vector<Usuario> usuarios_;
 };

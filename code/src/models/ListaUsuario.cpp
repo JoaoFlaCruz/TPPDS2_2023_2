@@ -6,7 +6,8 @@ ListaUsuario::ListaUsuario() {}
 void ListaUsuario::adicionarUsuario(const Usuario& usuario) {
     // Verifica se o usuário já existe
     if (validarLogin(usuario.nome())) {
-        throw "Usuário já existe na lista.";
+        UsuarioJaExiste e;
+        throw e;
     }
 
     usuarios_.push_back(usuario);
@@ -30,7 +31,8 @@ Usuario ListaUsuario::buscarUsuario(const std::string& login) const {
         }
     }
 
-    throw "Usuário não encontrado na lista.";
+    UsuarioNaoEncontrado e;
+    throw e;
 }
 
 void ListaUsuario::removerUsuario(const std::string& login) {

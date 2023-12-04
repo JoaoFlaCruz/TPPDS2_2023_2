@@ -23,6 +23,9 @@ public:
     // Desconecta o usuário logado
     void desconectarUsuario();
 
+    std::string nome();
+    std::string cpf();
+
 private:
     bool usuarioLogado_;
     Usuario usuarioAtual_;

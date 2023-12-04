@@ -9,27 +9,25 @@
 #include "../models/Login.hpp"
 
 struct OperacaoInvalida{
-
-std::string mensagem;
+    std::string mensagem;
 };
 
-
-
-
 struct LoginInvalido{
-
-std::string mensagem;
+    std::string mensagem;
 };
 
 struct ApostaInvalida{
-
-std::string mensagem;
+    std::string mensagem;
 };
 
 
 struct ExtratoInvalido{
+    std::string mensagem;
+};
 
-std::string mensagem;
+struct InformacoesLogin{
+    std::string login;
+    std::string cpf;
 };
 
 class SistemaJogador {
@@ -52,6 +50,7 @@ public:
 
     void cadastrar_usuario(std::string apelido, std::string login, std::string senha, std::string cpf);
     bool logado();
+    InformacoesLogin informacoes_login();
 
 private:
     Login login_;

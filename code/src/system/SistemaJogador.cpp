@@ -111,3 +111,8 @@ void SistemaJogador::cadastrar_usuario(std::string apelido, std::string login, s
 bool SistemaJogador::logado() {
     return login_.haUsuarioLogado();
 }
+
+InformacoesLogin SistemaJogador::informacoes_login(){
+    InformacoesLogin info{login_.nome(), login_.cpf()};
+    return info;
+}

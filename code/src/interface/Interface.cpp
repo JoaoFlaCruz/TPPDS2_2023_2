@@ -42,6 +42,9 @@ void Interface::executar() {
         case E9_PAG_LOGAR_JOGADOR:
             pag_9_logar_jogador();
             break;
+        case E10_PAG_SIS_JOGADOR:
+            pag_10_jogador();
+            break;
         default:
             break;
         }
@@ -63,6 +66,48 @@ void Interface::executar() {
         erro_tratado_ = false;
     } catch (SaldoInsuficiente e) {
         msg_erro_ = "O saldo é insuficiente!";
+        erro_tratado_ = false;
+    } catch (ExtratoVazio e) {
+        msg_erro_ = "O extrato está vazio.";
+        erro_tratado_ = false;
+    } catch (ListaDeApostaVazia e) {
+        msg_erro_ = "A lista de apostas está vazia.";
+        erro_tratado_ = false;
+    } catch (ApostaInexistente e) {
+        msg_erro_ = "A aposta é inexistente.";
+        erro_tratado_ = false;
+    } catch (ListaDeSorteioVazia e) {
+        msg_erro_ = "A lista de sorteios está vazia.";
+        erro_tratado_ = false;
+    } catch (SorteioInexistente e) {
+        msg_erro_ = "O sorteio não existe.";
+        erro_tratado_ = false;
+    } catch (JogadorNaoParticipou e) {
+        msg_erro_ = "O jogador não participou.";
+        erro_tratado_ = false;
+    } catch (Nenhum_Usuario_Logado e) {
+        msg_erro_ = "Não há usuario logado.";
+        erro_tratado_ = false;
+    } catch (SorteioAindaNaoSorteado e) {
+        msg_erro_ = "O sorteio ainda não foi executado.";
+        erro_tratado_ = false;
+    } catch (DiaInvalido e) {
+        msg_erro_ = "O dia passado é inválido.";
+        erro_tratado_ = false;
+    } catch (MesInvalido e) {
+        msg_erro_ = "O mês passado é inválido.";
+        erro_tratado_ = false;
+    } catch (AnoInvalido e) {
+        msg_erro_ = "O ano passado é inválido.";
+        erro_tratado_ = false;
+    } catch (HorarioInvalido e) {
+        msg_erro_ = "O horário passado é inválido.";
+        erro_tratado_ = false;
+    } catch (UsuarioJaExiste e) {
+        msg_erro_ = "O usuario cadastrado já existe.";
+        erro_tratado_ = false;
+    } catch (UsuarioNaoEncontrado e) {
+        msg_erro_ = "O usuario logado não está cadastrado.";
         erro_tratado_ = false;
     }
 }
@@ -98,6 +143,12 @@ int Interface::entrada_comando() {
     int entrada;
     std::cin >> entrada;
     return entrada;
+}
+
+void Interface::logado() {
+    InformacoesLogin info = sis_jogador_.informacoes_login();
+    std::cout << "########### Usuário: " << info.login << std::endl;
+    std::cout << "########### CPF: " << info.cpf << std::endl;
 }
 
 void Interface::pagina_0_inicial() {
@@ -393,6 +444,7 @@ void Interface::pag_9_logar_jogador() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
+    sis_jogador_.logout();
     int entrada = entrada_comando();
     if (entrada == 1) {
         std::cout << "########### Insira o login: ";
@@ -403,9 +455,12 @@ void Interface::pag_9_logar_jogador() {
         std::cin >> senha;
         sis_jogador_.login(login, senha);
         if(sis_jogador_.logado()) {
-            estado_ = E10_PAG_JOGADOR;
+            estado_ = E10_PAG_SIS_JOGADOR;
             return;
         }
+    } else if (entrada == 0) {
+        estado_ = E7_PAG_JOGADOR;
+        return;
     } else {
         EntradaInvalida e;
         throw e;
@@ -417,40 +472,44 @@ void Interface::pag_10_jogador() {
     cabecalho();
     quebra_linha();
     std::cout << "#          SISTEMA JOGADOR                                                          #" << std::endl;
-    std::cout << "#          (1) Realizar Aposta                                                     #" << std::endl;
-    std::cout << "#          (2) Exibir Extrato                                                      #" << std::endl;
+    std::cout << "#          (1) Aposta                                                               #" << std::endl;
+    std::cout << "#          (2) Carteira                                                             #" << std::endl;
     std::cout << "#          (3) Logout                                                               #" << std::endl;
     std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
+    logado();
     mensagem_de_erro();
     int entrada = entrada_comando();
     if (entrada == 0) {
-        estado_ = E0_PAG_INICIAL;
-        return;
-    } else if (entrada == 1) {
-        float valor;
-        std::cout << "########### Valor da aposta: $";
-        std::cin >> valor;
-
-        // Supondo que você tenha um método para obter os números da aposta
-        std::array<int, 2> numeros_aposta;
-        std::cout << "########### Números da aposta (exemplo: 12 34): ";
-        std::cin >> numeros_aposta[0] >> numeros_aposta[1];
-
-        sis_jogador_.realizarAposta(valor, numeros_aposta);
-        return;
-    } else if (entrada == 2) {
-        sis_jogador_.exibirExtrato();
+        estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
     } else if (entrada == 3) {
-        sis_jogador_.logout();
-        estado_ = E0_PAG_INICIAL;
+        estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
+    } else if (entrada == 1) {
+
+    } else if (entrada == 2) {
+
     } else {
         EntradaInvalida e;
         throw e;
     }
+}
+
+void Interface::pag_11_aposta() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA JOGADOR - APOSTA                                                 #" << std::endl;
+    std::cout << "#          (1) Realizar Aposta                                                      #" << std::endl;
+    std::cout << "#          (2) Listar Apostas                                                       #" << std::endl;
+    std::cout << "#          (3) Logout                                                               #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    logado();
+    mensagem_de_erro();
 }
 
 void Interface::pag_carteira_jogador() {

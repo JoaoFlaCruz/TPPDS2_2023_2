@@ -26,5 +26,13 @@ const Usuario& Login::obterUsuarioLogado() const {
 // Desconecta o usuário logado
 void Login::desconectarUsuario() {
     usuarioLogado_ = false;
-   usuarioAtual_ = Usuario(); 
+   usuarioAtual_ = Usuario();
+}
+
+std::string Login::nome() {
+    return usuarioAtual_.nome();
+}
+
+std::string Login::cpf() {
+    return usuarioAtual_.cpf();
 }
