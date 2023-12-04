@@ -1,6 +1,6 @@
-#include "doctest.h"
-#include "../../headers/models/Carteira.hpp"
-#include "../../headers/models/Extrato.hpp"
+#include "../third_party/doctest.h"
+#include "../../code/headers/models/Carteira.hpp"
+#include "../../code/headers/models/Extrato.hpp"
 
 TEST_CASE("Teste 1 - Construtor da Carteira")
 {

@@ -1,6 +1,7 @@
 #pragma once
 #include "Sorteio.hpp"
 #include <list>
+
 //Realizar os tratamentos de excessões
 //Testar
 struct ListaDeSorteioVazia {

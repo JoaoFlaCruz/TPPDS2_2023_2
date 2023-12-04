@@ -13,24 +13,32 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name *.$(SRCEXT))
+TESTOBJECTS := $(patsubst $(TSTDIR)/%,$(OBJDIR)/%,$(TSTSOURCES:.$(SRCEXT)=.o))
 
 CFLAGS := -g --coverage -Wall -O3 -std=c++11
-INC := -I include/ -I third_party/ -I $(HDRDIR)/ -I code/headers/
+INC := -I third_party/ -I $(HDRDIR)/ 
+
+# Add the include directory for tests
+INC_TESTS := -I $(TSTDIR)/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
+$(OBJDIR)/%.o: $(TSTDIR)/%.$(SRCEXT)
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) $(INC_TESTS) -c -o $@ $<
+
 main: $(OBJECTS)
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(INC) $(MAIN) $^ -o $(BINDIR)/main
 
-tests: $(OBJECTS)
+tests: $(TESTOBJECTS) $(OBJECTS)
 	@mkdir -p $(BINDIR)
-	$(CC) $(CFLAGS) $(INC) $(TESTER) $(TSTSOURCES) $^ -o $(BINDIR)/tester
+	$(CC) $(CFLAGS) $(INC) $(INC_TESTS) $(TESTER) $^ -o $(BINDIR)/tester
 	$(BINDIR)/tester
 
-all: main
+all: main tests
 
 run: main
 	$(BINDIR)/main
