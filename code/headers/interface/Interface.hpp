@@ -19,6 +19,7 @@
 #define E7_PAG_JOGADOR 7
 #define E8_PAG_CADASTRAR_JOGADOR 8
 #define E9_PAG_LOGAR_JOGADOR 9
+#define E10_PAG_JOGADOR 10
 
 //Excecoes lançadas
 struct EntradaInvalida {};
@@ -72,10 +73,11 @@ public:
     void pag_8_cadastrar_jogador();
     // E9_PAG_LOGAR_JOGADOR
     void pag_9_logar_jogador();
+    // E10_PAG_JOGADOR
+    void pag_10_jogador();
     // E_PAG_CARTEIRA_JOGADOR
     void pag_carteira_jogador();
-    // E_PAG_JOGADOR
-    void pagina_jogador();
+
 };
 
 // INTERFACE_HPP

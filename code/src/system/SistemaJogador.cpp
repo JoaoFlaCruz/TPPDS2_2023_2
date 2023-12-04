@@ -107,3 +107,7 @@ void SistemaJogador::cadastrar_usuario(std::string apelido, std::string login, s
     Usuario user(login, senha, cpf, jogador);
     listaUsuarios_.adicionarUsuario(user);
 }
+
+bool SistemaJogador::logado() {
+    return login_.haUsuarioLogado();
+}
