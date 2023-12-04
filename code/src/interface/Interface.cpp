@@ -8,6 +8,9 @@ Interface::Interface(){
 
 Interface::~Interface(){}
 
+
+
+
 void Interface::executar() {
     try{
         switch (estado_)
@@ -307,6 +310,83 @@ void Interface::pag_6_carteira_admin() {
         std::cout << "########### Valor a sacar: $";
         std::cin >> valor;
         sis_admin_.retirar_dinheiro(valor);
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+
+void Interface::pag_7_carteira_jogador() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA JOGADOR - CARTEIRA JOGADOR                                       #" << std::endl;
+    std::cout << "#          (1) Adicionar Fundos                                                     #" << std::endl;
+    std::cout << "#          (2) Sacar Fundos                                                         #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    std::cout << "########### Saldo: $" << std::fixed << std::setprecision(2) << sis_jogador_.retornar_saldo() << std::endl;
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 0) {
+        estado_ = E2_PAG_JOGADOR;
+        return;
+    } else if (entrada == 1) {
+        double valor;
+        std::cout << "########### Valor a adicionar: $";
+        std::cin >> valor;
+        sis_jogador_.adicionar_dinheiro(valor);
+        return;
+    } else if (entrada == 2) {
+        double valor;
+        std::cout << "########### Valor a sacar: $";
+        std::cin >> valor;
+        sis_jogador_.retirar_dinheiro(valor);
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pagina_8_jogador() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA JOGADOR                                                          #" << std::endl;
+    std::cout << "#          (1) Realizar Aposta                                                     #" << std::endl;
+    std::cout << "#          (2) Exibir Extrato                                                      #" << std::endl;
+    std::cout << "#          (3) Logout                                                               #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 0) {
+        estado_ = E0_PAG_INICIAL;
+        return;
+    } else if (entrada == 1) {
+        float valor;
+        std::cout << "########### Valor da aposta: $";
+        std::cin >> valor;
+
+        // Supondo que você tenha um método para obter os números da aposta
+        std::array<int, 2> numeros_aposta;
+        std::cout << "########### Números da aposta (exemplo: 12 34): ";
+        std::cin >> numeros_aposta[0] >> numeros_aposta[1];
+
+        sis_jogador_.realizarAposta(valor, numeros_aposta);
+        return;
+    } else if (entrada == 2) {
+        sis_jogador_.exibirExtrato();
+        return;
+    } else if (entrada == 3) {
+        sis_jogador_.logout();
+        estado_ = E0_PAG_INICIAL;
         return;
     } else {
         EntradaInvalida e;
