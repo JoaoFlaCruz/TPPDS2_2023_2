@@ -46,11 +46,10 @@ ListaApostas ListaApostas::apostas_ganhas(){
 }
 
 ListaApostas::~ListaApostas() {
-	for (auto it = this->lista_de_aposta_.begin(); it != this->lista_de_aposta_.end(); it++) {
-		delete &it;
-	}
+    for (auto it = this->lista_de_aposta_.begin(); it != this->lista_de_aposta_.end(); it++) {
+        // Nada a fazer aqui, a lista cuidará da liberação de memória automaticamente
+    }
 }
-
 bool ListaApostas::pertence(Aposta aposta) {
 	for (auto aposta_selecionada : this->lista_de_aposta_) {
 		if (aposta_selecionada == aposta) {
