@@ -17,6 +17,10 @@ public:
 	//Retornar a carteira do jogador
 	Carteira carteira();
 
+	void adicionar_fundos(float valor);
+    void retirar_fundos(float valor);
+    float saldo();
+
 private:
 
 	std::string nome_do_jogador_;//O mesmo nome que usuario

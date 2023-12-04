@@ -28,8 +28,19 @@ Jogador Usuario::jogador() const {
     return jogador_;
 }
 
-// Método para alterar a senha 
+// Método para alterar a senha
 void Usuario::alterarSenha(std::string senhaNova) {
     senha_ = senhaNova;
 }
 
+void Usuario::adicionar_fundos(float valor) {
+    jogador_.adicionar_fundos(valor);
+}
+
+void Usuario::retirar_fundos(float valor) {
+    jogador_.retirar_fundos(valor);
+}
+
+float Usuario::saldo() {
+    return jogador_.saldo();
+}

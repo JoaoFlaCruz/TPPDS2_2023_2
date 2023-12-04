@@ -20,7 +20,7 @@ public:
 
     // Retorna um objeto Usuario com o login especificado, se existir
      // pré-condição: a lista de usuários não deve estar vazia.
-    Usuario buscarUsuario(const std::string& login) const;
+    Usuario& buscarUsuario(const std::string& login);
     void removerUsuario(const std::string& login);
 
 private:

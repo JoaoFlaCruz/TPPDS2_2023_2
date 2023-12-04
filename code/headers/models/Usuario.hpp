@@ -11,7 +11,7 @@ private:
     Jogador jogador_;
 
 public:
-    
+
     Usuario(std::string nome, std::string senha, std::string cpf, Jogador jogador);
 
     //Cria um usuario vazio (construtor padrão)
@@ -27,5 +27,9 @@ public:
 
     // Método para alterar a senha //opcional podem tirar se quiserem
     void alterarSenha(std::string senhaNova);
+
+    void adicionar_fundos(float valor);
+    void retirar_fundos(float valor);
+    float saldo();
 };
 

@@ -26,7 +26,7 @@ const ListaApostas& SistemaJogador::obterListaApostas() const {
 }
 
 void SistemaJogador::login(const std::string& nome, const std::string& senha) {
-    Usuario usuario = listaUsuarios_.buscarUsuario(nome);
+    Usuario& usuario = listaUsuarios_.buscarUsuario(nome);
 
     // Verifica se o jogador existe
     if (usuario.nome() == "") {
@@ -78,8 +78,7 @@ void SistemaJogador::adicionar_dinheiro(double valor) {
         throw OperacaoInvalida{};
     }
 
-    Jogador jogador = login_.obterUsuarioLogado().jogador();
-    jogador.carteira().depositar(valor);
+    login_.adicionar_fundos(valor);
 }
 
 void SistemaJogador::retirar_dinheiro(double valor) {
@@ -87,8 +86,7 @@ void SistemaJogador::retirar_dinheiro(double valor) {
         throw OperacaoInvalida{};
     }
 
-    Jogador jogador = login_.obterUsuarioLogado().jogador();
-    jogador.carteira().sacar(valor);
+    login_.retirar_fundos(valor);
 }
 
 
@@ -97,8 +95,7 @@ float SistemaJogador::retornar_saldo() {
         throw OperacaoInvalida{};
     }
 
-    Jogador jogador = login_.obterUsuarioLogado().jogador();
-    return jogador.carteira().saldo();
+    return login_.saldo();
 }
 
 

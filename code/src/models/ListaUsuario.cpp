@@ -24,8 +24,8 @@ bool ListaUsuario::validarLogin(const std::string& login) const {
 }
 
 // Retorna um objeto Usuario com o login especificado, se existir
-Usuario ListaUsuario::buscarUsuario(const std::string& login) const {
-    for (const auto& usuario : usuarios_) {
+Usuario& ListaUsuario::buscarUsuario(const std::string& login) {
+    for (auto& usuario : usuarios_) {
         if (usuario.nome() == login) {
             return usuario;  // Retorna o usuário encontrado por valor
         }

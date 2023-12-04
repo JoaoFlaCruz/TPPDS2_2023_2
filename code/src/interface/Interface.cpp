@@ -45,6 +45,9 @@ void Interface::executar() {
         case E10_PAG_SIS_JOGADOR:
             pag_10_jogador();
             break;
+        case E14_PAG_CARTEIRA_JOGADOR:
+            pag_14_carteira_jogador();
+            break;
         default:
             break;
         }
@@ -490,7 +493,8 @@ void Interface::pag_10_jogador() {
     } else if (entrada == 1) {
 
     } else if (entrada == 2) {
-
+        estado_ = E14_PAG_CARTEIRA_JOGADOR;
+        return;
     } else {
         EntradaInvalida e;
         throw e;
@@ -510,9 +514,24 @@ void Interface::pag_11_aposta() {
     barra_final();
     logado();
     mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 1) {
+
+    } else if (entrada == 2) {
+
+    } else if (entrada == 3) {
+        estado_ = E9_PAG_LOGAR_JOGADOR;
+        return;
+    } else if (entrada == 0) {
+        estado_ = E10_PAG_SIS_JOGADOR;
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
 }
 
-void Interface::pag_carteira_jogador() {
+void Interface::pag_14_carteira_jogador() {
     limpar_tela();
     cabecalho();
     quebra_linha();

@@ -21,6 +21,9 @@
 #define E9_PAG_LOGAR_JOGADOR 9
 #define E10_PAG_SIS_JOGADOR 10
 #define E11_PAG_APOSTA 11
+#define E12_PAG_CADASTRAR_APOSTA 12
+//#define E13_PAG_LISTAR_APOSTA 13
+#define E14_PAG_CARTEIRA_JOGADOR 14
 
 //Excecoes lançadas
 struct EntradaInvalida {};
@@ -79,8 +82,10 @@ public:
     void pag_10_jogador();
     // E11_PAG_APOSTA
     void pag_11_aposta();
-    // E_PAG_CARTEIRA_JOGADOR
-    void pag_carteira_jogador();
+    // E12_PAG_CADASTRAR_APOSTA
+    void pag_12_cadastrar_aposta();
+    // E14_PAG_CARTEIRA_JOGADOR
+    void pag_14_carteira_jogador();
 
 };
 

@@ -26,6 +26,11 @@ public:
     std::string nome();
     std::string cpf();
 
+    void adicionar_fundos(float valor);
+    void retirar_fundos(float valor);
+    float saldo();
+
+
 private:
     bool usuarioLogado_;
     Usuario usuarioAtual_;

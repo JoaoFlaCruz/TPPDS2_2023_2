@@ -18,3 +18,15 @@ std::string Jogador::nome_do_jogador() {
 Carteira Jogador::carteira() {
     return carteira_;
 }
+
+void Jogador::adicionar_fundos(float valor) {
+    carteira_.depositar(valor);
+}
+
+void Jogador::retirar_fundos(float valor) {
+    carteira_.sacar(valor);
+}
+
+float Jogador::saldo() {
+    return carteira_.saldo();
+}

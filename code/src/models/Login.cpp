@@ -36,3 +36,15 @@ std::string Login::nome() {
 std::string Login::cpf() {
     return usuarioAtual_.cpf();
 }
+
+void Login::adicionar_fundos(float valor) {
+    usuarioAtual_.adicionar_fundos(valor);
+}
+
+void Login::retirar_fundos(float valor) {
+    usuarioAtual_.retirar_fundos(valor);
+}
+
+float Login::saldo() {
+    return usuarioAtual_.saldo();
+}
