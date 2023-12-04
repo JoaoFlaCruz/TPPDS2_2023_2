@@ -34,7 +34,7 @@ std::string mensagem;
 
 class SistemaJogador {
 public:
-    
+
     SistemaJogador();
     const Login& obterLogin() const;
     const ListaUsuario& obterListaUsuarios() const;
@@ -49,6 +49,8 @@ public:
     void retirar_dinheiro(double valor);
     void realizar_pagamento(Jogador& jogador, double valor);
     float retornar_saldo();
+
+    void cadastrar_usuario(std::string apelido, std::string login, std::string senha, std::string cpf);
 
 private:
     Login login_;

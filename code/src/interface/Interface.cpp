@@ -33,6 +33,15 @@ void Interface::executar() {
         case E6_PAG_CARTEIRA_ADMIN:
             pag_6_carteira_admin();
             break;
+        case E7_PAG_JOGADOR:
+            pag_7_jogador();
+            break;
+        case E8_PAG_CADASTRAR_JOGADOR:
+            pag_8_cadastrar_jogador();
+            break;
+        case E9_PAG_LOGAR_JOGADOR:
+            pag_9_logar_jogador();
+            break;
         default:
             break;
         }
@@ -106,7 +115,7 @@ void Interface::pagina_0_inicial() {
     if(entrada == 1) {
         estado_ = E1_PAG_LOGIN_ADMIN;
     } else if(entrada == 2) {
-
+        estado_ = E7_PAG_JOGADOR;
     } else {
         EntradaInvalida e;
         throw e;
@@ -314,6 +323,89 @@ void Interface::pag_6_carteira_admin() {
     }
 }
 
+void Interface::pag_7_jogador() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          LOGIN COMO JOGADOR                                                       #" << std::endl;
+    std::cout << "#          (1) Logar como Jogador                                                   #" << std::endl;
+    std::cout << "#          (2) Cadastrar Jogador                                                    #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 0) {
+        estado_ = E0_PAG_INICIAL;
+        return;
+    } else if (entrada == 2) {
+        estado_ = E8_PAG_CADASTRAR_JOGADOR;
+        return;
+    } else if (entrada == 1) {
+        estado_ = E9_PAG_LOGAR_JOGADOR;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pag_8_cadastrar_jogador() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          CADASTRAR JOGADOR                                                        #" << std::endl;
+    std::cout << "#          (1) Cadastrar Jogador                                                    #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 1) {
+        std::cout << "########### Insira um apelido de jogador: ";
+        std::string apelido;
+        std::cin >> apelido;
+        std::cout << "########### Insira o login jogador: ";
+        std::string login;
+        std::cin >> login;
+        std::cout << "########### Insira a senha: ";
+        std::string senha;
+        std::cin >> senha;
+        std::cout << "########### Insira o cpf: ";
+        std::string cpf;
+        std::cin >> cpf;
+        sis_jogador_.cadastrar_usuario(apelido, login, senha, cpf);
+    } else if (entrada == 0) {
+        estado_ = E7_PAG_JOGADOR;
+        return;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pag_9_logar_jogador() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          LOGIN JOGADOR                                                            #" << std::endl;
+    std::cout << "#          (1) Logar Jogador                                                        #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    mensagem_de_erro();
+    int entrada = entrada_comando();
+    if (entrada == 1) {
+        std::cout << "########### Insira o login: ";
+        std::string login;
+        std::cin >> login;
+        std::cout << "########### Insira a senha: ";
+        std::string senha;
+        std::cin >> senha;
+    } else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
 
 void Interface::pag_carteira_jogador() {
     limpar_tela();
@@ -330,7 +422,7 @@ void Interface::pag_carteira_jogador() {
     mensagem_de_erro();
     int entrada = entrada_comando();
     if (entrada == 0) {
-        estado_ = E2_PAG_JOGADOR;
+        estado_ = E7_PAG_JOGADOR;
         return;
     } else if (entrada == 1) {
         double valor;

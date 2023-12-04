@@ -101,3 +101,9 @@ float SistemaJogador::retornar_saldo() {
     return jogador.carteira().saldo();
 }
 
+
+void SistemaJogador::cadastrar_usuario(std::string apelido, std::string login, std::string senha, std::string cpf) {
+    Jogador jogador(apelido);
+    Usuario user(login, senha, cpf, jogador);
+    listaUsuarios_.adicionarUsuario(user);
+}

@@ -16,7 +16,9 @@
 #define E4_PAG_CADASTRAR_SORTEIO 4
 #define E5_PAG_LISTAR_SORTEIO 5
 #define E6_PAG_CARTEIRA_ADMIN 6
-#define E2_PAG_JOGADOR 7
+#define E7_PAG_JOGADOR 7
+#define E8_PAG_CADASTRAR_JOGADOR 8
+#define E9_PAG_LOGAR_JOGADOR 9
 
 //Excecoes lançadas
 struct EntradaInvalida {};
@@ -64,8 +66,12 @@ public:
     void pag_6_carteira_admin();
 
     // Estados relacionados ao SistemaJogador
-    //E7_PAG_JOGADOR
+    // E7_PAG_JOGADOR
     void pag_7_jogador();
+    // E8_PAG_CADASTRAR_JOGADOR
+    void pag_8_cadastrar_jogador();
+    // E9_PAG_LOGAR_JOGADOR
+    void pag_9_logar_jogador();
     // E_PAG_CARTEIRA_JOGADOR
     void pag_carteira_jogador();
     // E_PAG_JOGADOR
