@@ -1,10 +1,17 @@
 #include "./../../headers/system/SistemaJogador.hpp"
 #include <iostream>
 
-SistemaJogador::SistemaJogador(ListaApostas& listaApostas, ListaUsuario& listaUsuarios)
-    : listaApostas_(listaApostas), listaUsuarios_(listaUsuarios) {
-    // Inicializações adicionais, se necessário.
+
+SistemaJogador::SistemaJogador(){
+    // Inicialize listaApostas_ e listaUsuarios_ aqui com objetos válidos
+    // Exemplo:
+    ListaApostas listaApostas_;
+    ListaUsuario listaUsuarios_;
+
+    // Restante do código do construtor
 }
+
+
 
 const Login& SistemaJogador::obterLogin() const {
     return login_;
