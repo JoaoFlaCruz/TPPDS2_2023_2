@@ -34,8 +34,8 @@ std::string mensagem;
 
 class SistemaJogador {
 public:
-    SistemaJogador(ListaApostas& listaApostas, ListaUsuario& listaUsuarios);
-
+    
+    SistemaJogador();
     const Login& obterLogin() const;
     const ListaUsuario& obterListaUsuarios() const;
     const ListaApostas& obterListaApostas() const;
@@ -52,6 +52,6 @@ public:
 
 private:
     Login login_;
-    ListaApostas& listaApostas_;
-    ListaUsuario& listaUsuarios_;
+    ListaApostas listaApostas_;
+    ListaUsuario listaUsuarios_;
 };
