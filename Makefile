@@ -7,7 +7,7 @@ BINDIR := bin
 
 TARGET := main
 MAIN := code/main.cpp
-TESTER := program/tester.cpp
+TESTER := code/tester.cpp
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
