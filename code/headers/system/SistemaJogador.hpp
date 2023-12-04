@@ -51,6 +51,7 @@ public:
     float retornar_saldo();
 
     void cadastrar_usuario(std::string apelido, std::string login, std::string senha, std::string cpf);
+    bool logado();
 
 private:
     Login login_;
