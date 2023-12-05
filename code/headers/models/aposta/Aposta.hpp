@@ -1,3 +1,10 @@
+/**
+ * @file Aposta.hpp
+ * @brief Definição da classe abstrata Aposta.
+ * @version 1.0
+ * @date 2023-12-05
+ */
+
 #pragma once
 
 #include <string>
@@ -14,8 +21,10 @@
 #define GANHO_TERNO_GRUPO 130
 #define GANHO_TERNO_DEZENA 3000
 
+/**
+ * @brief Enumeração dos Grupos para apostas específicas.
+ */
 enum Grupos {
-
     AVESTRUZ = 1,
     AGUIA = 2,
     BURRO = 3,
@@ -41,55 +50,115 @@ enum Grupos {
     URSO = 23,
     VEADO = 24,
     VACA = 25
-
 };
 
-
+/**
+ * @brief Estrutura para representar um erro de valor de aposta negativo.
+ */
 struct ValorDaApostaNegativo {
     float valor;
 };
+
+/**
+ * @brief Estrutura para representar um erro de número de aposta negativo.
+ */
 struct NumeroDaApostaNegativo {
     int numeros;
 };
+
+/**
+ * @brief Estrutura para representar um erro de número de aposta muito alto.
+ */
 struct NumeroDaApostaMuitoAlto {
     int numeros;
 };
+
+/**
+ * @brief Estrutura para representar um erro de números iguais em apostas distintas.
+ */
 struct NumerosDasApostasIguais {
     int numero1;
     int numero2;
 };
 
-class Aposta{
-  
-    protected:
-        std::string nome_do_jogador_; //Nome do jogador que apostou
-        float valor_; //Valor apostado pelo jogador
-        const float ganho_ = GANHO_NULO; //Ganho nulo para uma classe Aposta abstrata
-        bool ganhou_ = false; //Verifica se a aposta é ganhadora
-        bool cabeca_; //Verificação se a aposta é na cabeça
-        std::vector<int> apostas_;
+/**
+ * @brief Classe abstrata que representa uma aposta.
+ */
+class Aposta {
+protected:
+    std::string nome_do_jogador_; ///< Nome do jogador que apostou.
+    float valor_; ///< Valor apostado pelo jogador.
+    const float ganho_ = GANHO_NULO; ///< Ganho nulo para uma classe Aposta abstrata.
+    bool ganhou_ = false; ///< Verifica se a aposta é ganhadora.
+    bool cabeca_; ///< Verificação se a aposta é na cabeça.
+    std::vector<int> apostas_; ///< Vetor contendo as apostas.
 
-    public:
-        // CONSTRUTORES E DESTRUTORES
-        Aposta(std::string nome_do_jogador, float valor, bool cabeca); //Construtor
+public:
+    /**
+     * @brief Construtor da classe Aposta.
+     * @param nome_do_jogador Nome do jogador que fez a aposta.
+     * @param valor Valor da aposta.
+     * @param cabeca Indica se a aposta é na cabeça.
+     */
+    Aposta(std::string nome_do_jogador, float valor, bool cabeca);
 
-        ~Aposta(); //Destrutor
+    /**
+     * @brief Destrutor da classe Aposta.
+     */
+    ~Aposta();
 
-        //GETTERS
-        float ganho(); //Getter para o atributo ganho
-        float valor(); //Getter para o atributo valor
-        bool cabeca(); //Getter para o atributo cabeça
-        std::string nome_do_jogador(); //Getter para o atributo nome_do_jogador
-        bool ganhou(); //Getter para o atributo ganhou
-        std::vector<int> apostas();
+    /**
+     * @brief Getter para o atributo ganho.
+     * @return O valor do ganho associado à aposta.
+     */
+    float ganho();
 
-        //MÉTODOS CONCRETOS
-        float calcular_ganho(); //Calculo do dinheiro ganhado com base no valor, no ganho e na cabeça
+    /**
+     * @brief Getter para o atributo valor.
+     * @return O valor da aposta.
+     */
+    float valor();
 
+    /**
+     * @brief Getter para o atributo cabeça.
+     * @return True se a aposta for na cabeça, false caso contrário.
+     */
+    bool cabeca();
 
-        //MÉTODOS ABSTRATOS
-        virtual void verificar_vitoria(std::array<int, 5> resultado); //Verificação da vitória com atualização da variavel ganhou
-        virtual bool operator==(Aposta outra); //Verifica se uma aposta é igual a outra
+    /**
+     * @brief Getter para o atributo nome_do_jogador.
+     * @return O nome do jogador que fez a aposta.
+     */
+    std::string nome_do_jogador();
 
+    /**
+     * @brief Getter para o atributo ganhou.
+     * @return True se a aposta for ganhadora, false caso contrário.
+     */
+    bool ganhou();
+
+    /**
+     * @brief Getter para o atributo apostas.
+     * @return O vetor contendo as apostas.
+     */
+    std::vector<int> apostas();
+
+    /**
+     * @brief Método concreto para calcular o ganho com base no valor, no ganho e na cabeça.
+     * @return O valor do ganho calculado.
+     */
+    float calcular_ganho();
+
+    /**
+     * @brief Método abstrato para verificar a vitória com base no resultado e atualizar a variável "ganhou".
+     * @param resultado Array contendo o resultado do jogo.
+     */
+    virtual void verificar_vitoria(std::array<int, 5> resultado);
+
+    /**
+     * @brief Método abstrato para verificar se uma aposta é igual a outra.
+     * @param outra A outra aposta a ser comparada.
+     * @return True se as apostas forem iguais, false caso contrário.
+     */
+    virtual bool operator==(Aposta outra);
 };
-

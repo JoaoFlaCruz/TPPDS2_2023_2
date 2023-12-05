@@ -8,7 +8,9 @@
 #include "./../system/SistemaGeral.hpp"
 #include "./../system/SistemaJogador.hpp"
 
-//Lista de possíveis estados
+/**
+ * @brief Lista de possíveis estados para a interface.
+ */
 #define E0_PAG_INICIAL 0
 #define E1_PAG_LOGIN_ADMIN 1
 #define E2_PAG_ADMIN 2
@@ -25,22 +27,38 @@
 //#define E13_PAG_LISTAR_APOSTA 13
 #define E14_PAG_CARTEIRA_JOGADOR 14
 
-//Excecoes lançadas
+/**
+ * @brief Exceção lançada para entrada inválida.
+ */
 struct EntradaInvalida {};
+
+/**
+ * @brief Exceção lançada para senha inválida.
+ */
 struct SenhaInvalida {};
 
+/**
+ * @brief Classe que representa a interface do sistema.
+ */
 class Interface {
 private:
-    int estado_;
-    std::string msg_erro_;
-    bool erro_tratado_;
+    int estado_;           ///< Estado atual da interface
+    std::string msg_erro_; ///< Mensagem de erro
+    bool erro_tratado_;    ///< Flag indicando se o erro foi tratado
 
-    SistemaAdmin sis_admin_;
-    SistemaGeral sis_geral_;
-    SistemaJogador sis_jogador_;
+    SistemaAdmin sis_admin_;   ///< Sistema Admin
+    SistemaGeral sis_geral_;   ///< Sistema Geral
+    SistemaJogador sis_jogador_; ///< Sistema do Jogador
 
 public:
+    /**
+     * @brief Construtor padrão da interface.
+     */
     Interface();
+
+    /**
+     * @brief Destrutor da interface.
+     */
     ~Interface();
 
     // Comandos básicos de interface gráfica
@@ -86,7 +104,4 @@ public:
     void pag_12_cadastrar_aposta();
     // E14_PAG_CARTEIRA_JOGADOR
     void pag_14_carteira_jogador();
-
 };
-
-// INTERFACE_HPP
