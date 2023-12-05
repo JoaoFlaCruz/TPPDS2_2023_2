@@ -1,15 +1,13 @@
-# JOGO DO BICHO - PDS2 2023.2
+<div id="top"></div>
 
-## Grupo
-
-- João Flávio de Freitas Cruz - 2023421408
-- João Vitor Alves - 2021014120
-- Matheus de Freitas Andrade - 2023421580
-- Maycon Gomes de Oliveira - 2021013949
-- Geanderson Luiz de Souza - 2021014350
+# Trabalho prático de PDS2 - Jogo do bicho!
 
 
-## Documentação
+
+<br/>
+
+
+## Começando 🚀
 
 ### Introdução sobre o jogo do bicho
 
@@ -98,3 +96,154 @@ O sistema deve ser dividido em duas frentes distintas: sistema de jogadores e si
 3. Deve ser robusto para resistir às entradas de dados errados e permitir que o usuário tente o quebrar sem êxito
 4. Deve ser realístico provando a possibilidade prática da implementação de um jogo do bicho em um programa computacional sendo um modelo para possíveis implementações em rede
 5. A organização do código e a adesão a boas práticas de programação deve ser essenciais na implementação do projeto.
+
+
+Com isso, foi possível replicar o funcionamento do sistema utilizando as habilidades adquiridas na disciplina Programação e Desenvolvimento de Software II.
+
+
+### Pré-requisitos
+Para começar a utilizar o repositório, você precisa cumprir todos os requisitos abaixo:
+
+* Ter um compilador c++ instalado.
+* Ter o mingw na versão 11.2.0 e/ou c++ na versão 17 ou superior.
+* Ter o cmake instalado.
+* Ter o git instalado.
+* Estar em um ambiente linux e/ou derivado.
+* Ter o gcov instalado.
+
+
+<p align="right">(<a href="#top">Voltar para o topo</a>)</p>
+
+### Instalação
+
+1. Clone o repositório.
+   ```sh
+   git clone https://github.com/JoaoFlaCruz/TPPDS2_2023_2
+   ```
+2. Entre no diretório do repositório.
+    ```sh
+    cd TPPDS2_2023_2
+    ```
+3. Execute o comando `make` para gerar o projeto.
+    ```sh
+    make
+    ```
+
+4. Execute o comando `make run` para rodar o projeto.
+    ```sh
+    make run
+    ```
+4. Execute o comando `make tests` para realizar os testes de unidade.
+    ```sh
+    make tests
+    ```
+    
+<p align="right">(<a href="#top">Voltar para o topo</a>)</p>
+
+## Como utilizar o Trabalho Prático
+
+Para começar a utilizar, após a instalação, basta rodar:
+
+- Para executar o código já compilado:
+
+```sh
+   make run
+```
+- Usuário para teste:
+
+```sh
+   Usuário:     Senha: 
+```
+
+
+<p align="right">(<a href="#top">Voltar para o topo</a>)</p>
+
+### Acessar a documentação
+
+1. Clone o repositório.
+   ```sh
+   git clone https://github.com/JoaoFlaCruz/TPPDS2_2023_2
+   ```
+2. Entre no diretório do repositório.
+    ```sh
+    cd TPPDS2_2023_2
+    ```
+3. Dê o seguinte comando.
+    ```sh
+    doxygen Doxyfile 
+
+4. Entre na pasta onde foi clonado em seu computador
+    ```sh
+    Procure a origem do arquivo
+    ```
+5. Entre na pasta html
+    ```sh
+    Procure o arquivo "annotated" e abra em seu navegador.
+    ```
+<p align="right">(<a href="#top">Voltar para o topo</a>)</p>
+
+## Contruibuindo
+
+As contribuições são o que tornam a comunidade de código aberto um lugar incrível para aprender, inspirar e criar. Quaisquer contribuições que você fizer serão **muito apreciadas**.
+
+Se você tiver uma sugestão para melhorar o projeto, por favor, faça um fork do repositório e crie um pull request. Você também pode simplesmente abrir um issue com a tag "melhoria".
+
+Não se esqueça de dar uma estrela ao projeto! Thanks!
+
+1. Dê um fork no projeto
+2. Cria sua branch de melhoria (`git checkout -b feature/MelhoriaIncrivel`)
+3. Faça um commit de suas mudanças (`git commit -m 'feat: adicionado uma melhoria incrível'`)
+4. Faça um push para sua branch (`git push origin feature/MelhoriaIncrivel`)
+5. Abra um pull request.
+
+<p align="right">(<a href="#top">Voltar para o topo</a>)</p>
+
+## 🤝 Quem fez acontecer
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/129776451?s=60&v=4" width="100px;" alt="MayconOliv1"/><br>
+        <sub>
+          <b>MayconOliv1</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/129343629?s=60&v=4" width="100px;" alt="geanderson4044"/><br>
+        <sub>
+          <b>geanderson4044</b>
+        </sub>
+      </a>
+    </td>
+	<td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/129343629?s=60&v=4" width="100px;" alt="mdfa99"/><br>
+        <sub>
+          <b>mdfa99</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/77082364?s=60&v=4" width="100px;" alt="JoaoFlaCruz"/><br>
+        <sub>
+          <b>JoaoFlaCruz</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/100239569?s=60&v=4" width="100px;" alt="joaoalves31"/><br>
+        <sub>
+          <b>joaoalves31</b>
+        </sub>
+      </a>
+    </td>
+    
+  </tr>
+</table>
