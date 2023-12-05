@@ -9,8 +9,9 @@
 
 ## Começando 🚀
 
-### Introdução sobre o jogo do bicho
+<span style="color:blue">### Introdução sobre o jogo do bicho</span>
 
+  
   O jogo do bicho é um tipo de jogo de azar amplamente difundido no Brasil.
 Nele, os participantes realizam apostas em grupos, sendo que cada grupo é associado a um animal e a
 quatro números consecutivos entre 0 e 99. Na aposta mais simples, a por grupo, cinco números são sorteados, e os jogadores saem vitoriosos caso o número
