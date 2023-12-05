@@ -1,0 +1,7 @@
+digraph "SistemaAdmin"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{SistemaAdmin\n||+ SistemaAdmin()\l+ ~SistemaAdmin()\l+ validar_senha()\l+ criar_sorteio()\l+ sortear()\l+ verificar_ganhador()\l+ realizar_pagamento()\l+ adicionar_sorteio()\l+ remover_sorteio()\l+ exibir_detalhes_sorteio()\l+ dados_sorteios()\l+ realizar_pagamento()\l+ adicionar_dinheiro()\l+ retirar_dinheiro()\l+ retornar_saldo()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa o sistema administrativo."];
+}

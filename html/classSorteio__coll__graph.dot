@@ -1,0 +1,7 @@
+digraph "Sorteio"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Sorteio\n||+ Sorteio()\l+ Sorteio()\l+ Sorteio()\l+ data_e_horario()\l+ nome()\l+ numeros_sorteados()\l+ apostas_feitas()\l+ apostas_ganhas()\l+ status()\l+ sortear()\l+ verificar_apostas_ganhas()\l+ Sorteio()\l+ Sorteio()\l+ data_e_horario()\l+ nome()\l+ numeros_sorteados()\l+ apostas_feitas()\l+ apostas_ganhas()\l+ status()\l+ sortear()\l+ verificar_apostas_ganhas()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa um sorteio."];
+}

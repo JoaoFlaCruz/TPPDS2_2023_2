@@ -1,0 +1,9 @@
+digraph "code/headers/models/aposta/terno" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_93dedd8997a00b7bc27b83991bb5a0d6 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="aposta" fontname="Helvetica", fontsize="10", URL="dir_93dedd8997a00b7bc27b83991bb5a0d6.html"]
+  dir_7143d3bb798a75ecf36453f238c492f7 [shape=box, label="terno", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7143d3bb798a75ecf36453f238c492f7.html"];
+  }
+}

@@ -1,0 +1,7 @@
+digraph "ListaSorteios"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ListaSorteios\n||+ ListaSorteios()\l+ tamanho()\l+ lista_de_sorteio()\l+ adicionar_sorteio()\l+ remover_sorteio()\l+ sorteios_em_andamento()\l+ sorteios_feitos()\l+ buscar_sorteio_por\l_data_e_horario()\l+ buscar_participacao()\l+ dados_sorteios()\l+ ListaSorteios()\l+ tamanho()\l+ lista_de_sorteio()\l+ adicionar_sorteio()\l+ remover_sorteio()\l+ sorteios_em_andamento()\l+ sorteios_feitos()\l+ buscar_sorteio_por_nome()\l+ buscar_sorteio_por\l_data_e_horario()\l+ buscar_participacao()\l+ dados_sorteios()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa uma lista de sorteios."];
+}

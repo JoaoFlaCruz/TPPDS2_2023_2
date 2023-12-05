@@ -1,0 +1,7 @@
+digraph "Usuario"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Usuario\n||+ Usuario()\l+ Usuario()\l+ ~Usuario()\l+ nome()\l+ senha()\l+ cpf()\l+ jogador()\l+ alterarSenha()\l+ adicionar_fundos()\l+ retirar_fundos()\l+ saldo()\l+ Usuario()\l+ Usuario()\l+ ~Usuario()\l+ nome()\l+ senha()\l+ cpf()\l+ jogador()\l+ saldo_da_carteira()\l+ depositar_na_carteira()\l+ sacar_na_carteira()\l+ extrato()\l+ adicionar_movimentacao()\l+ alterarSenha()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa um usuário do sistema."];
+}

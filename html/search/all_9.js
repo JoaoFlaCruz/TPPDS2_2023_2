@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['jacare_137',['JACARE',['../code_2headers_2models_2aposta_2Aposta_8hpp.html#a81d560ddcf122acd93be5757837d159eac91bf21a529f98424f640f5ef265986c',1,'JACARE():&#160;Aposta.hpp'],['../Versao__de__Seguranca__Rascunho_2headers_2models_2aposta_2Aposta_8hpp.html#a81d560ddcf122acd93be5757837d159eac91bf21a529f98424f640f5ef265986c',1,'JACARE():&#160;Aposta.hpp']]],
+  ['jogador_138',['Jogador',['../classJogador.html',1,'Jogador'],['../classUsuario.html#a40be98093cdf0cdf03722864747e1c8f',1,'Usuario::jogador() const'],['../classUsuario.html#a40be98093cdf0cdf03722864747e1c8f',1,'Usuario::jogador() const'],['../classJogador.html#a85bb56e9e90981e828e6199730c75b2d',1,'Jogador::Jogador(std::string apelido)'],['../classJogador.html#a94a4939138ce04d2f3ceb68257517ac1',1,'Jogador::Jogador()'],['../classJogador.html#a85bb56e9e90981e828e6199730c75b2d',1,'Jogador::Jogador(std::string apelido)'],['../classJogador.html#a94a4939138ce04d2f3ceb68257517ac1',1,'Jogador::Jogador()'],['../teste_8cpp.html#adbe653e4df813341acc4145fbc0909f4',1,'jogador():&#160;teste.cpp']]],
+  ['jogador_2ecpp_139',['Jogador.cpp',['../code_2src_2models_2Jogador_8cpp.html',1,'(Global Namespace)'],['../Versao__de__Seguranca__Rascunho_2src_2Jogador_8cpp.html',1,'(Global Namespace)'],['../Versao__de__Seguranca__Rascunho_2src_2models_2Jogador_8cpp.html',1,'(Global Namespace)']]],
+  ['jogador_2ehpp_140',['Jogador.hpp',['../code_2headers_2models_2Jogador_8hpp.html',1,'(Global Namespace)'],['../Versao__de__Seguranca__Rascunho_2headers_2models_2Jogador_8hpp.html',1,'(Global Namespace)']]],
+  ['jogadornaoparticipou_141',['JogadorNaoParticipou',['../structJogadorNaoParticipou.html',1,'']]]
+];

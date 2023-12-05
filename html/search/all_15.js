@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['_7eaposta_292',['~Aposta',['../classAposta.html#aeabb8eb452412e12507195f434d2010b',1,'Aposta::~Aposta()'],['../classAposta.html#aeabb8eb452412e12507195f434d2010b',1,'Aposta::~Aposta()']]],
+  ['_7ecentena_293',['~Centena',['../classCentena.html#a31b783ed43c0258c33281866ac443140',1,'Centena::~Centena()'],['../classCentena.html#a31b783ed43c0258c33281866ac443140',1,'Centena::~Centena()']]],
+  ['_7edezena_294',['~Dezena',['../classDezena.html#a0549299c6d27468ab2f7764eb035ac9d',1,'Dezena::~Dezena()'],['../classDezena.html#a0549299c6d27468ab2f7764eb035ac9d',1,'Dezena::~Dezena()']]],
+  ['_7eduque_295',['~Duque',['../classDuque.html#ab2b1d29c889ddbd081e9534749dd8ee5',1,'Duque::~Duque()'],['../classDuque.html#ab2b1d29c889ddbd081e9534749dd8ee5',1,'Duque::~Duque()']]],
+  ['_7eduquedezena_296',['~DuqueDezena',['../classDuqueDezena.html#aa6b4bb617f97e8f4e6885d56e6559819',1,'DuqueDezena::~DuqueDezena()'],['../classDuqueDezena.html#aa6b4bb617f97e8f4e6885d56e6559819',1,'DuqueDezena::~DuqueDezena()']]],
+  ['_7eduquegrupo_297',['~DuqueGrupo',['../classDuqueGrupo.html#a1e0543421ff91e5aa663ec71aa4cb1ba',1,'DuqueGrupo::~DuqueGrupo()'],['../classDuqueGrupo.html#a1e0543421ff91e5aa663ec71aa4cb1ba',1,'DuqueGrupo::~DuqueGrupo()']]],
+  ['_7egrupo_298',['~Grupo',['../classGrupo.html#ac0a18d5e4c7dec04b5bb75bdb020da86',1,'Grupo::~Grupo()'],['../classGrupo.html#ac0a18d5e4c7dec04b5bb75bdb020da86',1,'Grupo::~Grupo()']]],
+  ['_7einterface_299',['~Interface',['../classInterface.html#a19179888f29f18f1be54a3dfe98f68c0',1,'Interface']]],
+  ['_7elistaapostas_300',['~ListaApostas',['../classListaApostas.html#a0416f8c3349c93b1a5fb4aec7f3d3eb3',1,'ListaApostas::~ListaApostas()'],['../classListaApostas.html#a0416f8c3349c93b1a5fb4aec7f3d3eb3',1,'ListaApostas::~ListaApostas()']]],
+  ['_7emilhar_301',['~Milhar',['../classMilhar.html#a742707b315f3ce9124f2b7baa5d62fe5',1,'Milhar::~Milhar()'],['../classMilhar.html#a742707b315f3ce9124f2b7baa5d62fe5',1,'Milhar::~Milhar()']]],
+  ['_7enormal_302',['~Normal',['../classNormal.html#a2ed547e3b7361c3675224d352cf79740',1,'Normal::~Normal()'],['../classNormal.html#a2ed547e3b7361c3675224d352cf79740',1,'Normal::~Normal()']]],
+  ['_7esistemaadmin_303',['~SistemaAdmin',['../classSistemaAdmin.html#ab5291bbdc3cfca0130889fc8b0b47d78',1,'SistemaAdmin']]],
+  ['_7eterno_304',['~Terno',['../classTerno.html#a2e9b8ff7ddbfd9e4f53e3c482f5c6eae',1,'Terno::~Terno()'],['../classTerno.html#a2e9b8ff7ddbfd9e4f53e3c482f5c6eae',1,'Terno::~Terno()']]],
+  ['_7eternodezena_305',['~TernoDezena',['../classTernoDezena.html#a7d09d63c782df3eb70cbf12c2b99665e',1,'TernoDezena::~TernoDezena()'],['../classTernoDezena.html#a7d09d63c782df3eb70cbf12c2b99665e',1,'TernoDezena::~TernoDezena()']]],
+  ['_7eternogrupo_306',['~TernoGrupo',['../classTernoGrupo.html#a1695f65c526241ef33dcf06d0a334325',1,'TernoGrupo::~TernoGrupo()'],['../classTernoGrupo.html#a1695f65c526241ef33dcf06d0a334325',1,'TernoGrupo::~TernoGrupo()']]],
+  ['_7eusuario_307',['~Usuario',['../classUsuario.html#ab4096b0b8300ecb47b10c555fb09c997',1,'Usuario::~Usuario()'],['../classUsuario.html#ab4096b0b8300ecb47b10c555fb09c997',1,'Usuario::~Usuario()']]]
+];

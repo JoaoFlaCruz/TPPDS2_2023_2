@@ -1,0 +1,20 @@
+digraph "Milhar"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Milhar\n||+ Milhar()\l+ ~Milhar()\l+ verificar_vitoria()\l+ operator==()\l+ Milhar()\l+ ~Milhar()\l+ verificar_vitoria()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa uma aposta do tipo Milhar."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Normal\n||+ Normal()\l+ ~Normal()\l+ apostas()\l+ Normal()\l+ ~Normal()\l+ apostas()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNormal.html",tooltip="Classe que representa uma aposta do tipo Normal."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Aposta\n||+ Aposta()\l+ ~Aposta()\l+ ganho()\l+ valor()\l+ cabeca()\l+ nome_do_jogador()\l+ ganhou()\l+ apostas()\l+ calcular_ganho()\l+ verificar_vitoria()\l+ operator==()\l+ Aposta()\l+ ~Aposta()\l+ ganho()\l+ valor()\l+ cabeca()\l+ nome_do_jogador()\l+ ganhou()\l+ apostas()\l+ calcular_ganho()\l+ verificar_vitoria()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAposta.html",tooltip="Classe abstrata que representa uma aposta."];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" #valor_\n#ganho_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{float\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [color="grey25",fontsize="10",style="solid",label=" #apostas_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{vector\< int \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node3 [color="grey25",fontsize="10",style="solid",label=" #cabeca_\n#ganhou_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{bool\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node3 [color="grey25",fontsize="10",style="solid",label=" #nome_do_jogador_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #apostas_" ,arrowhead="odiamond",fontname="Helvetica"];
+}

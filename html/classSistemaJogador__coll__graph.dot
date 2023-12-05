@@ -1,0 +1,7 @@
+digraph "SistemaJogador"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{SistemaJogador\n||+ SistemaJogador()\l+ obterLogin()\l+ obterListaUsuarios()\l+ obterListaApostas()\l+ login()\l+ logout()\l+ realizarAposta()\l+ exibirExtrato()\l+ adicionar_dinheiro()\l+ retirar_dinheiro()\l+ realizar_pagamento()\l+ retornar_saldo()\l+ cadastrar_usuario()\l+ logado()\l+ informacoes_login()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa o sistema do jogador."];
+}

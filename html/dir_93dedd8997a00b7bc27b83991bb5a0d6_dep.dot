@@ -1,0 +1,15 @@
+digraph "code/headers/models/aposta" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_1de32022380623a420f43826aeb771bc {
+    graph [ bgcolor="#ddddee", pencolor="black", label="models" fontname="Helvetica", fontsize="10", URL="dir_1de32022380623a420f43826aeb771bc.html"]
+  subgraph clusterdir_93dedd8997a00b7bc27b83991bb5a0d6 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_93dedd8997a00b7bc27b83991bb5a0d6.html"];
+    dir_93dedd8997a00b7bc27b83991bb5a0d6 [shape=plaintext label="aposta"];
+    dir_22125b206a9e00b2b97ae3aa57b1b819 [shape=box label="duque" color="black" fillcolor="white" style="filled" URL="dir_22125b206a9e00b2b97ae3aa57b1b819.html"];
+    dir_c2307aac674f38538f8c0d609b87b143 [shape=box label="normal" color="black" fillcolor="white" style="filled" URL="dir_c2307aac674f38538f8c0d609b87b143.html"];
+    dir_7143d3bb798a75ecf36453f238c492f7 [shape=box label="terno" color="black" fillcolor="white" style="filled" URL="dir_7143d3bb798a75ecf36453f238c492f7.html"];
+  }
+  }
+}

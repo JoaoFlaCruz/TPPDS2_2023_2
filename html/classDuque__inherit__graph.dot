@@ -1,0 +1,13 @@
+digraph "Duque"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Duque\n|# apostas_\l|+ Duque()\l+ ~Duque()\l+ apostas()\l+ Duque()\l+ ~Duque()\l+ apostas()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa uma aposta do tipo Duque."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Aposta\n|# nome_do_jogador_\l# valor_\l# ganho_\l# ganhou_\l# cabeca_\l# apostas_\l|+ Aposta()\l+ ~Aposta()\l+ ganho()\l+ valor()\l+ cabeca()\l+ nome_do_jogador()\l+ ganhou()\l+ apostas()\l+ calcular_ganho()\l+ verificar_vitoria()\l+ operator==()\l+ Aposta()\l+ ~Aposta()\l+ ganho()\l+ valor()\l+ cabeca()\l+ nome_do_jogador()\l+ ganhou()\l+ apostas()\l+ calcular_ganho()\l+ verificar_vitoria()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAposta.html",tooltip="Classe abstrata que representa uma aposta."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{DuqueDezena\n||+ DuqueDezena()\l+ ~DuqueDezena()\l+ verificar_vitoria()\l+ operator==()\l+ DuqueDezena()\l+ ~DuqueDezena()\l+ verificar_vitoria()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDuqueDezena.html",tooltip="Classe que representa uma aposta do tipo DuqueDezena."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{DuqueGrupo\n||+ DuqueGrupo()\l+ ~DuqueGrupo()\l+ verificar_vitoria()\l+ operator==()\l+ DuqueGrupo()\l+ ~DuqueGrupo()\l+ verificar_vitoria()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDuqueGrupo.html",tooltip="Classe que representa uma aposta do tipo DuqueGrupo."];
+}

@@ -1,0 +1,7 @@
+digraph "Extrato"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Extrato\n||+ Extrato()\l+ tamanho()\l+ extrato_por_ordem_cronologica()\l+ ordenar_por_ordem_de\l_valor()\l+ adicionar_movimentacao()\l+ exibirMovimentacoes()\l+ Extrato()\l+ tamanho()\l+ extrato_por_ordem_cronologica()\l+ ordenar_por_ordem_de\l_valor()\l+ adicionar_movimentacao()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa um extrato de movimentações financeiras."];
+}

@@ -1,0 +1,7 @@
+digraph "ListaApostas"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ListaApostas\n||+ ListaApostas()\l+ lista_de_aposta()\l+ tamanho()\l+ adicionar_aposta()\l+ remover_aposta()\l+ apostas_ganhas()\l+ ~ListaApostas()\l+ ListaApostas()\l+ lista_de_aposta()\l+ tamanho()\l+ adicionar_aposta()\l+ remover_aposta()\l+ apostas_ganhas()\l+ ~ListaApostas()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa uma lista de apostas."];
+}

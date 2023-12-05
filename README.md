@@ -11,7 +11,7 @@
 
 <span style="color:blue">### Introdução sobre o jogo do bicho</span>
 
-  
+
   O jogo do bicho é um tipo de jogo de azar amplamente difundido no Brasil.
 Nele, os participantes realizam apostas em grupos, sendo que cada grupo é associado a um animal e a
 quatro números consecutivos entre 0 e 99. Na aposta mais simples, a por grupo, cinco números são sorteados, e os jogadores saem vitoriosos caso o número
@@ -138,7 +138,7 @@ Para começar a utilizar o repositório, você precisa cumprir todos os requisit
     ```sh
     make tests
     ```
-    
+
 <p align="right">(<a href="#top">Voltar para o topo</a>)</p>
 
 ## Como utilizar o Trabalho Prático
@@ -153,7 +153,7 @@ Para começar a utilizar, após a instalação, basta rodar:
 - Usuário para teste:
 
 ```sh
-   Usuário:     Senha: 
+   Usuário:     Senha:
 ```
 
 
@@ -169,15 +169,22 @@ Para começar a utilizar, após a instalação, basta rodar:
     ```sh
     cd TPPDS2_2023_2
     ```
-3. Dê o seguinte comando.
-    ```sh
-    doxygen Doxyfile 
 
-4. Entre na pasta onde foi clonado em seu computador
+3. Instale o Doxygen pelo seguinte comando (Linux):
+
+    ```sh
+    sudo apt-get install doxygen
+
+
+5. Dê o seguinte comando.
+    ```sh
+    doxygen Doxyfile
+
+6. Entre na pasta onde foi clonado em seu computador
     ```sh
     Procure a origem do arquivo
     ```
-5. Entre na pasta html
+7. Entre na pasta html
     ```sh
     Procure o arquivo "annotated" e abra em seu navegador.
     ```
@@ -245,6 +252,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
-    
+
   </tr>
 </table>

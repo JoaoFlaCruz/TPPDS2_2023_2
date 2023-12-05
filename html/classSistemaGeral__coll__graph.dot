@@ -1,0 +1,7 @@
+digraph "SistemaGeral"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{SistemaGeral\n||+ cadastrar_usuario()\l+ logar_usuario()\l+ logout()\l+ apostar()\l+ buscar_sorteios_participados()\l+ buscar_sorteios_em\l_andamento()\l+ saldo_da_carteira_do\l_jogador()\l+ depositar_na_carteira\l_do_jogador()\l+ sacar_na_carteira_do\l_jogador()\l+ extrato_do_jogador()\l+ cadastrar_sorteio()\l+ sortear()\l+ buscar_sorteios_ja\l_realizados()\l+ saldo_da_carteira_do\l_administrador()\l+ depositar_na_carteira\l_do_administrador()\l+ sacar_na_carteira_do\l_administrador()\l+ extrato_do_administrador()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

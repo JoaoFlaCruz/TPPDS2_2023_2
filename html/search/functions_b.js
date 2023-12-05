@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['nome_492',['nome',['../classLogin.html#aaa3bff11f6bfb2783fa73f16679631b2',1,'Login::nome()'],['../classSorteio.html#aaaf99b0592260d37c9266f48cd01a0d3',1,'Sorteio::nome()'],['../classUsuario.html#af7a3ac2062428b6bc1d132e6ea53e6f8',1,'Usuario::nome()'],['../classSorteio.html#aaaf99b0592260d37c9266f48cd01a0d3',1,'Sorteio::nome()'],['../classUsuario.html#af7a3ac2062428b6bc1d132e6ea53e6f8',1,'Usuario::nome()']]],
+  ['nome_5fdo_5fjogador_493',['nome_do_jogador',['../classAposta.html#a2d536a991044978ab9b9444794d938ac',1,'Aposta::nome_do_jogador()'],['../classJogador.html#a6d592bd8dd7cc2a17d746fa94ef80ad2',1,'Jogador::nome_do_jogador()'],['../classAposta.html#a2d536a991044978ab9b9444794d938ac',1,'Aposta::nome_do_jogador()'],['../classJogador.html#a6d592bd8dd7cc2a17d746fa94ef80ad2',1,'Jogador::nome_do_jogador()']]],
+  ['normal_494',['Normal',['../classNormal.html#afea823877cafe7cb304a78d4578e9ca6',1,'Normal::Normal(std::string nome_do_jogador, float valor, bool cabeca, std::array&lt; int, 1 &gt; apostas)'],['../classNormal.html#afea823877cafe7cb304a78d4578e9ca6',1,'Normal::Normal(std::string nome_do_jogador, float valor, bool cabeca, std::array&lt; int, 1 &gt; apostas)']]],
+  ['numeros_5fsorteados_495',['numeros_sorteados',['../classSorteio.html#a83ae50bb99de127e1b841267ec164ecb',1,'Sorteio::numeros_sorteados()'],['../classSorteio.html#a4b3ec9534e0496c98b7e3dcd7508d7f9',1,'Sorteio::numeros_sorteados()']]]
+];

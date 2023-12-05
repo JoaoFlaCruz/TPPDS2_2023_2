@@ -1,0 +1,7 @@
+digraph "Interface"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Interface\n||+ Interface()\l+ ~Interface()\l+ limpar_tela()\l+ cabecalho()\l+ barra_final()\l+ quebra_linha()\l+ mensagem_de_erro()\l+ entrada_comando()\l+ logado()\l+ executar()\l+ pagina_0_inicial()\l+ pagina_1_login_admin()\l+ pagina_2_admin()\l+ pagina_3_sorteio()\l+ pag_4_cadastrar_sorteio()\l+ pag_5_listar_sorteio()\l+ pag_6_carteira_admin()\l+ pag_7_jogador()\l+ pag_8_cadastrar_jogador()\l+ pag_9_logar_jogador()\l+ pag_10_jogador()\l+ pag_11_aposta()\l+ pag_12_cadastrar_aposta()\l+ pag_14_carteira_jogador()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que representa a interface do sistema."];
+}

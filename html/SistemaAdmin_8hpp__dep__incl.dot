@@ -1,0 +1,15 @@
+digraph "code/headers/system/SistemaAdmin.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="code/headers/system\l/SistemaAdmin.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definição da classe SistemaAdmin."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="code/headers/interface\l/Interface.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Interface_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="code/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$code_2main_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="code/src/interface\l/Interface.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Interface_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="code/src/system/SistemaAdmin.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SistemaAdmin_8cpp.html",tooltip=" "];
+}
