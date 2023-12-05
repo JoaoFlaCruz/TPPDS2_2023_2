@@ -13,20 +13,17 @@ public:
 	//Inicializa um extrato vazio
 	Extrato();
 
-	// Retornar extrato
-	std::list<std::pair<std::string, float>> extrato();
-
 
 	//Retorna o tamanho da lista
 	int tamanho();
 
 	//Retorna um extrato por padrão em ordem cronologica
 	//Pré-condição:tamanho do extrato deve ser maior que zero
-	Extrato extrato_por_ordem_cronologica();
+	std::list<std::pair<std::string, float>> extrato_por_ordem_cronologica();
 
 	//Pré-condição:tamanho do extrato deve ser maior que zero
 	//Retornar a lista em ordem de maior valor
-	Extrato ordenar_por_ordem_de_valor();
+	std::list<std::pair<std::string, float>> ordenar_por_ordem_de_valor();
 
 	//Adiciona uma movimentação
 	//Pré-condição: o valor passado tem que ser valido
