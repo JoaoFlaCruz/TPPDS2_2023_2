@@ -15,7 +15,7 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name *.$(SRCEXT))
 TESTOBJECTS := $(patsubst $(TSTDIR)/%,$(OBJDIR)/%,$(TSTSOURCES:.$(SRCEXT)=.o))
 
-CFLAGS := -g --coverage -Wall -O3 -std=c++11
+CFLAGS := -g --coverage -w -O3 -std=c++11
 INC := -I third_party/ -I $(HDRDIR)/ 
 
 # Add the include directory for tests
