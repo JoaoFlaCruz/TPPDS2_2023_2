@@ -12,10 +12,6 @@ Extrato Carteira::extrato(){
     return this->extrato_;
 }
 
-void Carteira::adicionar_movimentacao(std::string descricao, float valor){
-    this->extrato_.adicionar_movimentacao(descricao, valor);
-}
-
 void Carteira::depositar(float valor){
     if (valor <= 0) {
         throw ValorInvalido{ valor };

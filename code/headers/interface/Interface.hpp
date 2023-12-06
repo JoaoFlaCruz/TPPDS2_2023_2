@@ -1,10 +1,12 @@
 #pragma once
-#pragma once
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+#include <bits/stdc++.h>
 
-#include "../system/SistemaGeral.hpp"
+#include "./../system/SistemaAdmin.hpp"
+#include "./../system/SistemaGeral.hpp"
+#include "./../system/SistemaJogador.hpp"
 
 /**
  * @brief Lista de possíveis estados para a interface.
@@ -22,7 +24,7 @@
 #define E10_PAG_SIS_JOGADOR 10
 #define E11_PAG_APOSTA 11
 #define E12_PAG_CADASTRAR_APOSTA 12
-#define E13_PAG_LISTAR_APOSTA 13
+//#define E13_PAG_LISTAR_APOSTA 13
 #define E14_PAG_CARTEIRA_JOGADOR 14
 
 /**
@@ -44,8 +46,9 @@ private:
     std::string msg_erro_; ///< Mensagem de erro
     bool erro_tratado_;    ///< Flag indicando se o erro foi tratado
 
-    SistemaGeral jogo;   ///< Sistema Geral
-
+    SistemaAdmin sis_admin_;   ///< Sistema Admin
+    SistemaGeral sis_geral_;   ///< Sistema Geral
+    SistemaJogador sis_jogador_; ///< Sistema do Jogador
 
 public:
     /**
@@ -99,8 +102,6 @@ public:
     void pag_11_aposta();
     // E12_PAG_CADASTRAR_APOSTA
     void pag_12_cadastrar_aposta();
-    // E13_PAG_LISTAR_APOSTA
-    void pag_13_listar_aposta();
     // E14_PAG_CARTEIRA_JOGADOR
     void pag_14_carteira_jogador();
 };
