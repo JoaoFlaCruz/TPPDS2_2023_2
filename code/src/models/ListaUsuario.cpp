@@ -2,32 +2,36 @@
 
 ListaUsuario::ListaUsuario() {}
 
+Usuario* ListaUsuario::usuario_logado(){
+    return this->usuario_logado_;
+}
+
 // Adiciona um novo usuário ao vetor usuarios_
-void ListaUsuario::adicionarUsuario(const Usuario& usuario) {
+void ListaUsuario::adicionarUsuario(std::string nome, std::string senha, std::string cpf) {
     // Verifica se o usuário já existe
-    if (validarLogin(usuario.nome())) {
+    if (pertence(nome)) {
         UsuarioJaExiste e;
         throw e;
     }
-
-    usuarios_.push_back(usuario);
+    Usuario adicionado(nome, senha, cpf, Jogador());
+    usuarios_.push_back(adicionado);
 }
 
 // Verifica se um determinado login existe no vetor usuarios_
-bool ListaUsuario::validarLogin(const std::string& login) const {
+bool ListaUsuario::pertence(std::string nome) {
     for (const auto& usuario : usuarios_) {
-        if (usuario.nome() == login) {
-            return true;  // Login encontrado
+        if (usuario.nome() == nome) {
+            return true;  
         }
     }
-    return false;  // Login não encontrado
+    return false; 
 }
 
 // Retorna um objeto Usuario com o login especificado, se existir
-Usuario& ListaUsuario::buscarUsuario(const std::string& login) {
+Usuario* ListaUsuario::buscarUsuario(const std::string& login) {
     for (auto& usuario : usuarios_) {
         if (usuario.nome() == login) {
-            return usuario;  // Retorna o usuário encontrado por valor
+            return &usuario;  // Retorna o usuário encontrado por valor
         }
     }
 
@@ -42,4 +46,22 @@ void ListaUsuario::removerUsuario(const std::string& login) {
             break;
         }
     }
+}
+
+void ListaUsuario::login(std::string nome_do_usuario, std::string senha){
+    // Verifica se o jogador existe
+    if (nome_do_usuario == "") {
+        throw LoginInvalido{};
+    }
+
+    // Verifica se a senha está correta
+    if (buscarUsuario(nome_do_usuario)->senha() != senha) {
+        throw LoginInvalido{};
+    }
+    this->usuario_logado_ = (buscarUsuario(nome_do_usuario));
+
+}
+
+void ListaUsuario::logout(){
+    this->usuario_logado_ = nullptr;
 }
