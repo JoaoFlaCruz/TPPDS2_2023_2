@@ -23,12 +23,12 @@ public:
 	int tamanho();
 
 	//Adiciona uma nova aposta na lista
-	void adicionar_aposta(Aposta aposta);
+	void adicionar_aposta(Aposta* aposta);//
 
 	//Remove uma aposta na lista
 	//Pre-Condição: deve existir a aposta a ser removida
 	//Pre-condicao: o tamanho da lista tem que ser maior que zero 
-	void remover_aposta(Aposta aposta);
+	void remover_aposta(Aposta aposta);//
 	
 	//Buscar aposta que ganharam
 	ListaApostas apostas_ganhas();
@@ -36,8 +36,10 @@ public:
 	//Libera todo espaço reservado para os conteudos da lista
 	~ListaApostas();
 
+	void verificar_apostas_ganhas(std::array<int, 5> resultados);
+
 private:
-	std::list<Aposta> lista_de_aposta_;
+	std::list<Aposta*> lista_de_aposta_;
 	int tamanho_;
 	bool pertence(Aposta aposta);
 };

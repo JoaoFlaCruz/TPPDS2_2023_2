@@ -70,7 +70,7 @@ ListaSorteios ListaSorteios::sorteios_feitos(){
 	return sorteios_feitos;
 }
 
-Sorteio& ListaSorteios::buscar_sorteio_por_nome(std::string nome_do_sorteio){
+Sorteio ListaSorteios::buscar_sorteio_por_nome(std::string nome_do_sorteio){
 	if (this->tamanho_ == 0) {
 		throw ListaDeSorteioVazia{};
 	}
@@ -115,10 +115,10 @@ ListaSorteios ListaSorteios::buscar_participacao(std::string nome_do_jogador){
 
 		for (auto aposta : sorteio.apostas_feitas().lista_de_aposta()) {//Selecionador de aposta de cada torneio
 			if (aposta.nome_do_jogador() == nome_do_jogador) {//Se o jogador participou
-				sorteio_participado.apostas_feitas().adicionar_aposta(aposta);
+				sorteio_participado.apostas_feitas().adicionar_aposta(&aposta);
 				existe_participacao = 1;
 				if (aposta.ganhou() == 1) {
-					sorteio_participado.apostas_ganhas().adicionar_aposta(aposta);//Adiciona as apostas ganhas do jogador na lista de
+					sorteio_participado.apostas_ganhas().adicionar_aposta(&aposta);//Adiciona as apostas ganhas do jogador na lista de
 					//apostas ganhas do sorteio participado
 				}
 			}
@@ -132,6 +132,22 @@ ListaSorteios ListaSorteios::buscar_participacao(std::string nome_do_jogador){
 	}
 
 	return participacao;
+}
+
+void ListaSorteios::apostar(Aposta* aposta, std::string nome_do_sorteio){
+	for (auto& sorteio_selecionado : this->lista_de_sorteio_) {
+		if (nome_do_sorteio == sorteio_selecionado.nome()) {
+			sorteio_selecionado.apostar(aposta, nome_do_sorteio);
+		}
+	}
+}
+
+void ListaSorteios::sortear(std::string nome_do_sorteio_a_ser_sortado){
+	for (auto& sorteio_selecionado : this->lista_de_sorteio_) {
+		if (sorteio_selecionado.nome() == nome_do_sorteio_a_ser_sortado) {
+			sorteio_selecionado.sortear();
+		}
+	}
 }
 
 bool ListaSorteios::pertence(std::string data_e_horario){

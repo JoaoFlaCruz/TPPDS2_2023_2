@@ -39,7 +39,7 @@ public:
 	std::string nome();
 
 	//Retornar os numeros sorteados
-	std::array<int, 5> numeros_sorteados();
+	std::array<int, 5> resultados();
 
 	//Retornar a lista de apostadas feitas
 	ListaApostas apostas_feitas();
@@ -57,6 +57,9 @@ public:
 	//A seguencia dos numeros sorteados tem que ter tamanho igual a 5, ou seja, é
 	// necessario já haver um sorteio
 	void verificar_apostas_ganhas();
+
+	void apostar(Aposta* aposta, std::string nome_do_sorteio);
+
 
 private:
 

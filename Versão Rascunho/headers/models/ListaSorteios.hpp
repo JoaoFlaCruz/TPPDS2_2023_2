@@ -54,7 +54,7 @@ public:
 	ListaSorteios sorteios_feitos();
 
 	//Buscar sorteio por nome
-	Sorteio& buscar_sorteio_por_nome(std::string nome_do_sorteio);
+	Sorteio buscar_sorteio_por_nome(std::string nome_do_sorteio);
 
 	//Buscar sorteio por nome(Data e hora)
 	//Pre-Condição: deve existir esse sorteio
@@ -64,6 +64,10 @@ public:
 	//Buscar participações de um jogador
 	//Pre-Condição: deve existir pelo menos um sorteio participado
 	ListaSorteios buscar_participacao(std::string nome_do_jogador);
+
+	void apostar(Aposta* aposta, std::string nome_do_sorteio);
+
+	void sortear(std::string nome_do_sorteio_a_ser_sortado);
 
 	std::list<DadosSorteio> dados_sorteios();
 

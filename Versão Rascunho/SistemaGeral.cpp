@@ -15,16 +15,16 @@ void SistemaGeral::logout(){
 	this->usuario_logado = nullptr;
 }
 
-void SistemaGeral::apostar(Aposta aposta, std::string nome_do_sorteio){
-	this->todos_os_sorteios.buscar_sorteio_por_nome(nome_do_sorteio).apostas_feitas().adicionar_aposta(aposta);
+void SistemaGeral::apostar(Aposta* aposta, std::string nome_do_sorteio){
+	this->sorteios_em_andamento.apostar(aposta, nome_do_sorteio);
 }
 
 ListaSorteios SistemaGeral::buscar_sorteios_participados(std::string nome_do_jogador){
-	return this->todos_os_sorteios.buscar_participacao(nome_do_jogador);
+	return this->sorteios_realizados.buscar_participacao(nome_do_jogador);
 }
 
 ListaSorteios SistemaGeral::buscar_sorteios_em_andamento(){
-	return this->todos_os_sorteios.sorteios_em_andamento();
+	return this->sorteios_em_andamento.sorteios_feitos();
 }
 
 float SistemaGeral::saldo_da_carteira_do_jogador(){
@@ -44,16 +44,29 @@ Extrato SistemaGeral::extrato_do_jogador(){
 	return this->usuario_logado->extrato();
 }
 
-void SistemaGeral::cadastrar_sorteio(std::string nome_sorteio_a_ser_cadastrado){
-	this->todos_os_sorteios.adicionar_sorteio(this->todos_os_sorteios.buscar_sorteio_por_nome(nome_sorteio_a_ser_cadastrado));
+bool SistemaGeral::login_administardor(std::string senha){
+	if (senha == "1234") {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+void SistemaGeral::cadastrar_sorteio(std::string nome_sorteio_a_ser_cadastrado, std::string data_e_horario){
+	Sorteio sorteio_criado(nome_sorteio_a_ser_cadastrado, data_e_horario);
+	this->sorteios_em_andamento.adicionar_sorteio(sorteio_criado);
+	
 }
 
 void SistemaGeral::sortear(std::string nome_do_sorteio_a_ser_sorteado){
-	this->todos_os_sorteios.buscar_sorteio_por_nome(nome_do_sorteio_a_ser_sorteado).sortear();
+	this->sorteios_em_andamento.sortear(nome_do_sorteio_a_ser_sorteado);
+	//pagar os jogadores
+	//copiar sorteio da lista de sorteios em andamento para a de sorteios realizados e exclui-lo de em andamentos
 }
 
 ListaSorteios SistemaGeral::buscar_sorteios_ja_realizados(){
-	return this->todos_os_sorteios.sorteios_feitos();
+	return this->sorteios_realizados.sorteios_feitos();
 }
 
 float SistemaGeral::saldo_da_carteira_do_administrador(){

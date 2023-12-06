@@ -1,7 +1,7 @@
 #include "../../headers/models/aposta/normal/Normal.hpp"
 
 Normal::Normal(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 1> apostas) : Aposta(nome_do_jogador, valor, cabeca) {
-    if ((this->apostas_[0] < 0)) {
+    if ( apostas[0] < 0 ) {
         throw NumeroDaApostaNegativo{ apostas[0] };
     }
 

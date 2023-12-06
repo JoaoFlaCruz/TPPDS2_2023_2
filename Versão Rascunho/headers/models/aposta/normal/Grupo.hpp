@@ -10,7 +10,7 @@ class Grupo : public Normal {
 
     public:
         /*Construtor*/
-        Grupo(float valor, std::string nome_do_jogador, bool cabeca, std::array<int, 1> apostas);
+        Grupo(std::string nome_do_jogador, float valor, bool cabeca, std::array<int, 1> apostas);
 
         /*Destrutor*/
         ~Grupo();

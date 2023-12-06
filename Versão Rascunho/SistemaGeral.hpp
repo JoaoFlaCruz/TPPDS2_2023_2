@@ -27,7 +27,7 @@ public:
 
 	//Apostar
 	//Adiciona uma aposta a lista de apostas de um sorteio desejado
-	void apostar(Aposta aposta, std::string nome_do_sorteio);
+	void apostar(Aposta* aposta, std::string nome_do_sorteio);
 
 	//Listar sorteios participados
 	ListaSorteios buscar_sorteios_participados(std::string nome_do_jogador);
@@ -51,9 +51,11 @@ public:
 
 
 	/* Administrador */
+	//Login como adm[
+	bool login_administardor(std::string senha);
 
 	//Cadastrar sorteio
-	void cadastrar_sorteio(std::string nome_sorteio_a_ser_cadastrado);
+	void cadastrar_sorteio(std::string nome_sorteio_a_ser_cadastrado, std::string data_e_horario);
 
 	//Sortear
 	void sortear(std::string nome_do_sorteio_a_ser_sorteado);
@@ -79,7 +81,8 @@ public:
 private:
 	ListaUsuario lista_de_usuarios_cadastrados;
 	Usuario* usuario_logado;
-	ListaSorteios todos_os_sorteios;
+	ListaSorteios sorteios_realizados;
+	ListaSorteios sorteios_em_andamento;
 	Carteira carteira_do_administrador;
 
 }; 
