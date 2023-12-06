@@ -1,14 +1,14 @@
 #pragma once
 
-#include "headers/models/aposta/Aposta.hpp"
-#include "headers/models/Carteira.hpp"
-#include "headers/models/Extrato.hpp"
-#include "headers/models/Jogador.hpp"
-#include "headers/models/ListaApostas.hpp"
-#include "headers/models/ListaSorteios.hpp"
-#include "headers/models/ListaUsuario.hpp"
-#include "headers/models/Sorteio.hpp"
-#include "headers/models/Usuario.hpp"
+#include "../../headers/models/aposta/Aposta.hpp"
+#include "../../headers/models/Carteira.hpp"
+#include "../../headers/models/Extrato.hpp"
+#include "../../headers/models/Jogador.hpp"
+#include "../../headers/models/ListaApostas.hpp"
+#include "../../headers/models/ListaSorteios.hpp"
+#include "../../headers/models/ListaUsuario.hpp"
+#include "../../headers/models/Sorteio.hpp"
+#include "../../headers/models/Usuario.hpp"
 
 //Provavelmente a parte dos sorteios haverá problemas, mas será facil de corrigir
 class SistemaGeral {
