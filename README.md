@@ -175,7 +175,6 @@ Para começar a utilizar, após a instalação, basta rodar:
     ```sh
     sudo apt-get install doxygen
 
-
 5. Dê o seguinte comando.
     ```sh
     doxygen Doxyfile

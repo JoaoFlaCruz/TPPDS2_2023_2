@@ -546,7 +546,7 @@ void Interface::pag_14_carteira_jogador() {
     mensagem_de_erro();
     int entrada = entrada_comando();
     if (entrada == 0) {
-        estado_ = E7_PAG_JOGADOR;
+        estado_ = E10_PAG_SIS_JOGADOR;
         return;
     } else if (entrada == 1) {
         double valor;
