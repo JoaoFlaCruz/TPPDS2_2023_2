@@ -45,6 +45,9 @@ void Interface::executar() {
         case E10_PAG_SIS_JOGADOR:
             pag_10_jogador();
             break;
+        case E13_PAG_LISTAR_APOSTA:
+            pag_13_listar_aposta();
+            break;
         case E14_PAG_CARTEIRA_JOGADOR:
             pag_14_carteira_jogador();
             break;
@@ -153,7 +156,7 @@ void Interface::mensagem_de_erro() {
     erro_tratado_ = true;
 }
 
-int Interface::entrada_comando() {
+std::string Interface::entrada_comando() {
     std::cout << "########### ENTRE COM O COMANDO: ";
     int entrada;
     std::cin >> entrada;
@@ -161,7 +164,7 @@ int Interface::entrada_comando() {
 }
 
 void Interface::logado() {
-    
+
     std::cout << "########### Usuário: " <<jogo.usuario_logado().nome() << std::endl;
     std::cout << "########### CPF: " << jogo.usuario_logado().cpf() << std::endl;
 }
@@ -493,7 +496,7 @@ void Interface::pag_9_logar_jogador() {
         estado_ = E10_PAG_SIS_JOGADOR;
 
         return;
- 
+
     } else if (entrada == 0) {
         estado_ = E7_PAG_JOGADOR;
         return;
@@ -557,7 +560,8 @@ void Interface::pag_11_aposta() {
 
     }
     else if (entrada == 2) {
-
+        estado_ = E13_PAG_LISTAR_APOSTA;
+        return;
     }
     else if (entrada == 3) {
         estado_ = E9_PAG_LOGAR_JOGADOR;
