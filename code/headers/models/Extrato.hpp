@@ -1,46 +1,36 @@
 #pragma once
-#include "Extrato.hpp"
 
-//Pronta
-
-struct ValorInvalido {
-	float valor;
+#include <list>
+#include <string>
+#include <utility>
+//Pronto
+struct ExtratoVazio {
 };
 
-struct SaldoInsuficiente {
-    float valor;
-
-    SaldoInsuficiente(float valor) : valor(valor) {}
-};
-
-class Carteira {
+class Extrato {
+	
 public:
-	//Inicializa uma carteira vazia 
-	Carteira();
+	//Inicializa um extrato vazio
+	Extrato();
 
-	//Retorna o saldo da carteira
-	float saldo();
 
-	//Retorna o extrato da carteira
-	Extrato extrato();
+	//Retorna o tamanho da lista
+	int tamanho();
+
+	//Retorna um extrato por padrão em ordem cronologica
+	//Pré-condição:tamanho do extrato deve ser maior que zero
+	std::list<std::pair<std::string, float>> extrato_por_ordem_cronologica();
+
+	//Pré-condição:tamanho do extrato deve ser maior que zero
+	//Retornar a lista em ordem de maior valor
+	std::list<std::pair<std::string, float>> ordenar_por_ordem_de_valor();
 
 	//Adiciona uma movimentação
 	//Pré-condição: o valor passado tem que ser valido
 	void adicionar_movimentacao(std::string descricao, float valor);
-	
-	//Depositar
-	//Pré-condição: valor tem que ser maior que zero e positivo
-	void depositar(float valor);
 
-	//Sacar
-	//Pré-condição: valor tem que ser maior que zero e menor que o saldo
-	void sacar(float valor);
-	
 private:
-	float saldo_;
-	Extrato extrato_;
+	//Lista de movimentações que guarda se recebido, depositado ou pago, data e valor 
+	std::list<std::pair<std::string, float>> extrato_;
+	int tamanho_;
 };
-
-
-
-
