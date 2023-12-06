@@ -1,12 +1,10 @@
 #pragma once
+#pragma once
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include <bits/stdc++.h>
 
-#include "./../system/SistemaAdmin.hpp"
-#include "./../system/SistemaGeral.hpp"
-#include "./../system/SistemaJogador.hpp"
+#include "SistemaGeral.hpp"
 
 /**
  * @brief Lista de possíveis estados para a interface.
@@ -24,7 +22,7 @@
 #define E10_PAG_SIS_JOGADOR 10
 #define E11_PAG_APOSTA 11
 #define E12_PAG_CADASTRAR_APOSTA 12
-//#define E13_PAG_LISTAR_APOSTA 13
+ //#define E13_PAG_LISTAR_APOSTA 13
 #define E14_PAG_CARTEIRA_JOGADOR 14
 
 /**
@@ -46,9 +44,8 @@ private:
     std::string msg_erro_; ///< Mensagem de erro
     bool erro_tratado_;    ///< Flag indicando se o erro foi tratado
 
-    SistemaAdmin sis_admin_;   ///< Sistema Admin
-    SistemaGeral sis_geral_;   ///< Sistema Geral
-    SistemaJogador sis_jogador_; ///< Sistema do Jogador
+    SistemaGeral jogo;   ///< Sistema Geral
+  
 
 public:
     /**
@@ -67,7 +64,7 @@ public:
     void barra_final();
     void quebra_linha();
     void mensagem_de_erro();
-    std::string entrada_comando();
+    int entrada_comando();
     void logado();
 
     // Execução principal
