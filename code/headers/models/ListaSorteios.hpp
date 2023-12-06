@@ -1,132 +1,78 @@
-/**
- * @file ListaSorteios.hpp
- * @brief Definição da classe ListaSorteios.
- * @version 1.0
- * @date 2023-12-05
- */
 #pragma once
 #include "Sorteio.hpp"
 #include <list>
 
-/**
- * @brief Exceção lançada quando a lista de sorteios está vazia.
- */
+//Realizar os tratamentos de excessões
+//Testar
 struct ListaDeSorteioVazia {
 };
 
-/**
- * @brief Exceção lançada quando um sorteio não existe na lista.
- */
 struct SorteioInexistente {
-	std::string data_e_horario_que_nao_existe; /**< Data e horário do sorteio inexistente. */
+	std::string data_e_horario_que_nao_existe;//Não existe construtor para esse tipo de aposta
 };
 
-/**
- * @brief Exceção lançada quando tenta-se adicionar um sorteio que já existe na lista.
- */
-struct SorteioJaExistente{
-	std::string data_e_horario_ja_existente; /**< Data e horário do sorteio que já existe. */
+struct SorteioJaExistente {
+	std::string data_e_horario_ja_existente;
 };
 
-/**
- * @brief Exceção lançada quando um jogador não participou do sorteio.
- */
 struct JogadorNaoParticipou {
-	std::string nome_do_jogador; /**< Nome do jogador que não participou. */
+	std::string nome_do_jogador;
 };
 
-/**
- * @brief Estrutura para armazenar dados de um sorteio.
- */
 struct DadosSorteio {
-    std::string nome; /**< Nome do sorteio. */
-    std::string data_hora; /**< Data e horário do sorteio. */
-    bool status; /**< Status do sorteio (em andamento ou feito). */
+	std::string nome;
+	std::string data_hora;
+	bool status;
 };
 
-/**
- * @brief Classe que representa uma lista de sorteios.
- */
 class ListaSorteios {
 public:
-	/**
-	 * @brief Construtor padrão da ListaSorteios.
-	 */
+	//Inicializa uma lista de sorteios vazia
 	ListaSorteios();
 
-	/**
-	 * @brief Retorna o tamanho da lista de sorteios.
-	 * @return Tamanho da lista.
-	 */
+	//Retorna o tamanho da lista
 	int tamanho();
 
-	/**
-	 * @brief Retorna a lista de sorteios.
-	 * @return Lista de sorteios.
-	 */
+	//Retorna a lista de sorteio
 	std::list<Sorteio> lista_de_sorteio();
 
-	/**
-	 * @brief Adiciona um novo sorteio à lista.
-	 * @param sorteio Sorteio a ser adicionado.
-	 * @throw SorteioJaExistente se o sorteio já existe na lista.
-	 */
+	//Adiciona uma novo sorteio na lista
+	//Pre-condição: o sorteio não deve já existir na lista
 	void adicionar_sorteio(Sorteio sorteio);
 
-	/**
-	 * @brief Remove um sorteio da lista.
-	 * @param data_e_horario Data e horário do sorteio a ser removido.
-	 * @throw SorteioInexistente se o sorteio não existe na lista.
-	 * @pre O tamanho da lista deve ser maior que zero.
-	 */
+	//Remove um sorteio na lista
+	//Pre-Condição: deve existir esse sorteio
+	//Pre_condição: tamanho da lista maior que zero
 	void remover_sorteio(std::string data_e_horario);
 
-	/**
-	 * @brief Retorna uma lista de sorteios em andamento.
-	 * @return Lista de sorteios em andamento.
-	 * @pre O tamanho da lista deve ser maior que zero.
-	 */
+	//Buscar sorteios em andamento
+	//Pre_condição: tamanho da lista maior que zero
 	ListaSorteios sorteios_em_andamento();
 
-	/**
-	 * @brief Retorna uma lista de sorteios feitos.
-	 * @return Lista de sorteios feitos.
-	 * @pre O tamanho da lista deve ser maior que zero.
-	 */
+	//Buscar sorteios feitos
+	//Pre_condição: tamanho da lista maior que zero
 	ListaSorteios sorteios_feitos();
 
-	/**
-	 * @brief Busca um sorteio na lista pelo nome (data e horário).
-	 * @param data_e_horario Data e horário do sorteio a ser buscado.
-	 * @return Sorteio encontrado.
-	 * @throw SorteioInexistente se o sorteio não existe na lista.
-	 * @pre O tamanho da lista deve ser maior que zero.
-	 */
+	//Buscar sorteio por nome
+	Sorteio buscar_sorteio_por_nome(std::string nome_do_sorteio);
+
+	//Buscar sorteio por nome(Data e hora)
+	//Pre-Condição: deve existir esse sorteio
+	//Pre_condição: tamanho da lista maior que zero
 	Sorteio buscar_sorteio_por_data_e_horario(std::string data_e_horario);
 
-	/**
-	 * @brief Busca participações de um jogador na lista de sorteios.
-	 * @param nome_do_jogador Nome do jogador a ser buscado.
-	 * @return Lista de sorteios em que o jogador participou.
-	 * @throw JogadorNaoParticipou se o jogador não participou de nenhum sorteio.
-	 * @pre Deve existir pelo menos um sorteio participado.
-	 */
+	//Buscar participações de um jogador
+	//Pre-Condição: deve existir pelo menos um sorteio participado
 	ListaSorteios buscar_participacao(std::string nome_do_jogador);
 
-	/**
-	 * @brief Retorna uma lista de dados dos sorteios.
-	 * @return Lista de dados de sorteios.
-	 */
+	void apostar(Aposta* aposta, std::string nome_do_sorteio);
+
+	void sortear(std::string nome_do_sorteio_a_ser_sortado);
+
 	std::list<DadosSorteio> dados_sorteios();
 
 private:
-	std::list<Sorteio> lista_de_sorteio_; /**< Lista de sorteios. */
-	int tamanho_; /**< Tamanho atual da lista. */
-
-	/**
-	 * @brief Verifica se um sorteio com a data e horário fornecidos pertence à lista.
-	 * @param data_e_horario Data e horário do sorteio a ser verificado.
-	 * @return True se pertence, False caso contrário.
-	 */
+	std::list<Sorteio> lista_de_sorteio_;
+	int tamanho_;
 	bool pertence(std::string data_e_horario);
 };
