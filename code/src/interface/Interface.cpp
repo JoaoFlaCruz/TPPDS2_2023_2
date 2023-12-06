@@ -45,6 +45,12 @@ void Interface::executar() {
         case E10_PAG_SIS_JOGADOR:
             pag_10_jogador();
             break;
+        case E11_PAG_APOSTA:
+            pag_11_aposta();
+            break;
+        case E12_PAG_CADASTRAR_APOSTA:
+            pag_12_cadastrar_aposta();
+            break;
         case E13_PAG_LISTAR_APOSTA:
             pag_13_listar_aposta();
             break;
@@ -158,7 +164,7 @@ void Interface::mensagem_de_erro() {
 
 std::string Interface::entrada_comando() {
     std::cout << "########### ENTRE COM O COMANDO: ";
-    int entrada;
+    std::string entrada;
     std::cin >> entrada;
     return entrada;
 }
@@ -179,12 +185,12 @@ void Interface::pagina_0_inicial() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
+    std::string entrada = entrada_comando();
 
-    if (entrada == 1) {
+    if (entrada == "1") {
         estado_ = E1_PAG_LOGIN_ADMIN;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         estado_ = E7_PAG_JOGADOR;
     }
     else {
@@ -203,11 +209,11 @@ void Interface::pagina_1_login_admin() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
+    std::string entrada = entrada_comando();
 
-    if (entrada == 1) {
+    if (entrada == "1") {
     }
-    else if (entrada == 0) {
+    else if (entrada == "0") {
         estado_ = E0_PAG_INICIAL;
         return;
     }
@@ -242,17 +248,17 @@ void Interface::pagina_2_admin() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
+    std::string entrada = entrada_comando();
 
-    if (entrada == 0) {
+    if (entrada == "0") {
         estado_ = E1_PAG_LOGIN_ADMIN;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
         estado_ = E3_PAG_SORTEIO;
         return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         estado_ = E6_PAG_CARTEIRA_ADMIN;
         return;
     }
@@ -274,21 +280,21 @@ void Interface::pagina_3_sorteio() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
+    std::string entrada = entrada_comando();
 
-    if (entrada == 0) {
+    if (entrada == "0") {
         estado_ = E2_PAG_ADMIN;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
         estado_ = E5_PAG_LISTAR_SORTEIO;
         return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         estado_ = E4_PAG_CADASTRAR_SORTEIO;
         return;
     }
-    else if (entrada == 3) {
+    else if (entrada == "3") {
         // Preencher com PAG_REALIZAR_SORTEIO
         return;
     }
@@ -308,13 +314,13 @@ void Interface::pag_4_cadastrar_sorteio() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
+    std::string entrada = entrada_comando();
 
-    if (entrada == 0) {
+    if (entrada == "0") {
         estado_ = E3_PAG_SORTEIO;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
 
     }
     else {
@@ -362,8 +368,8 @@ void Interface::pag_5_listar_sorteio() {
 
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 0) {
+    std::string entrada = entrada_comando();
+    if (entrada == "0") {
         estado_ = E3_PAG_SORTEIO;
         return;
     }
@@ -386,19 +392,19 @@ void Interface::pag_6_carteira_admin() {
     std::cout << "########### Saldo: $" << std::fixed << std::setprecision(2) << jogo.saldo_da_carteira_do_administrador() << std::endl;
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 0) {
+    std::string entrada = entrada_comando();
+    if (entrada == "0") {
         estado_ = E2_PAG_ADMIN;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
         double valor;
         std::cout << "########### Valor a adicionar: $";
         std::cin >> valor;
         jogo.depositar_na_carteira_do_administrador(valor);
         return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         double valor;
         std::cout << "########### Valor a sacar: $";
         std::cin >> valor;
@@ -422,16 +428,16 @@ void Interface::pag_7_jogador() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 0) {
+    std::string entrada = entrada_comando();
+    if (entrada == "0") {
         estado_ = E0_PAG_INICIAL;
         return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         estado_ = E8_PAG_CADASTRAR_JOGADOR;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
         estado_ = E9_PAG_LOGAR_JOGADOR;
     }
     else {
@@ -450,8 +456,8 @@ void Interface::pag_8_cadastrar_jogador() {
     quebra_linha();
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 1) {
+    std::string entrada = entrada_comando();
+    if (entrada == "1") {
         std::cout << "########### Insira o login jogador: ";
         std::string login;
         std::cin >> login;
@@ -463,7 +469,7 @@ void Interface::pag_8_cadastrar_jogador() {
         std::cin >> cpf;
         jogo.cadastrar_usuario(login, senha, cpf);
     }
-    else if (entrada == 0) {
+    else if (entrada == "0") {
         estado_ = E7_PAG_JOGADOR;
         return;
     }
@@ -484,8 +490,8 @@ void Interface::pag_9_logar_jogador() {
     barra_final();
     mensagem_de_erro();
     jogo.logout();
-    int entrada = entrada_comando();
-    if (entrada == 1) {
+    std::string entrada = entrada_comando();
+    if (entrada == "1") {
         std::cout << "########### Insira o login: ";
         std::string login;
         std::cin >> login;
@@ -497,7 +503,7 @@ void Interface::pag_9_logar_jogador() {
 
         return;
 
-    } else if (entrada == 0) {
+    } else if (entrada == "0") {
         estado_ = E7_PAG_JOGADOR;
         return;
     }
@@ -520,19 +526,20 @@ void Interface::pag_10_jogador() {
     barra_final();
     logado();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 0) {
+    std::string entrada = entrada_comando();
+    if (entrada == "0") {
         estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
     }
-    else if (entrada == 3) {
+    else if (entrada == "3") {
         estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
     }
-    else if (entrada == 1) {
-
+    else if (entrada == "1") {
+        estado_ = E11_PAG_APOSTA;
+        return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         estado_ = E14_PAG_CARTEIRA_JOGADOR;
         return;
     }
@@ -555,19 +562,20 @@ void Interface::pag_11_aposta() {
     barra_final();
     logado();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 1) {
-
-    }
-    else if (entrada == 2) {
-        estado_ = E13_PAG_LISTAR_APOSTA;
+    std::string entrada = entrada_comando();
+    if (entrada == "1") {
+        estado_ = E12_PAG_CADASTRAR_APOSTA;
         return;
     }
-    else if (entrada == 3) {
+    else if (entrada == "2") {
+        //estado_ = E13_PAG_LISTAR_APOSTA;
+        return;
+    }
+    else if (entrada == "3") {
         estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
     }
-    else if (entrada == 0) {
+    else if (entrada == "0") {
         estado_ = E10_PAG_SIS_JOGADOR;
         return;
     }
@@ -575,6 +583,40 @@ void Interface::pag_11_aposta() {
         EntradaInvalida e;
         throw e;
     }
+}
+
+void Interface::pag_12_cadastrar_aposta() {
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA JOGADOR - CADASTRAR APOSTA                                       #" << std::endl;
+    std::cout << "#          (1) Cadastrar Aposta                                                     #" << std::endl;
+    std::cout << "#          (3) Logout                                                               #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    logado();
+    mensagem_de_erro();
+    std::string entrada = entrada_comando();
+    if (entrada == "1") {
+        // Fluxo de cadastro de aposta
+    }
+    else if (entrada == "3") {
+        estado_ = E9_PAG_LOGAR_JOGADOR;
+        return;
+    }
+    else if (entrada == "0") {
+        estado_ = E10_PAG_SIS_JOGADOR;
+        return;
+    }
+    else {
+        EntradaInvalida e;
+        throw e;
+    }
+}
+
+void Interface::pag_13_listar_aposta() {
+
 }
 
 void Interface::pag_14_carteira_jogador() {
@@ -590,19 +632,19 @@ void Interface::pag_14_carteira_jogador() {
     std::cout << "########### Saldo: $" << std::fixed << std::setprecision(2) << jogo.saldo_da_carteira_do_jogador() << std::endl;
     barra_final();
     mensagem_de_erro();
-    int entrada = entrada_comando();
-    if (entrada == 0) {
+    std::string entrada = entrada_comando();
+    if (entrada == "0") {
         estado_ = E7_PAG_JOGADOR;
         return;
     }
-    else if (entrada == 1) {
+    else if (entrada == "1") {
         double valor;
         std::cout << "########### Valor a adicionar: $";
         std::cin >> valor;
         jogo.depositar_na_carteira_do_jogador(valor);
         return;
     }
-    else if (entrada == 2) {
+    else if (entrada == "2") {
         double valor;
         std::cout << "########### Valor a sacar: $";
         std::cin >> valor;
