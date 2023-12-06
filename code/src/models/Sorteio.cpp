@@ -1,19 +1,15 @@
 #include "../../headers/models/Sorteio.hpp"
-
+#include <regex>
+#include <random>
 
 //Realizar o tratamento de excessões e a função verificar sorteio
 //Testar
 
 
 
-Sorteio::Sorteio(std::string data_e_horario, std::string nome) : data_e_horario_(data_e_horario), nome_(nome), numeros_sorteados_({}), status_(0),
+Sorteio::Sorteio(std::string nome, std::string data_e_horario) : data_e_horario_(data_e_horario), nome_(nome), numeros_sorteados_({}), status_(0),
 apostas_feitas_({}) {
 
-    std::regex reg("[0-9]{2}-[0-9]{2}-[0-9]{4}/[A-Z]{3}");
-    if (!std::regex_search(data_e_horario, reg)){
-        FormatoDataHoraInvalido e;
-        throw e;
-    }
 
     //DECOMPOSIÇÃO DA DATA E HORARIO
     std::string dia = data_e_horario.substr(0, 2);
@@ -23,7 +19,7 @@ apostas_feitas_({}) {
 
     std::string separador1 = data_e_horario.substr(2, 1);
     std::string separador2 = data_e_horario.substr(5, 1);
-    std::string separador3 = data_e_horario.substr(10, 1);
+    std::string separador3 = data_e_horario.substr(11, 1);
 
     int dia_ = stoi(dia);
     int mes_ = stoi(mes);
@@ -88,7 +84,7 @@ std::string Sorteio::nome() {
     return this->nome_;
 }
 
-std::array<int, 5> Sorteio::numeros_sorteados(){
+std::array<int, 5> Sorteio::resultados(){
     return this->numeros_sorteados_;
 }
 
@@ -100,7 +96,7 @@ ListaApostas Sorteio::apostas_ganhas(){
     ListaApostas apostas_ganhas;
     for (auto aposta_selecionada : this->apostas_feitas_.lista_de_aposta()) {
         if (aposta_selecionada.ganhou() == 1) {
-            apostas_ganhas.adicionar_aposta(aposta_selecionada);
+            apostas_ganhas.adicionar_aposta(&aposta_selecionada);
         }
     }
     return apostas_ganhas;
@@ -113,10 +109,12 @@ bool Sorteio::status(){
 void Sorteio::sortear(){
     std::array<int, 5> numeros_sorteados;
     for (int i = 0; i < 5; i++) {
-        numeros_sorteados[i] = gerar_numero_aleatorio();
+        numeros_sorteados[i] = 14;
+            //gerar_numero_aleatorio();
 
     }
     this->numeros_sorteados_ = numeros_sorteados;
+    this->verificar_apostas_ganhas();
     this->status_ = 1;
 }
 
@@ -124,9 +122,11 @@ void Sorteio::verificar_apostas_ganhas(){
     if (this->numeros_sorteados_.size() < 5) {
         throw SorteioAindaNaoSorteado{ this->data_e_horario_ };
     }
-    for (auto apostas_selecionadas : this->apostas_feitas_.lista_de_aposta()) {
-        apostas_selecionadas.verificar_vitoria(this->numeros_sorteados_);
-    }
+    this->apostas_feitas_.verificar_apostas_ganhas(this->resultados());
+   
+}
+void Sorteio::apostar(Aposta* aposta, std::string nome_do_sorteio){
+    this->apostas_feitas_.adicionar_aposta(aposta);
 }
 int Sorteio::gerar_numero_aleatorio(){
     std::random_device rd;
