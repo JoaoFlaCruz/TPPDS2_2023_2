@@ -591,7 +591,7 @@ void Interface::pag_12_cadastrar_aposta() {
     quebra_linha();
     std::cout << "#          SISTEMA JOGADOR - CADASTRAR APOSTA                                       #" << std::endl;
     std::cout << "#          (1) Cadastrar Aposta                                                     #" << std::endl;
-    std::cout << "#          (3) Logout                                                               #" << std::endl;
+    std::cout << "#          (2) Logout                                                               #" << std::endl;
     std::cout << "#          (0) Retornar                                                             #" << std::endl;
     quebra_linha();
     barra_final();
@@ -601,7 +601,7 @@ void Interface::pag_12_cadastrar_aposta() {
     if (entrada == "1") {
         // Fluxo de cadastro de aposta
     }
-    else if (entrada == "3") {
+    else if (entrada == "2") {
         estado_ = E9_PAG_LOGAR_JOGADOR;
         return;
     }
@@ -616,7 +616,29 @@ void Interface::pag_12_cadastrar_aposta() {
 }
 
 void Interface::pag_13_listar_aposta() {
-
+    limpar_tela();
+    cabecalho();
+    quebra_linha();
+    std::cout << "#          SISTEMA JOGADOR - LISTAR APOSTA                                          #" << std::endl;
+    std::cout << "#          (1) Logout                                                               #" << std::endl;
+    std::cout << "#          (0) Retornar                                                             #" << std::endl;
+    quebra_linha();
+    barra_final();
+    logado();
+    mensagem_de_erro();
+    std::string entrada = entrada_comando();
+    if (entrada == "1") {
+        estado_ = E9_PAG_LOGAR_JOGADOR;
+        return;
+    }
+    else if (entrada == "0") {
+        estado_ = E10_PAG_SIS_JOGADOR;
+        return;
+    }
+    else {
+        EntradaInvalida e;
+        throw e;
+    }
 }
 
 void Interface::pag_14_carteira_jogador() {
