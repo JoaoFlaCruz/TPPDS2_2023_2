@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "SistemaGeral.hpp"
+#include "../system/SistemaGeral.hpp"
 
 /**
  * @brief Lista de possíveis estados para a interface.
