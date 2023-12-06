@@ -1,64 +1,41 @@
-/**
- * @file Jogador.hpp
- * @brief Definição da classe Jogador.
- * @version 1.0
- * @date 2023-12-05
- */
-
 #pragma once
-
 #include "Sorteio.hpp"
 #include "Carteira.hpp"
 #include "./aposta/normal/Grupo.hpp"
+//Testar
 
-/**
- * @brief Classe que representa um jogador.
- */
 class Jogador {
 public:
-    /**
-     * @brief Construtor da classe Jogador.
-     * @param apelido Apelido do jogador.
-     */
-    Jogador(std::string apelido);
+	Jogador(std::string apelido);
 
-    /**
-     * @brief Construtor padrão da classe Jogador.
-     * Cria um jogador vazio.
-     */
-    Jogador();
+	//Cria um jogador vazio (construtor padrão)
+	Jogador();
 
-    /**
-     * @brief Retorna o apelido do jogador.
-     * @return O apelido do jogador.
-     */
-    std::string nome_do_jogador();
+	//Retornar apelido do jogador
+	std::string nome_do_jogador();
 
-    /**
-     * @brief Retorna a carteira do jogador.
-     * @return A carteira do jogador.
-     */
-    Carteira carteira();
+	//Retornar a carteira do jogador
+	Carteira carteira();
 
-    /**
-     * @brief Adiciona fundos à carteira do jogador.
-     * @param valor O valor a ser adicionado.
-     */
-    void adicionar_fundos(float valor);
+	//Saldo na carteira 
+	float saldo_da_carteira();
 
-    /**
-     * @brief Retira fundos da carteira do jogador.
-     * @param valor O valor a ser retirado.
-     */
-    void retirar_fundos(float valor);
+	//Depositar na carteira 
+	void depositar_na_carteira(float valor_a_ser_depositado);
 
-    /**
-     * @brief Retorna o saldo da carteira do jogador.
-     * @return O saldo da carteira do jogador.
-     */
-    float saldo();
+	//Sacar na carteira 
+	void sacar_na_carteira(float valor_a_ser_sacado);
+
+	//Mostrar extrato
+	Extrato extrato();
+	
+	//Adicinoar movimentação
+	void adicionar_movimentacao(std::string descricao, float valor);
+
 
 private:
-    std::string nome_do_jogador_; ///< O apelido do jogador, o mesmo que o nome de usuário.
-    Carteira carteira_; ///< A carteira do jogador.
+
+	std::string nome_do_jogador_;//O mesmo nome que usuario
+	Carteira carteira_;//Carteria do jogador
+
 };
