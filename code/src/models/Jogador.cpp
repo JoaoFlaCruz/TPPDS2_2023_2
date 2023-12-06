@@ -19,14 +19,24 @@ Carteira Jogador::carteira() {
     return carteira_;
 }
 
-void Jogador::adicionar_fundos(float valor) {
-    carteira_.depositar(valor);
+float Jogador::saldo_da_carteira(){
+    return this->carteira_.saldo();
 }
 
-void Jogador::retirar_fundos(float valor) {
-    carteira_.sacar(valor);
+void Jogador::depositar_na_carteira(float valor_a_ser_depositado){
+    this->carteira_.depositar(valor_a_ser_depositado);
 }
 
-float Jogador::saldo() {
-    return carteira_.saldo();
+void Jogador::sacar_na_carteira(float valor_a_ser_sacado){
+    this->carteira_.sacar(valor_a_ser_sacado);
 }
+
+Extrato Jogador::extrato()
+{
+    return this->carteira_.extrato();
+}
+
+void Jogador::adicionar_movimentacao(std::string descricao, float valor){
+    this->carteira_.adicionar_movimentacao(descricao, valor);
+}
+
