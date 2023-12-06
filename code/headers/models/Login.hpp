@@ -65,26 +65,7 @@ public:
      */
     std::string cpf();
 
-    /**
-     * @brief Adiciona fundos à carteira do usuário logado.
-     * @param valor O valor a ser adicionado.
-     * @throws Nenhum_Usuario_Logado se nenhum usuário estiver logado.
-     */
-    void adicionar_fundos(float valor);
-
-    /**
-     * @brief Retira fundos da carteira do usuário logado.
-     * @param valor O valor a ser retirado.
-     * @throws Nenhum_Usuario_Logado se nenhum usuário estiver logado.
-     */
-    void retirar_fundos(float valor);
-
-    /**
-     * @brief Retorna o saldo da carteira do usuário logado.
-     * @return O saldo da carteira do usuário logado.
-     * @throws Nenhum_Usuario_Logado se nenhum usuário estiver logado.
-     */
-    float saldo();
+   
 
 private:
     bool usuarioLogado_; ///< Flag indicando se há um usuário logado.
