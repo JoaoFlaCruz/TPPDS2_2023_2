@@ -26,8 +26,9 @@ int Extrato::tamanho() {
     return this->tamanho_;
 }
 
-void Extrato::exibirMovimentacoes() const {
-    for (const auto& movimento : this->extrato_) {
-        std::cout << "Tipo: " << movimento.first << ", Valor: " << movimento.second << std::endl;
-    }
+std::list<std::pair<std::string, float>> Extrato::extrato_por_ordem_cronologica()
+{
+    return this->extrato_;
 }
+
+
