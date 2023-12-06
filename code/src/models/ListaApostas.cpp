@@ -13,7 +13,7 @@ int ListaApostas::tamanho(){
 	return this->tamanho_;
 }
 
-void ListaApostas::adicionar_aposta(Aposta aposta){
+void ListaApostas::adicionar_aposta(Aposta *aposta){
 	this->lista_de_aposta_.push_back(aposta);
 	this->tamanho_++;
 }
@@ -26,7 +26,7 @@ void ListaApostas::remover_aposta(Aposta aposta) {
 		throw ApostaInexistente{ aposta };
 	}
 	for (auto it = this->lista_de_aposta_.begin(); it != this->lista_de_aposta_.end(); it++) {
-		if (*it == aposta) {
+		if (**it == aposta) {
 			this->lista_de_aposta_.erase(it);
 			this->tamanho_--;
 			break;
@@ -37,8 +37,8 @@ void ListaApostas::remover_aposta(Aposta aposta) {
 
 ListaApostas ListaApostas::apostas_ganhas(){
 	ListaApostas apostas_ganhas;
-	for (auto& aposta : this->lista_de_aposta_) {
-		if (aposta.ganhou()) {
+	for (auto aposta : this->lista_de_aposta_) {
+		if (aposta->ganhou()) {
 			apostas_ganhas.adicionar_aposta(aposta);
 		}
 	}
@@ -50,9 +50,14 @@ ListaApostas::~ListaApostas() {
         // Nada a fazer aqui, a lista cuidará da liberação de memória automaticamente
     }
 }
+void ListaApostas::verificar_apostas_ganhas(std::array<int, 5> resultados){
+	for (auto& apostas_selecionadas : this->lista_de_aposta_) {
+		apostas_selecionadas->verificar_vitoria(resultados);
+	}
+}
 bool ListaApostas::pertence(Aposta aposta) {
 	for (auto aposta_selecionada : this->lista_de_aposta_) {
-		if (aposta_selecionada == aposta) {
+		if (*aposta_selecionada == aposta) {
 			return 1;
 		}
 	}
