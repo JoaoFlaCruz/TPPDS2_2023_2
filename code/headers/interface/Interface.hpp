@@ -67,7 +67,7 @@ public:
     void barra_final();
     void quebra_linha();
     void mensagem_de_erro();
-    int entrada_comando();
+    std::string entrada_comando();
     void logado();
 
     // Execução principal
